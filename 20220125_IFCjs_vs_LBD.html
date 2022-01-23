@@ -92,6 +92,7 @@
 							<li>Works with web-ifc-three <pre><code class="hljs javascript"> const rdf = await lbdParser.parseBOTTriples(ifcApi, modelID);</code></pre></li>
 							<li>Currently supports BOT, Products and FSO</li>
 							<li>Modular and easy to extend</li>
+							<li>Written in TypeScript</li>
 						</ul>
 
 					</section>
@@ -115,7 +116,7 @@
 
 					<section>
 						<h2>Use it in an app</h2>
-						<pre><code class="hljs javascript">
+						<pre><code class="hljs javascript" data-line-numbers>
 import * as WebIFC from "web-ifc/web-ifc-api.js";
 import { LBDParser } from "ifc-lbd";
 
@@ -149,11 +150,196 @@ main();
 						</code></pre>
 					</section>
 
+				</section>
+
+				<section>
+
 					<section>
 						<h2>Deeper look into the code</h2>
-						
+
+						<h4>Path search helpers</h4>
+						<ul>
+							<li>buildRelOneToOne()</li>
+							<li>buildRelOneToMany()</li>
+						</ul>
+
 					</section>
 
+					<section>
+						<h2>buildRelOneToOne()</h2>
+
+						<p>For example: IFCRELSPACEBOUNDARY</p>
+
+						<pre><code class="hljs typescript" data-line-numbers>function buildRelOneToOne(
+		ifcAPI: WebIFC.IfcAPI, modelID: number = 0, 
+		relationshipType: number, subjectRef: string, 
+		targetRef: string, rdfRelationship: string, 
+		includeInterface: boolean = false, 
+		biderectional: boolean = false)</code></pre>
+					</section>
+
+					<section>
+						<h2>buildRelOneToOne()</h2>
+						<h4>space/element adjacency</h4>
+
+						<pre><code class="hljs typescript" data-line-numbers>private async buildSpaceAdjacentElementRelationships(){
+	const subjectRef = "RelatingSpace";
+	const targetRef = "RelatedBuildingElement";
+	const rdfRelationship = "bot:adjacentElement";
+	return await buildRelOneToOne(
+		this.ifcAPI, // API
+		this.modelID, // modelID
+		IFCRELSPACEBOUNDARY, // relationship type
+		subjectRef, // what rel is used to find subject of triple?
+		targetRef, // what rel is used to find object of triple?
+		rdfRelationship, // what's the predicate of the new triple?
+		true // Add triple in both directions?
+	);
+}</code></pre>
+					</section>
+
+					<section>
+						<h2>buildRelOneToMany()</h2>
+
+						<p>For example: IFCRELCONTAINEDINSPATIALSTRUCTURE</p>
+
+						<pre><code class="hljs typescript" data-line-numbers>function buildRelOneToMany(
+		ifcAPI: WebIFC.IfcAPI, modelID: number = 0, 
+		relationshipType: number, subjectRef: string, 
+		targetRef: string, rdfRelationship: string, 
+		subjectClassConstraint?: number, 
+		targetClassConstraint?: number)</code></pre>
+					</section>
+
+					<section>
+						<h2>buildRelOneToOne()</h2>
+						<h4>space/element adjacency</h4>
+
+						<pre><code class="hljs typescript" data-line-numbers>private async buildSpaceContainedElementRelationships(){
+	const subjectRef = "RelatingStructure";
+	const targetRef = "RelatedElements";
+	const rdfRelationship = "bot:containsElement";
+	const subjectClass = IFCSPACE;
+	return await buildRelOneToMany(
+		this.ifcAPI, // API
+		this.modelID, // modelID
+		IFCRELCONTAINEDINSPATIALSTRUCTURE, // relationship type
+		subjectRef, // what rel is used to find subject of triples?
+		targetRef, // what rel is used to find objects of triples?
+		rdfRelationship, // what's the predicate of the new triple?
+		subjectClass // subjects must be of this type
+	);
+}</code></pre>
+
+					</section>
+
+				</section>
+
+				<section>
+
+					<section>
+						<h2>Post-processing with N3 + Comunica</h2>
+					</section>
+
+					<section>
+						<p>FSO uses some pattern matches that require post-processing with SPARQL update queries</p>
+					</section>
+
+					<section>
+						<!-- IFC-FSO with CLI tool -->
+						<script id="asciicast-F6FcgJEDhqhT7xjZNVfMNkyyH" src="https://asciinema.org/a/F6FcgJEDhqhT7xjZNVfMNkyyH.js" async></script>
+					</section>
+
+					<section>
+						<ol>
+							<li>Load data into N3 store</li>
+							<li>Use Comunica to query the store</li>
+							<li>Serialize store content to file with N3 stream writer</li>
+						</ol>
+					</section>
+
+					<section>
+
+						<pre><code class="hljs typescript" data-line-numbers="|3-16|17">async function componentConections(): Promise&lt;void&gt;{
+	const query = `
+		PREFIX fso: 	&lt;https://w3id.org/fso#&gt;
+		INSERT{
+			?e1 fso:connectedWith ?e2 .
+			?e2 fso:connectedWith ?e1 .
+			?e1 fso:feedsFluidTo ?e2 .
+			?e2 fso:hasFluidFedBy ?e1
+		}
+		WHERE{
+			?e1 fso:connectedPort ?p1 .
+			?p1 fso:connectedPort ?p2 .
+			?p2 fso:connectedComponent ?e2 .
+			?p1 a fso:OutPort .
+			?p2 a fso:InPort .
+		}`;
+	await this.executeUpdateQuery(query);
+}</code></pre>
+
+					</section>
+
+					<section>
+
+						<h4>Some queries use Extension Functions</h4>
+
+						<pre><code class="hljs typescript" data-line-numbers="|3,11">async function segmentLengths(): Promise&lt;void&gt;{
+	const query = `INSERT{
+		?seg ex:length ?d
+	}
+	WHERE{
+		?seg a fso:Segment ;
+			fso:connectedPort ?port1 , ?port2 .
+		FILTER(?port1 != ?port2)
+		?port1 omg:hasGeometry/fog::asSfa_v2-wkt ?p1 .
+		?port2 omg:hasGeometry/fog::asSfa_v2-wkt ?p2 .
+		BIND(geosf:distance(?p1, ?p2, 3) AS ?d)
+	}`;
+	await this.executeUpdateQuery(query);
+}</code></pre>
+
+					</section>
+
+					<section>
+
+						<h4>Some queries use Extension Functions</h4>
+
+						<pre><code class="hljs typescript" data-line-numbers="|5-6|11-18|20|24-25">// GEOJSON
+// geosf:distance(p1, p2, decimals)
+'http://www.opengis.net/def/function/geosparql/distance'(args: RDF.Term[]) {
+
+	// Number of decimals? (default = 8)
+	const decimals = args[2] != undefined ? parseFloat(args[2].value) : 8;
+
+	// Make sure both args are literal values
+	if (args[0].termType === 'Literal' && args[1].termType === 'Literal') {
+
+		const p1 = parseWKT(args[0].value);
+		const p2 = parseWKT(args[1].value);
+		
+		const a = p1[0] - p2[0];
+		const b = p1[1] - p2[1];
+		const c = p1[2] - p2[2];
+
+		const d: number = round(Math.sqrt(a * a + b * b + c * c), decimals);
+
+		return DF.literal(d.toString(), DF.namedNode('http://www.w3.org/2001/XMLSchema#decimal'));
+
+	}
+
+	// Just return literal "ERROR" if something fails
+	return DF.literal("ERROR");
+}</code></pre>
+
+					</section>
+
+				</section>
+
+				<section>
+					<section data-background-iframe="https://ld-bim.web.app/viewer" data-background-interactive>
+					</section>
 				</section>
 				
 
