@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>What a waste!!</title>
+		<title>LBD meetis IFC.js</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -42,7 +42,7 @@
 							<p>Antonio González Viegas</p>
 						</div>
 						<div class="col">
-							<img src="static/ansoni.jpeg">
+							<img src="static/images/ansoni.jpeg">
 						</div>
 					</div>
 
@@ -51,14 +51,111 @@
 							<p>Mads Holten Rasmussen</p>
 						</div>
 						<div class="col">
-							<img src="static/mhra.jpeg">
+							<img src="static/images/mhra.jpeg">
 						</div>
 					</div>
 					
 				</section>
 
-				<section data-background-iframe="https://ifcjs.github.io/info/" data-background-interactive>
+
+
+				<!-- Intro to IFC.js -->
+				<section>
+
+					<section>
+						<h2>IFC.js</h2>
+						<p>An open source library for IFC on the web</p>
+					</section>
+
+					<section data-background-iframe="https://ifcjs.github.io/info/" data-background-interactive>
+					</section>
+
 				</section>
+				
+
+
+				<!-- Intro to IFC-LBD -->
+				<section>
+
+					<section>
+						<h2>IFC-LBD</h2>
+						<p>An open source converter built in IFC.js</p>
+					</section>
+
+					<section data-background-iframe="https://www.npmjs.com/package/ifc-lbd" data-background-interactive>
+					</section>
+
+					<section>
+
+						<ul>
+							<li>Includes a CLI tool</li>
+							<li>Works with web-ifc-three <pre><code class="hljs javascript"> const rdf = await lbdParser.parseBOTTriples(ifcApi, modelID);</code></pre></li>
+							<li>Currently supports BOT, Products and FSO</li>
+							<li>Modular and easy to extend</li>
+						</ul>
+
+					</section>
+
+					<section>
+						<h2>Use as a cli tool</h2>
+						<pre><code class="hljs bash">
+							npm install -g ifc-lbd
+						</code></pre>
+					</section>
+
+					<section>
+						<!-- Install from npm -->
+						<script id="asciicast-LBOJ5ttHS0QhMgbeHpPWpWfWS" src="https://asciinema.org/a/LBOJ5ttHS0QhMgbeHpPWpWfWS.js" async></script>
+					</section>
+
+					<section>
+						<!-- IFC-BOT with CLI tool -->
+						<script id="asciicast-UXK5g315KVl8UjVcvU0MSc71U" src="https://asciinema.org/a/UXK5g315KVl8UjVcvU0MSc71U.js" async></script>
+					</section>
+
+					<section>
+						<h2>Use it in an app</h2>
+						<pre><code class="hljs javascript">
+import * as WebIFC from "web-ifc/web-ifc-api.js";
+import { LBDParser } from "ifc-lbd";
+
+import * as path from 'path';
+import { readFile } from "fs";
+import * as util from "util";
+const readFileAsync = util.promisify(readFile);
+
+async function main(){
+
+	// Read file
+	const modelPath = path.join(__dirname, './Duplex.ifc');
+	const modelData = readFileAsync(modelPath);
+	
+	// Init API and load model
+	const ifcApi = new WebIFC.IfcAPI();
+	await ifcApi.Init();
+	const modelID = ifcApi.OpenModel(ifcModelData);
+	
+	// Init LBD Parser and parse BOT
+	const lbdParser = new LBDParser();
+	const botTriples = await lbdParser.parseBOTTriples(ifcApi, modelID);
+	console.log(botTriples);
+
+	// Close the model, all memory is freed
+	ifcApi.CloseModel(modelID);
+
+}
+
+main();
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Deeper look into the code</h2>
+						
+					</section>
+
+				</section>
+				
 
 			</div>
 		</div>
@@ -78,5 +175,6 @@
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
+
 	</body>
 </html>
