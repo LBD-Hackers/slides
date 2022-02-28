@@ -1,0 +1,391 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>LBD meetis IFC.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	<!-- Custom styles -->
+	<style>
+		.two-col {
+			display: flex;
+			height: 100vh;
+		}
+
+		.col {
+			flex: 1;
+			padding: 50px;
+		}
+
+		.footer-left {
+			position: absolute;
+			bottom: 27px;
+			left: 80px;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-direction: row;
+			gap: 10px;
+			align-content: flex-start;
+			align-items: center;
+		}
+
+		.box {
+			background-color: rgba(255, 255, 255, 0.5);
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			font-size: 1em !important;
+			color: black;
+			padding: 1vh;
+		}
+
+		.box-top-left {
+			position: absolute;
+			left: 0vw;
+			top: -30vh;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			font-size: 1em !important;
+			color: black;
+			padding: 1vh;
+		}
+
+		.top-right {
+			position: static;
+			right: 0vw;
+			top: 0vh;
+			bottom: 40vh;
+			z-index: 10;
+			background-color: red;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="reveal">
+
+		<!-- Captions -->
+		<cap
+			style="position: absolute; bottom: 12vh; left: 0px; width: 100%; z-index:500; text-align: center; font-size: 1.9vw; font-style: italic; color: #65625e">
+		</cap>
+
+		<!-- Footer left -->
+		<div class="footer-left">
+			<img src="./static/images/logos/ebc.svg" height="25vw"> <img src="./static/images/logos/niras.svg"
+				height="25vw"> <span style="font-size: 1.2vw">ARC and linked building data | IEA Annex 81 |
+				2.3.2022</span>
+		</div>
+
+
+
+		<div class="slides">
+
+			<section>
+				<!-- About me -->
+				<section data-background-image="./static/images/mhra/AboutMe.svg">
+				</section>
+			</section>
+
+			<section>
+				<h2>Agenda</h2>
+				<ul>
+					<li>The BART project and our take on ARC</li>
+					<li>Tech intro: What is Linked Building Data?</li>
+					<li>A case study</li>
+					<li>Other work: a formal way of describing flow systems</li>
+				</ul>
+			</section>
+
+			<section>
+
+				<section data-background-iframe="https://bartbyg.dk/" data-background-interactive>
+				</section>
+
+				<section>
+					<h4>Two tracks:</h4>
+					<p class="fragment fade-up">Main track: Formalize BR18 (Danish building regulations of 2018) for
+						checking in Solibri Model Checker</p>
+					<p class="fragment fade-up">Secondary track: Where could we take it if we were not limited by
+						commercially available software?</p>
+				</section>
+
+				<section>
+					<h4>Overall problems:</h4>
+					<ul>
+						<li>Too high requirements for the model's information level</li>
+						<li>We are limited to checking what is there (not what should have been there)</li>
+						<li>Not all information is in the BIM model</li>
+					</ul>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h3>Tech intro</h3>
+					<h4>One problem with Today's BIM</h4>
+				</section>
+
+				<section>
+					<p>In my opinion Today's BIM solutions and their underlying technology is too much of a
+						one-size-fits-all.</p>
+				</section>
+
+				<section data-background-image="./static/images/Systems-01.svg" data-background-size="100vw">
+					<h4 class="box-top-left">What do you see?</h4>
+				</section>
+
+				<section data-background-image="./static/images/Systems-02.svg" data-background-size="100vw">
+					<h4 class="box-top-left">What the architect sees</h4>
+				</section>
+
+				<section data-background-image="./static/images/Systems-03.svg" data-background-size="100vw">
+					<h4 class="box-top-left">What the ICE engineer sees</h4>
+				</section>
+
+				<section data-background-image="./static/images/Systems-04.svg" data-background-size="100vw">
+					<h4 class="box-top-left">What the automation engineer sees</h4>
+				</section>
+
+				<section data-background-image="./static/images/Systems-05.svg" data-background-size="100vw">
+					<h4 class="box-top-left">What the automation engineer sees</h4>
+				</section>
+
+				<section data-background-image="./static/images/Systems-06.svg" data-background-size="100vw">
+					<h4 class="box-top-left">What the HVAC engineer sees</h4>
+				</section>
+
+				<section>
+					<h5>My opinion</h5>
+					<p>The BIM tools of today do not handle this very well</p>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h3>Tech intro</h3>
+					<h4>What is Linked Data?</h4>
+				</section>
+
+				<section>
+					<p>BIM tools have an underlying data model that allow us to capture the world as we see it.</p>
+					<p class="fragment fade-up">This is the same case for linked data except that the data model is
+						expected to never be complete.</p>
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph1.svg"
+					data-background-size="90vw" data-state="neptune">
+					<style>
+						.neptune cap:after {
+							content: "Amazon Neptune: https://aws.amazon.com/neptune";
+						}
+					</style>
+					<h4 class="fragment fade-up box">Knowledge Graph</h4>
+				</section>
+
+				<section>
+					<p>In linked data and the semantic web we use a simple framework to capture this knowledge graph</p>
+				</section>
+
+				<!-- RDF -->
+				<section>
+					<img data-src="./static/images/logos/W3C.svg"></img>
+					<h4>RDF: Resource Description Framework</h4>
+				</section>
+
+				<section data-background-image="./static/images/SPO.svg" data-background-size="120vw"></section>
+				<section data-background-image="./static/images/SPO2.svg" data-background-size="120vw"></section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph2.svg"
+					data-background-size="90vw" data-state="neptune">
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph3.svg"
+					data-background-size="90vw" data-state="neptune">
+				</section>
+
+				<section>
+					<p>Querying the graph is as easy as decribing a path along its edges</p>
+				</section>
+
+				<!-- SPARQL -->
+				<section>
+					<img data-src="./static/images/logos/W3C.svg"></img>
+					<h4>SPARQL: SPARQL Protocol and RDF Query Language</h4>
+				</section>
+
+				<section
+					data-background-iframe="./static/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true"
+					data-background-interactive>
+				</section>
+
+				<section
+					data-background-iframe="./static/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true&tab=5"
+					data-background-interactive>
+				</section>
+
+				<section>
+					<p>The loosely coupled graph can be distributed across the web and so can the underlying schemas</p>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h3>Tech intro</h3>
+					<h4>What is Linked Building Data?</h4>
+				</section>
+
+				<!-- BOT -->
+				<section data-background-image="./static/images/BOT-papers.svg" data-background-size="80vw"
+					data-state="cap-bot3">
+					<h4 class="box">BOT: The Building Topology Ontology</h4>
+					<style>
+						.cap-bot3 cap:after {
+							content: "Rasmussen, M. H., Lefrançois, Maxime, Schneider, G. F., Pauwels, P. (2020). BOT: the Building Topology Ontology of the W3C Linked Building Data Group. Semantic Web Journal.";
+						}
+					</style>
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-03.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-01.svg" data-background-size="80vw"
+					data-background-position="50% 60%">
+					<h4 class="box-top-left">7 classes</h4>
+        		</section>
+
+				<!-- BOT ZONE -->
+				<section>
+					<h4 class="center">bot:Zone</h4>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Zones-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Zones-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- BOT ELEMENT -->
+				<section>
+					<h4 class="center">bot:Element</h4>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- BOT INTERFACE -->
+
+				<section>
+					<h4 class="center">bot:Interface</h4>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-03.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-04.svg" data-background-size="80vw">
+				</section>
+
+			</section>
+
+			<!-- CASE STUDY -->
+			<section>
+
+				<section>
+					<h4>A case study of LBD-driven ARC</h4>
+				</section>
+
+				<section>
+					<p>Combining what is Today to separate data sources:</p>
+					<ul>
+						<li class="fragment fade-up">Fire sections (2D drawings)</li>
+						<li class="fragment fade-up">Ventilation model (3D model)</li>
+					</ul>
+				</section>
+
+				<section data-background-iframe="https://www.youtube.com/embed/zeT-s1mjLzI?mute=1"></section>
+
+				<section>
+					<p>Discoveries:</p>
+					<ul>
+						<li class="fragment fade-up">Fire resistance is not a property of a wall but of an interface between a space/zone and a wall</li>
+						<li class="fragment fade-up">Intuitive to define space/fire cell relationship using Excel</li>
+						<li class="fragment fade-up">Independent tools together form a united model</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Lastly:</h3>
+					<h4>A demonstration of LBD for flow systems</h4>
+				</section>
+
+				<section data-background-iframe="https://bs-visualizer.web.app/">
+				</section>
+
+				<section data-background-image="./static/images/mhra/ukraine.jpg" data-state="cap-intune">
+					<h3>Thank you for your attention!</h3>
+					<style>
+						.cap-intune cap:after {
+							content: "@inga_tuneew_drawings";
+						}
+					</style>
+				</section>
+
+			</section>
+
+
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/notes/notes.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/markdown/markdown.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+
+</body>
+
+</html>
