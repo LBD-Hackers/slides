@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="493.314px" height="269.392px" viewBox="0 0 493.314 269.392" enable-background="new 0 0 493.314 269.392"
+	 xml:space="preserve">
+<text transform="matrix(1 0 0 1 69.9917 16.8799)" font-family="'GeosansLight'" font-size="12">Geometry</text>
+<text transform="matrix(1 0 0 1 0.0498 50.2261)" stroke="#000000" stroke-width="0.1" stroke-miterlimit="10" font-family="'GeosansLight-Oblique'" font-size="12">Rule 1</text>
+<text transform="matrix(1 0 0 1 0.0498 73.5537)" font-family="'GeosansLight'" font-size="12">Function</text>
+<text transform="matrix(1 0 0 1 0.0498 96.8813)" font-family="'GeosansLight'" font-size="12">Requirement</text>
+<text transform="matrix(1 0 0 1 69.9917 49.0059)" font-family="'GeosansLight'" font-size="8">A wall cannot be too high</text>
+<text transform="matrix(1 0 0 1 182.4966 116.5059)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="8">If there are wall mounted </tspan><tspan x="0" y="9.6" font-family="'GeosansLight'" font-size="8">elements then the wall needs </tspan><tspan x="0" y="19.2" font-family="'GeosansLight'" font-size="8">surface reinforcement</tspan></text>
+<text transform="matrix(1 0 0 1 298.6245 168.0063)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="8">If room X is adjacent to room</tspan><tspan x="0" y="9.6" font-family="'GeosansLight'" font-size="8">Z and there is a difference in</tspan><tspan x="0" y="19.199" font-family="'GeosansLight'" font-size="8">the acoustic requirements the</tspan><tspan x="0" y="28.799" font-family="'GeosansLight'" font-size="8">wall needs acoustic insulation</tspan></text>
+<text transform="matrix(1 0 0 1 416.0327 227.5063)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="8">A wall must be stronger if</tspan><tspan x="0" y="9.6" font-family="'GeosansLight'" font-size="8">it carries a heavy door</tspan></text>
+<text transform="matrix(1 0 0 1 416.0327 253.8442)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="8">Doors and windows must</tspan><tspan x="0" y="9.601" font-family="'GeosansLight'" font-size="8">be modelled</tspan></text>
+<text transform="matrix(1 0 0 1 182.4966 154.5063)" font-family="'GeosansLight'" font-size="8">Cupboards need to be modelled</text>
+<text transform="matrix(1 0 0 1 298.6245 212.7642)" font-family="'GeosansLight'" font-size="8">Room functions must be known</text>
+<text transform="matrix(1 0 0 1 69.9917 72.3335)" font-family="'GeosansLight'" font-size="8">Height in relation to thickness</text>
+<text transform="matrix(1 0 0 1 69.9917 90.6064)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="8">There needs to be a geometry/</tspan><tspan x="0" y="9.6" font-family="'GeosansLight'" font-size="8">placeholder that represents a wall</tspan></text>
+<text transform="matrix(1 0 0 1 182.4966 16.8799)" font-family="'GeosansLight'" font-size="12">Surfaces</text>
+<text transform="matrix(1 0 0 1 298.6245 16.8799)" font-family="'GeosansLight'" font-size="12">Insulation</text>
+<text transform="matrix(1 0 0 1 416.0327 16.8799)" font-family="'GeosansLight'" font-size="12">Core structure</text>
+<line fill="none" stroke="#000000" stroke-width="0.3" stroke-miterlimit="10" x1="62.667" y1="0" x2="62.667" y2="269.392"/>
+<line fill="none" stroke="#000000" stroke-width="0.3" stroke-miterlimit="10" x1="178.314" y1="0" x2="178.314" y2="269.392"/>
+<line fill="none" stroke="#000000" stroke-width="0.3" stroke-miterlimit="10" x1="178.314" y1="0" x2="178.314" y2="269.392"/>
+<line fill="none" stroke="#000000" stroke-width="0.3" stroke-miterlimit="10" x1="293.96" y1="0" x2="293.96" y2="269.392"/>
+<line fill="none" stroke="#000000" stroke-width="0.3" stroke-miterlimit="10" x1="409.607" y1="0" x2="409.607" y2="269.392"/>
+<line fill="none" stroke="#000000" stroke-width="0.3" stroke-miterlimit="10" x1="493.314" y1="31.088" x2="0.049" y2="31.088"/>
+<line fill="none" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" x1="493.314" y1="57.588" x2="0.049" y2="57.588"/>
+<line fill="none" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" x1="493.314" y1="79.588" x2="0.049" y2="79.588"/>
+<line fill="none" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" x1="493.314" y1="142.838" x2="0.049" y2="142.838"/>
+<line fill="none" stroke="#000000" stroke-width="0.3" stroke-miterlimit="10" x1="493.314" y1="107.589" x2="0.049" y2="107.588"/>
+<line fill="none" stroke="#000000" stroke-width="0.3" stroke-miterlimit="10" x1="493.314" y1="158.176" x2="0.049" y2="158.176"/>
+<text transform="matrix(1 0 0 1 0.0498 126.7266)" stroke="#000000" stroke-width="0.1" stroke-miterlimit="10" font-family="'GeosansLight-Oblique'" font-size="12">Rule 2</text>
+<text transform="matrix(1 0 0 1 0.0498 154.5063)" font-family="'GeosansLight'" font-size="12">Requirement</text>
+<line fill="none" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" x1="493.314" y1="201.095" x2="0.049" y2="201.095"/>
+<line fill="none" stroke="#000000" stroke-width="0.3" stroke-miterlimit="10" x1="493.314" y1="216.433" x2="0.049" y2="216.433"/>
+<text transform="matrix(1 0 0 1 0.0498 177.3149)" stroke="#000000" stroke-width="0.1" stroke-miterlimit="10" font-family="'GeosansLight-Oblique'" font-size="12">Rule 3</text>
+<text transform="matrix(1 0 0 1 0.0498 212.7642)" font-family="'GeosansLight'" font-size="12">Requirement</text>
+<line fill="none" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" x1="493.314" y1="244.014" x2="0.049" y2="244.014"/>
+<text transform="matrix(1 0 0 1 0.0498 235.5708)" stroke="#000000" stroke-width="0.1" stroke-miterlimit="10" font-family="'GeosansLight-Oblique'" font-size="12">Rule 4</text>
+<text transform="matrix(1 0 0 1 0.0498 257.7407)" font-family="'GeosansLight'" font-size="12">Requirement</text>
+</svg>

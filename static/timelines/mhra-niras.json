@@ -52,6 +52,17 @@
                 }
             },
             {
+                "startDate":"2021,5",
+                "endDate":"2022,1",
+                "headline":"ConTech Pioneer project 5",
+                "text":"<p>Saint Gobain: \"Why do architects make detailed drawings of walls when they are bought as systems?\"<br>\"What if they could just focus on establishing the boundary conditions?\"</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/projects/ConTech5.png",
+                    "caption":"Test model for the case study"
+                }
+            },
+            {
                 "startDate":"2022,4",
                 "endDate":"2023,1",
                 "headline":"Almen Byggeportal",

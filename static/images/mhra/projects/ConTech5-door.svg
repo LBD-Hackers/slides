@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="338.85px" height="415.341px" viewBox="0 0 338.85 415.341" enable-background="new 0 0 338.85 415.341"
+	 xml:space="preserve">
+<g>
+	<g>
+		<polygon fill="#C1C3C3" points="0.75,409.239 0.75,286.737 166.08,233.681 166.08,52.519 328.748,0.832 338.1,8.114 
+			338.1,310.241 7.909,414.511 		"/>
+		<path fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" d="M333.6,305.044"/>
+		<polygon fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" points="0.75,409.239 0.75,286.737 
+			166.08,233.681 166.08,52.519 328.326,0.832 338.1,8.114 338.1,310.241 7.909,414.511 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" points="7.909,414.511 8.152,291.507 
+			176.693,237.817 178.033,59.792 338.1,8.114 		"/>
+		<line fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" x1="0.75" y1="286.737" x2="8.152" y2="291.507"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" x1="166.08" y1="233.681" x2="176.693" y2="237.817"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" x1="166.08" y1="52.519" x2="178.033" y2="59.792"/>
+	</g>
+	<g>
+		<polygon fill="#C1C3C3" points="288.265,241.759 292.928,240.472 292.928,324.593 251.338,337.329 251.596,334.147 
+			288.265,322.466 		"/>
+		
+			<polyline fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			288.265,322.663 292.928,324.593 292.928,240.472 251.596,253.638 251.596,337.247 		"/>
+		<polyline fill="#036936" points="251.596,334.147 251.596,253.44 288.265,241.759 288.265,322.466 251.596,334.147 
+			288.265,322.466 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" points="251.596,334.147 288.265,322.466 
+			288.265,241.759 		"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 243.3271 220.3496)"><tspan x="0" y="0" font-family="'Consolas'" font-size="10.5">bot:Element</tspan><tspan x="0" y="12.6" font-family="'Consolas'" font-size="10.5">ifc2x3:IfcDoor</tspan></text>
+<g>
+	<rect x="234.826" y="337.702" opacity="0.8" fill="#C1C3C3" width="33.023" height="12.83"/>
+	<text transform="matrix(1 0 0 1 236.5498 347.626)" font-family="'Consolas'" font-size="10.5">EI 60</text>
+	
+		<rect x="234.826" y="337.702" fill="none" stroke="#000000" stroke-width="0.6" stroke-miterlimit="10" width="33.023" height="12.83"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.6" stroke-miterlimit="10" x1="267.85" y1="337.702" x2="267.85" y2="331.261"/>
+</g>
+<text transform="matrix(1 0 0 1 243.3271 202.2744)" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'Consolas'" font-size="10.5">:DO1</text>
+<text transform="matrix(1 0 0 1 76.6875 100.459)" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'Consolas'" font-size="10.5">:IW3</text>
+<g>
+	<text transform="matrix(1 0 0 1 76.6875 118.8184)"><tspan x="0" y="0" font-family="'Consolas'" font-size="10.5">bot:Element</tspan><tspan x="0" y="12.6" font-family="'Consolas'" font-size="10.5">ifc2x3:IfcWall</tspan></text>
+</g>
+<g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M144.147,242.876
+			c1.826-58.293,63.944-31.697,101.715,4.985"/>
+		<g>
+			<circle cx="144.202" cy="242.737" r="2.82"/>
+		</g>
+		<g>
+			<polygon points="242.362,248.45 245.139,247.269 246.217,244.45 249.029,251.019 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 47.3213 224.9268)" font-family="'Consolas'" font-size="10.5">bot:hasSubElement</text>
+</g>
+</svg>
