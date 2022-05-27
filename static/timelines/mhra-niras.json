@@ -1,0 +1,67 @@
+{ 
+	"timeline":
+	{
+		"headline":"Linked Data related projects at NIRAS",
+		"type":"default",
+		"startDate":"2018,8",
+        "endDate":"2022,6",
+		"text": "<p>We are applying the technology both internally and in client projects.</p>",
+		"date": [
+            {
+                "startDate":"2018,8",
+                "endDate":"2022,6",
+                "headline":"WeBIM",
+                "text":"<p>Web-BIM platform for providing engineers with insights.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/projects/WeBIM.png",
+                    "caption": "Room history allows you to see how the layout has changed over time"
+                }
+            },
+    		{
+                "startDate":"2020,5",
+                "endDate":"2020,7",
+                "headline":"Aarhus University Digital Twin",
+                "text":"<p>Semantic data model of campus, buildings, spaces, sensors and mechanical system.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/projects/AU.png",
+                    "caption":"Subset of the client report"
+                }
+            },
+    		{
+                "startDate":"2020,12",
+                "endDate":"2021,6",
+                "headline":"ScienceCity Lyngby",
+                "text":"<p>Democratic access to data. I provide my data and we can all use and analyze a common dataset.</p><p>Querying over various data sources using Comunica</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/projects/science-city-map.png",
+                    "caption":"Map with space polygons retrieved from ScienceCity data hub"
+                }
+            },
+            {
+                "startDate":"2021,1",
+                "endDate":"2022,6",
+                "headline":"BART",
+                "text":"<p>Track A: Building Solibri rule sets for checking danish building regulations</p><p>Track B: Investigating new methods (including Linked Data)</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/projects/bartbyg.png",
+                    "caption":"Map with space polygons retrieved from ScienceCity data hub"
+                }
+            },
+            {
+                "startDate":"2022,4",
+                "endDate":"2023,1",
+                "headline":"Almen Byggeportal",
+                "text":"<p>Digital project delivery for all subsidized residential buildings in Denmark</p><p>- Examination declarations<br>- Document and model checking<br>- Building element documentation (Material passports, O&M material etc.)</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/projects/ABP.png",
+                    "caption":"Mockup of UI for Examination Declarations"
+                }
+            }
+        ]
+    }
+}

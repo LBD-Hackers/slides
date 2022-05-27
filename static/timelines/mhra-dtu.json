@@ -1,0 +1,199 @@
+{ 
+	"timeline":
+	{
+		"headline":"My professional journey",
+		"type":"default",
+		"startDate":"2007,9",
+        "endDate":"2013,6",
+		"text": "<p>From Architectural Engineer over HVAC Engineer to Data Engineer</p>",
+		"asset": {
+			"media":"./static/images/mhra/me.jpg",
+			"credit":"",
+			"caption":""
+		},
+		"date": [
+    		{
+                "startDate":"2007,9",
+                "endDate":"2013,3",
+                "headline":"MSc Architectural Engineering",
+                "text":"<p>Technical University of Denmark (DTU)</p><p>The middleman between the architect and the engineer</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/ae.jpg",
+                    "credit":"https://www.dtu.dk/uddannelse/bachelor/uddannelsesretninger/bygningsdesign",
+                    "caption":"\"Polystyrene/cardboard engineer\""
+                }
+            },
+            {
+                "startDate":"2008,9",
+                "endDate":"2008,11",
+                "headline":"Bryghusgrunden",
+                "text":"<p>A building at the Harbour front of Copenhagen.</p><p>Where the BLOX building is now located.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/bryghusgrunden.png",
+                    "caption":"\"Our proposal for an office building / kindergarden\""
+                }
+            },
+            {
+                "startDate":"2009,1",
+                "headline":"Bridge",
+                "text":"<p>Design a pedestriant bridge and do static calculations in FEM</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/columna.png",
+                    "caption":"\"Our proposal for a bridge at DTU\""
+                }
+            },
+            {
+                "startDate":"2009,6",
+                "headline":"Culture House",
+                "text":"<p>Design a culture house at Utterslev Mose, Copenhagen.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/culture-house.png",
+                    "caption":"\"Our proposal for a culture house\""
+                }
+            },
+            {
+                "startDate":"2010,1",
+                "endDate":"2010,6",
+                "headline":"Archline Zero",
+                "text":"<p>A single family house that should meet the expected 2020 requirements for energy consumption.</p><p>2D heat flux and daylight calculations on special window design.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/arch-zero.png",
+                    "caption":"Effect of angled window opening."
+                }
+            },
+            {
+                "startDate":"2010,9",
+                "endDate":"2011,1",
+                "headline":"Diploma engineer thesis",
+                "text":"<p>Energy Efficiency Retrofit of a residential building from the fifties.</p><p>Thermal simulations, daylight simulations, CFD, ventilation design.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/bachelor.png",
+                    "caption":"Radiance-derived window shade and the effect on daylight access"
+                }
+            },
+            {
+                "startDate":"2011,1",
+                "endDate":"2011,5",
+                "headline":"AEC Global Teamwork",
+                "text":"<p>Stanford course that has existed since 1993.</p><p>Main focus is communication using ICT.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/aec-global-teamwork.png",
+                    "caption":"Students from all over the world"
+                }
+            },
+            {
+                "startDate":"2012,1",
+                "endDate":"2012,5",
+                "headline":"Virtual Construction from a Management Perspective",
+                "text":"<p>Location based scheduling.</p><p>Concept for a new BIM-based consultant role.</p><p>Mockup of an app for on-site planning.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/id-bim.png",
+                    "caption":"iD-BIM."
+                }
+            },
+            {
+                "startDate":"2012,1",
+                "endDate":"2012,6",
+                "headline":"Integrated Functional Project",
+                "text":"<p>Deigning an educational facility at DTU.</p><p>Parametric window design using evolutionary algorithm.</p><p>Low-preasure ventilation system.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/dtu-116.png",
+                    "caption":"Our proposal for an educational facility at DTU."
+                }
+            },
+            {
+                "startDate":"2012,9",
+                "endDate":"2012,11",
+                "headline":"Ventilation course",
+                "text":"<p>Practical course with 1-1 experiments in climate chambers.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/ventilation-course.png",
+                    "caption":"Measurement results from full-scale experiment."
+                }
+            },
+            {
+                "startDate":"2012,11",
+                "endDate":"2013,5",
+                "headline":"Thesis",
+                "text":"<p>An integrated data driven approach to HVAC design.</p><p>The basis of my later research.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/thesis.png",
+                    "caption":"Data flow for HVAC design."
+                }
+            },
+            {
+                "startDate":"2013,6",
+                "endDate":"2016,12",
+                "headline":"Alectia",
+                "text":"<p>Consulting Engineer in HVAC department.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/alectia.jpg"
+                }
+            },
+            {
+                "startDate":"2013,8",
+                "endDate":"2018,1",
+                "headline":"Axel Towers",
+                "text":"<p>Office building in central Copenhagen.</p><p>Architect: Lundgaard & Tranberg<br>Turnkey Contractor: Züblin</p><p>- 2D project<br>- Challenging geometry and uncompromising architect<br>- Spatial database for HVAC sizing<br>- Radiant cooling/heating</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/at.png"
+                }
+            },
+            {
+                "startDate":"2014,11",
+                "headline":"Potential PhD position",
+                "text":"<p>Christian Anker Hviid:<br>\"Mads! We are applying for a PhD position and you are the perfect candidate!\"</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/busy.jpg",
+                    "credit": "https://www.plays-in-business.com/too-busy-to-improve-performance-management-square-wheels/",
+                    "caption": "Pretty happy with my job but tired of putting out fires"
+                }
+            },
+            {
+                "startDate":"2015,4",
+                "endDate":"2017,2",
+                "headline":"Bispebjerg Hospital lab&log",
+                "text":"<p>Laboratory and Logistics building.</p><p>Animal stables and GMO laboratories.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/bbh.png",
+                    "caption": "Mechanical model"
+                }
+            },
+            {
+                "startDate":"2016,1",
+                "headline":"PhD application approved",
+                "text":"<p>Officially an Industrial PhD student and whole new challenges await.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/back-to-uni.jpg",
+                    "credit": "https://www.therange.co.uk/blog/uni-essentials/back-to-uni-essentials/",
+                    "caption": "Back to uni!"
+                }
+            },
+            {
+                "startDate":"2016,12",
+                "headline":"NIRAS",
+                "text":"<p>ALECTIA is merged with NIRAS</p><p>From 650 colleagues to 2500 colleagues and lots of new opportunities.</p>",
+                "asset":
+                {
+                    "media":"./static/images/mhra/alectia-niras.jpg"
+                }
+            }
+        ]
+    }
+}

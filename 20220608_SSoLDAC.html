@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/white.css">
+	<link rel="stylesheet" href="dist/theme/mhra.css">
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -90,9 +90,128 @@
 		<div class="slides">
 
 			<section>
-				<h4>From Architectural Engineer over HVAC Engineer to Data Engineer</h4>
+				<h3>Agenda</h3>
+				<ul>
+					<li>Historical retrospective (before PhD)</li>
+					<li>My research and the challenges it addresses</li>
+					<li>Selected projects</li>
+				</ul>
 			</section>
 
+			<!-- Before PhD -->
+			<section>
+
+				<section>
+					<h2>Historical retrospective</h2>
+					<h4>Before my PhD</h4>
+				</section>
+
+				<section>
+					<div data-timeline="./static/timelines/mhra-dtu.json"></div>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>My research</h2>
+				</section>
+
+				<section>
+					<h2>Problems in scope</h2>
+					<ul>
+						<li class="fragment fade-up">We do BIM, but it involves perhaps 10 % of the knowledge we generate</li>
+						<li class="fragment fade-up">Complex and interdependent project documents are handled in a manual fashion</li>
+						<li class="fragment fade-up">Accessing information is hard and requires manual work</li>
+						<li class="fragment fade-up">Most of your time is spent on revising project material to reflect recent changes</li>
+						<li class="fragment fade-up">Knowledge and traceability is lost as people change jobs</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>A deeper look at my Master´s thesis</h2>
+					<img src="./static/images/mhra/Requirement-db.svg">
+				</section>
+
+				<section data-background-image="./static/images/mhra/bim-icd-data-flow.svg" data-background-size="90vw 85vh">
+				</section>
+
+				<section>
+					<h2>Challenges</h2>
+					<ul>
+						<li class="fragment fade-up">Required manual cleaning of model in SimpleBIM</li>
+						<li class="fragment fade-up">Database schema not easily extended</li>
+						<li class="fragment fade-up">Calculation still had to be performed manually in desktop app</li>
+						<li class="fragment fade-up">Web app was coded from scratch in PHP and was a big mess 😁</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 style="font-style: oblique;">...and then I discovered the flexibility of knowledge graphs!</h2>
+				</section>
+
+				<section>
+					<h2>Some research highlights</h2>
+					<ul>
+						<li>BOT: The Building Topology Ontology</li>
+						<li>OPM: Ontology for Property Management</li>
+						<li>FSO: Flow Systems Ontology</li>
+					</ul>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Selected projects from NIRAS</h2>
+				</section>
+
+				<section>
+					<div data-timeline="./static/timelines/welcome.json"></div>
+				</section>
+
+				<section>
+					<h2>Byggeriets Blockchain</h2>
+					<p>The intelligent and traceable minutes of meetings</p>
+				</section>
+
+				<section>
+					<h2>WeBIM</h2>
+					<p>An internal platform for building data management</p>
+				</section>
+
+				<section>
+					<h2>ScienceCity Lyngby</h2>
+					<p>A democratic platform for data sharing</p>
+				</section>
+
+				<section>
+					<h2>ConTech Pioneer Project 5</h2>
+					<p>Context-derived requirements for gypsum board walls</p>
+				</section>
+
+				<section>
+					<h2>BART</h2>
+					<p>Automated Rule Checking in Construction</p>
+				</section>
+
+				<section>
+					<h2>Almen Byggeportal</h2>
+					<p></p>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Thank you for your attention!</h2>
+					<p><span style="font-style: oblique">Questions? Thoughts? Ideas? Let's discuss them over a</span> ☕</p>
+				</section>
+
+			</section>
 
 		</div>
 	</div>
@@ -109,7 +228,10 @@
 			hash: true,
 
 			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			dependencies: [
+                { src: './plugin/reveal-timeline.js',  async: true, condition: function() { return !!document.querySelector( '[data-timeline]' ); } }
+            ]
 		});
 	</script>
 
