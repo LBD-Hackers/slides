@@ -529,7 +529,7 @@
 				c-0.071,0.061-0.443-0.107-0.57-0.26C307.143,167.138,306.518,167.092,305.685,167.25z"/>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 -1.7354 138.6646)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="13.2519">Architectural model</tspan><tspan x="42.405" y="15.902" font-family="'GeosansLight'" font-size="13.2519">Revit 2013</tspan></text>
+	<text transform="matrix(1 0 0 1 -1.7354 138.6646)"><tspan x="0" y="0" font-family="GeosansLight" font-size="13.2519">Architectural model</tspan><tspan x="42.405" y="15.902" font-family="GeosansLight" font-size="13.2519">Revit 2013</tspan></text>
 	<g>
 		<g>
 			<path fill-rule="evenodd" clip-rule="evenodd" fill="#FEFDFE" d="M460.222,126.239c9.388,0,18.775,0.003,28.163-0.01
@@ -931,7 +931,7 @@
 				C470.097,150.613,470.072,150.567,470.046,150.519z"/>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 490.9272 138.6646)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="13.2519">HVAC model</tspan><tspan x="0" y="15.902" font-family="'GeosansLight'" font-size="13.2519">Revit 2013</tspan></text>
+	<text transform="matrix(1 0 0 1 490.9272 138.6646)"><tspan x="0" y="0" font-family="GeosansLight" font-size="13.2519">HVAC model</tspan><tspan x="0" y="15.902" font-family="GeosansLight" font-size="13.2519">Revit 2013</tspan></text>
 	<g>
 		<ellipse fill="none" stroke="#000000" stroke-miterlimit="10" cx="297.673" cy="111.887" rx="29.922" ry="7.411"/>
 		<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="267.751" y1="111.887" x2="267.751" y2="169.631"/>
@@ -995,9 +995,9 @@
 			</g>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 184.2554 296.0298)" font-family="'GeosansLight'" font-size="11.0433">Geometry</text>
-	<text transform="matrix(1 0 0 1 340.6333 271.894)" font-family="'GeosansLight'" font-size="11.0433">Results</text>
-	<text transform="matrix(1 0 0 1 192.2114 263.5396)" font-family="'GeosansLight'" font-size="11.0433">Results</text>
+	<text transform="matrix(1 0 0 1 184.2554 296.0298)" font-family="GeosansLight" font-size="11.0433">Geometry</text>
+	<text transform="matrix(1 0 0 1 340.6333 271.894)" font-family="GeosansLight" font-size="11.0433">Results</text>
+	<text transform="matrix(1 0 0 1 192.2114 263.5396)" font-family="GeosansLight" font-size="11.0433">Results</text>
 	<g>
 		<g>
 			<path fill-rule="evenodd" clip-rule="evenodd" fill="#F4F3F4" d="M244.752,22.674c-0.066,0.475,0.276,0.787,0.438,1.175
@@ -1402,7 +1402,7 @@
 				C296.614,216.375,296.206,216.336,295.742,216.336z"/>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 281.2026 12.8115)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="12.1476">Browser based</tspan><tspan x="0" y="14.577" font-family="'GeosansLight'" font-size="12.1476">User Interface</tspan></text>
+	<text transform="matrix(1 0 0 1 281.2026 12.8115)"><tspan x="0" y="0" font-family="GeosansLight" font-size="12.1476">Browser based</tspan><tspan x="0" y="14.577" font-family="GeosansLight" font-size="12.1476">User Interface</tspan></text>
 	<g>
 		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M309.542,279.879
 			c0,8.836,0.426,10.104-8.916,10.104h-5.188c-9.338,0-8.915-1.269-8.915-10.104l0,0c0-8.824-0.418-11.989,8.921-11.989h5.188
@@ -1420,7 +1420,7 @@
 			c0,4.146,0.189,4.74-3.954,4.74h-2.301c-4.141,0-3.953-0.595-3.953-4.74l0,0c0-4.14-0.186-5.624,3.955-5.624h2.302
 			C314.119,273.72,313.927,275.205,313.927,279.344L313.927,279.344z"/>
 	</g>
-	<text transform="matrix(1 0 0 1 239.9204 308.2192)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="12.1476">Thermal simulation model</tspan><tspan x="30.216" y="14.577" font-family="'GeosansLight'" font-size="12.1476">IDA ICE 4.5</tspan></text>
+	<text transform="matrix(1 0 0 1 239.9204 308.2192)"><tspan x="0" y="0" font-family="GeosansLight" font-size="12.1476">Thermal simulation model</tspan><tspan x="30.216" y="14.577" font-family="GeosansLight" font-size="12.1476">IDA ICE 4.5</tspan></text>
 	<g>
 		<g>
 			<path fill-rule="evenodd" clip-rule="evenodd" fill="#1E6735" d="M115.126,295.192c-5.019,0-10.037-0.011-15.055,0.015
@@ -1519,7 +1519,7 @@
 			</g>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 12.5981 274.7808)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="13.2519">Simplified model</tspan><tspan x="27.908" y="15.902" font-family="'GeosansLight'" font-size="13.2519">SimpleBIM</tspan></text>
+	<text transform="matrix(1 0 0 1 12.5981 274.7808)"><tspan x="0" y="0" font-family="GeosansLight" font-size="13.2519">Simplified model</tspan><tspan x="27.908" y="15.902" font-family="GeosansLight" font-size="13.2519">SimpleBIM</tspan></text>
 	<g>
 		<rect x="105.549" y="197.219" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="18.654" height="18.548"/>
 		<g>
@@ -1570,11 +1570,11 @@
 			</g>
 		</g>
 	</g>
-	<text transform="matrix(0 1 -1 0 125.7397 184.6831)" font-family="'GeosansLight'" font-size="11.0433">Geometry</text>
-	<text transform="matrix(1 0 0 1 369.7339 162.4243)" font-family="'GeosansLight'" font-size="11.0433">Quantities</text>
-	<text transform="matrix(1 0 0 1 179.9438 162.4243)" font-family="'GeosansLight'" font-size="11.0433">Quantities</text>
-	<text transform="matrix(1 0 0 1 357.3774 129.4438)" font-family="'GeosansLight'" font-size="11.0433">Properties+ results</text>
-	<text transform="matrix(1 0 0 1 180.1362 129.4438)" font-family="'GeosansLight'" font-size="11.0433">Properties</text>
+	<text transform="matrix(0 1 -1 0 125.7397 184.6831)" font-family="GeosansLight" font-size="11.0433">Geometry</text>
+	<text transform="matrix(1 0 0 1 369.7339 162.4243)" font-family="GeosansLight" font-size="11.0433">Quantities</text>
+	<text transform="matrix(1 0 0 1 179.9438 162.4243)" font-family="GeosansLight" font-size="11.0433">Quantities</text>
+	<text transform="matrix(1 0 0 1 357.3774 129.4438)" font-family="GeosansLight" font-size="11.0433">Properties+ results</text>
+	<text transform="matrix(1 0 0 1 180.1362 129.4438)" font-family="GeosansLight" font-size="11.0433">Properties</text>
 	<g>
 		<g>
 			<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="336.667" y1="137.829" x2="337.667" y2="137.829"/>
@@ -1643,11 +1643,11 @@
 	</g>
 	<g>
 		<rect x="376.044" y="134.811" fill="#FFFFFF" width="37.822" height="14.075"/>
-		<text transform="matrix(1 0 0 1 377.1646 146.1079)" fill="#951B81" font-family="'GeosansLight'" font-size="11.0433">RDB link</text>
+		<text transform="matrix(1 0 0 1 377.1646 146.1079)" fill="#951B81" font-family="GeosansLight" font-size="11.0433">RDB link</text>
 	</g>
 	<g>
 		<rect x="184.849" y="134.811" fill="#FFFFFF" width="37.823" height="14.075"/>
-		<text transform="matrix(1 0 0 1 185.9702 146.1079)" fill="#951B81" font-family="'GeosansLight'" font-size="11.0433">RDB link</text>
+		<text transform="matrix(1 0 0 1 185.9702 146.1079)" fill="#951B81" font-family="GeosansLight" font-size="11.0433">RDB link</text>
 	</g>
 	<g>
 		<g>
@@ -1800,7 +1800,7 @@
 			</g>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 428.5405 273.0718)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="13.2519">Results</tspan><tspan x="0" y="15.902" font-family="'GeosansLight'" font-size="13.2519">Excel 2010</tspan></text>
+	<text transform="matrix(1 0 0 1 428.5405 273.0718)"><tspan x="0" y="0" font-family="GeosansLight" font-size="13.2519">Results</tspan><tspan x="0" y="15.902" font-family="GeosansLight" font-size="13.2519">Excel 2010</tspan></text>
 	<g>
 		<rect x="100.38" y="330.9" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="29.158" height="28.991"/>
 		<g>
@@ -1851,7 +1851,7 @@
 			</g>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 32.5283 340.937)"><tspan x="0" y="0" font-family="'GeosansLight'" font-size="13.2519">Result model</tspan><tspan x="45.691" y="15.902" font-family="'GeosansLight'" font-size="13.2519">IFC</tspan></text>
+	<text transform="matrix(1 0 0 1 32.5283 340.937)"><tspan x="0" y="0" font-family="GeosansLight" font-size="13.2519">Result model</tspan><tspan x="45.691" y="15.902" font-family="GeosansLight" font-size="13.2519">IFC</tspan></text>
 	<g>
 		<rect x="197.054" y="267.92" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="18.656" height="18.548"/>
 		<g>
@@ -2133,6 +2133,6 @@
 			</g>
 		</g>
 	</g>
-	<text transform="matrix(0.6853 0.7283 -0.7283 0.6853 345.5054 185.2388)" font-family="'GeosansLight'" font-size="11.0433">Simulation results</text>
+	<text transform="matrix(0.6853 0.7283 -0.7283 0.6853 345.5054 185.2388)" font-family="GeosansLight" font-size="11.0433">Simulation results</text>
 </g>
 </svg>
