@@ -30,7 +30,7 @@
         },
         "text": {
           "headline": "MSc Architectural Engineering",
-          "text": "<p>Technical University of Denmark (DTU)</p><p>The middleman between the architect and the engineer</p>"
+          "text": "<p>Technical University of Denmark (DTU)</p><p>Initially \"City and Building Engineer\"</p><p>The middleman between the architect and the engineer</p>"
         }
       },
       {
@@ -52,7 +52,7 @@
         },
         "text": {
           "headline": "Bryghusgrunden",
-          "text": "<p>A building at the Harbour front of Copenhagen.</p><p>Where the BLOX building is now located.</p>"
+          "text": "<p>A building at the Harbour front of Copenhagen.</p><p>Mix of a building and a cityscape assignment</p><p>Where the BLOX building is now located.</p>"
         }
       },
       {
@@ -74,7 +74,7 @@
         },
         "text": {
           "headline": "Bridge",
-          "text": "<p>Design a pedestriant bridge and do static calculations in FEM</p>"
+          "text": "<p>Design of a pedestriant bridge at DTU</p><p>Main focus on FEM and calculations of welded joints</p>"
         }
       },
       {
@@ -96,7 +96,29 @@
         },
         "text": {
           "headline": "Culture House",
-          "text": "<p>Design a culture house at Utterslev Mose, Copenhagen.</p>"
+          "text": "<p>Design a culture house at Utterslev Mose, Copenhagen.</p><p>Design the building + perform acoustic calculations on the concert hall.</p>"
+        }
+      },
+      {
+        "media": {
+            "url":"../images/mhra/architect.jpg",
+            "thumbnail": "../images/mhra/architect.jpg",
+            "credit":"https://www.inc.com/linda-naiman/what-architects-can-teach-the-rest-of-us-about-thinking-like-a-designer.html",
+            "caption":"Internship as an architect"
+        },
+        "start_date": {
+          "month": "8",
+          "day": "",
+          "year": "2009"
+        },
+        "end_date": {
+            "month": "1",
+            "day": "",
+            "year": "2010"
+        },
+        "text": {
+          "headline": "Internship at Holm & Grut Architects",
+          "text": "<p>Designing a gym for an elementary school + an arrival hall at CPH airport.</p>"
         }
       },
       {
@@ -306,7 +328,7 @@
         },
         "text": {
           "headline": "Potential PhD position",
-          "text": "<p>Christian Anker Hviid:<br>\"Mads! We are applying for a PhD position and you are the perfect candidate!\"</p>"
+          "text": "<p>Christian Anker Hviid:<br>\"Mads! We are applying for a PhD position and you are the perfect candidate!\"</p><br><p>Me:<br/>\"No way!\"</p>"
         }
       },
       {
@@ -433,10 +455,10 @@
       },
       {
         "media": {
-            "url":"../images/mhra/projects/bartbyg.png",
+            "url":"../images/mhra/projects/BART.gif",
             "thumbnail": "../images/mhra/projects/bartbyg.png",
             "credit":"https://bartbyg.dk",
-            "caption":"bartbyg.dk website"
+            "caption":"Deliverables in the BART project"
         },
         "start_date": {
           "month": "1",
@@ -476,6 +498,12 @@
         }
       },
       {
+        "media": {
+          "url":"../images/mhra/projects/K4A.gif",
+          "thumbnail": "../images/mhra/projects/K4A1.png",
+          "credit":"",
+          "caption":"Mockup of UI for Examination Declarations"
+        },
         "start_date": {
           "month": "1",
           "day": "",
