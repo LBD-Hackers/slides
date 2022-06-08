@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'GeosansLight';
+    src: url('geosans-light.woff2') format('woff2'),
+        url('geosans-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GeosansLight';
+    src: url('geosans-light-oblique.woff2') format('woff2'),
+        url('geosans-light-oblique.woff') format('woff');
+    font-weight: 300;
+    font-style: oblique;
+    font-display: swap;
+}
