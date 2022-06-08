@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="678.884px" height="459.133px" viewBox="0 0 678.884 459.133" enable-background="new 0 0 678.884 459.133"
+	 xml:space="preserve">
+<text transform="matrix(1 0 0 1 501.1621 51.2964)" font-family="'Consolas'" font-size="10.5">ex:relatedSpace</text>
+<g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M630.651,57.604
+			c1.301-26.467,22.059-23.417,32.189-9.931"/>
+		<g>
+			<circle cx="630.661" cy="57.465" r="2.819"/>
+		</g>
+		<g>
+			<polygon points="659.278,47.519 662.243,46.959 663.899,44.437 665.243,51.454 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<path fill="none" stroke="#009444" stroke-width="0.75" stroke-miterlimit="10" d="M630.652,57.604
+			c1.3-26.466,22.058-23.417,32.188-9.93"/>
+		<g>
+			<circle fill="#009444" cx="630.661" cy="57.465" r="2.82"/>
+		</g>
+		<g>
+			<polygon fill="#009444" points="659.278,47.519 662.243,46.959 663.899,44.436 665.243,51.454 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 501.1621 81.4663)" font-family="'Consolas'" font-size="10.5">ex:oppositeSurface</text>
+<text transform="matrix(1 0 0 1 501.1621 21.1265)" font-family="'Consolas'" font-size="10.5">bot:containsZone</text>
+<g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M630.651,27.435
+			c1.301-26.467,22.059-23.417,32.189-9.931"/>
+		<g>
+			<circle cx="630.661" cy="27.295" r="2.819"/>
+		</g>
+		<g>
+			<polygon points="659.278,17.349 662.243,16.789 663.899,14.267 665.243,21.284 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<rect x="5.413" y="4.9" opacity="0.8" fill="#C1C3C3" width="122.429" height="136.693"/>
+	
+		<rect x="5.413" y="4.9" fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" width="122.429" height="136.693"/>
+	<text transform="matrix(1 0 0 1 9.2178 16.5542)"><tspan x="0" y="0" font-family="'MyriadPro-Regular'" font-size="8.25">[?i1, ex:fireClassification, ex:EI60],</tspan><tspan x="0" y="9.9" font-family="'MyriadPro-Regular'" font-size="8.25">[?i2, ex:fireClassification, ex:EI60]</tspan><tspan x="0" y="19.8" font-family="'MyriadPro-Regular'" font-size="8.25">:-</tspan><tspan x="0" y="29.7" font-family="'MyriadPro-Regular'" font-size="8.25">[?sp1, a, bot:Space],</tspan><tspan x="0" y="39.6" font-family="'MyriadPro-Regular'" font-size="8.25">[?sp2, a, bot:Space],</tspan><tspan x="0" y="49.5" font-family="'MyriadPro-Regular'" font-size="8.25">[?fs1, a, ex:FireSection],</tspan><tspan x="0" y="59.4" font-family="'MyriadPro-Regular'" font-size="8.25">[?fs2, a, ex:FireSection],</tspan><tspan x="0" y="69.3" font-family="'MyriadPro-Regular'" font-size="8.25">[?fs1, bot:containsZone, ?sp1],</tspan><tspan x="0" y="79.2" font-family="'MyriadPro-Regular'" font-size="8.25">[?fs2, bot:containsZone, ?sp2],</tspan><tspan x="0" y="89.1" font-family="'MyriadPro-Regular'" font-size="8.25">[?i1, ex:relatedSpace, ?sp1],</tspan><tspan x="0" y="99" font-family="'MyriadPro-Regular'" font-size="8.25">[?i2, ex:relatedSpace, ?sp2],</tspan><tspan x="0" y="108.9" font-family="'MyriadPro-Regular'" font-size="8.25">[?i1, ex:oppositeSurface, ?i2],</tspan><tspan x="0" y="118.8" font-family="'MyriadPro-Regular'" font-size="8.25">FILTER(?fs1 != ?fs2).</tspan></text>
+</g>
+<g>
+	
+		<line fill="none" stroke="#EE2F47" stroke-width="4.0498" stroke-miterlimit="10" stroke-dasharray="9.7195" x1="359.295" y1="73.247" x2="359.295" y2="277.767"/>
+	
+		<line fill="none" stroke="#EE2F47" stroke-width="4.0498" stroke-miterlimit="10" stroke-dasharray="9.7195" x1="359.295" y1="276.311" x2="691.299" y2="276.311"/>
+	<rect x="214.868" y="279.761" opacity="0.1" fill="#CD3F27" width="214.08" height="128.816"/>
+	<rect x="434.07" y="279.761" opacity="0.1" fill="#CD3F27" width="214.08" height="128.816"/>
+	<rect x="506.283" y="144.567" opacity="0.1" fill="#F8982C" width="141.867" height="128.816"/>
+	<rect x="214.868" y="144.567" opacity="0.1" fill="#CD3F27" width="141.867" height="128.816"/>
+	
+		<rect x="214.868" y="273.384" fill="#FFFFFF" stroke="#000000" stroke-width="0.3656" stroke-miterlimit="10" width="433.282" height="6.377"/>
+	
+		<rect x="356.734" y="144.567" fill="#FFFFFF" stroke="#000000" stroke-width="0.3656" stroke-miterlimit="10" width="5.122" height="128.816"/>
+	
+		<rect x="501.162" y="144.567" fill="#FFFFFF" stroke="#000000" stroke-width="0.3656" stroke-miterlimit="10" width="5.121" height="128.816"/>
+	<rect x="361.856" y="144.567" opacity="0.1" fill="#F8982C" width="141.867" height="128.816"/>
+	
+		<rect x="214.868" y="144.567" fill="none" stroke="#000000" stroke-width="0.6721" stroke-miterlimit="10" width="433.282" height="264.01"/>
+	<g>
+		<rect x="77.08" y="197.321" opacity="0.8" fill="#C1C3C3" width="100.979" height="24.809"/>
+		<text transform="matrix(1 0 0 1 81.166 215.1172)" font-family="'GeosansLight'" font-size="18">Fire Section A</text>
+		
+			<rect x="77.08" y="197.321" fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" width="100.979" height="24.809"/>
+	</g>
+	<g>
+		<rect x="77.08" y="332.14" opacity="0.8" fill="#C1C3C3" width="100.979" height="24.809"/>
+		<text transform="matrix(1 0 0 1 81.166 349.9355)" font-family="'GeosansLight'" font-size="18">Fire Section B</text>
+		
+			<rect x="77.08" y="332.14" fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" width="100.979" height="24.809"/>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M166.473,332.304
+				c0.44-71.616,18.627-99.755,49.521-102.152"/>
+			<g>
+				<circle cx="166.512" cy="332.163" r="2.82"/>
+			</g>
+			<g>
+				<polygon points="214.021,233.071 215.067,230.241 213.756,227.522 220.465,229.982 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M133.651,194.64
+				c3.688-134.576,285.567-92.718,300.132-37.311"/>
+			<g>
+				<circle cx="133.709" cy="194.503" r="2.82"/>
+			</g>
+			<g>
+				<polygon points="430.624,155.677 433.549,156.423 436.115,154.835 434.367,161.764 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M133.645,194.642
+				c4.1-180.162,422.598-95.025,443.595-37.277"/>
+			<g>
+				<circle cx="133.719" cy="194.503" r="2.82"/>
+			</g>
+			<g>
+				<polygon points="573.956,155.911 576.92,156.481 579.387,154.743 578.057,161.764 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M133.691,359.626
+				c3.803,65.785,147.105,88.754,154.861,37.344"/>
+			<g>
+				<circle cx="133.712" cy="359.767" r="2.82"/>
+			</g>
+			<g>
+				<polygon points="291.085,399.302 288.418,397.89 285.551,398.829 288.879,392.506 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M133.674,359.622
+				c5.543,122.799,393.081,117.016,407.049,37.346"/>
+			<g>
+				<circle cx="133.685" cy="359.767" r="2.82"/>
+			</g>
+			<g>
+				<polygon points="543.195,399.341 540.554,397.881 537.67,398.769 541.11,392.506 				"/>
+			</g>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 77.0791 232.4375)" font-family="'Consolas'" font-size="10.5">ex:FireSection</text>
+	<text transform="matrix(1 0 0 1 77.0791 326.123)" font-family="'Consolas'" font-size="10.5">ex:FireSection</text>
+	
+		<rect x="428.948" y="279.761" fill="#FFFFFF" stroke="#000000" stroke-width="0.3656" stroke-miterlimit="10" width="5.122" height="128.816"/>
+	
+		<line opacity="0.9" fill="none" stroke="#924C9D" stroke-width="3.75" stroke-miterlimit="10" x1="359.295" y1="280.511" x2="428.948" y2="280.511"/>
+	
+		<line opacity="0.9" fill="none" stroke="#924C9D" stroke-width="2.0163" stroke-miterlimit="10" x1="214.868" y1="280.511" x2="359.295" y2="280.511"/>
+	
+		<line opacity="0.9" fill="none" stroke="#CD3F27" stroke-width="3.75" stroke-miterlimit="10" x1="434.07" y1="280.511" x2="648.15" y2="280.511"/>
+	
+		<line opacity="0.9" fill="none" stroke="#CD3F27" stroke-width="2.0163" stroke-miterlimit="10" x1="434.07" y1="280.511" x2="434.07" y2="408.577"/>
+	
+		<line opacity="0.9" fill="none" stroke="#924C9D" stroke-width="2.0163" stroke-miterlimit="10" x1="428.948" y1="280.511" x2="428.948" y2="408.577"/>
+	
+		<line opacity="0.9" fill="none" stroke="#F8982C" stroke-width="3.75" stroke-miterlimit="10" x1="356.734" y1="144.567" x2="356.734" y2="273.384"/>
+	
+		<line opacity="0.9" fill="none" stroke="#649B43" stroke-width="2.0163" stroke-miterlimit="10" x1="501.162" y1="144.567" x2="501.162" y2="273.384"/>
+	
+		<line opacity="0.9" fill="none" stroke="#649B43" stroke-width="3.75" stroke-miterlimit="10" x1="361.856" y1="144.567" x2="361.856" y2="273.384"/>
+	
+		<line opacity="0.9" fill="none" stroke="#356A9A" stroke-width="2.0163" stroke-miterlimit="10" x1="506.283" y1="144.567" x2="506.283" y2="273.384"/>
+	
+		<line opacity="0.9" fill="none" stroke="#F8982C" stroke-width="2.0163" stroke-miterlimit="10" x1="214.868" y1="273.384" x2="356.734" y2="272.634"/>
+	<path opacity="0.9" fill="none" stroke="#F8982C" stroke-width="2.0163" stroke-miterlimit="10" d="M361.856,273.384"/>
+	
+		<line opacity="0.9" fill="none" stroke="#356A9A" stroke-width="3.75" stroke-miterlimit="10" x1="648.15" y1="273.384" x2="506.283" y2="273.384"/>
+	
+		<line opacity="0.9" fill="none" stroke="#649B43" stroke-width="3.75" stroke-miterlimit="10" x1="501.162" y1="273.384" x2="361.856" y2="273.384"/>
+	<text transform="matrix(1 0 0 1 313.7266 220.752)" font-family="'Consolas'" font-size="10.5">:IW1SP1</text>
+	<text transform="matrix(1 0 0 1 363.8018 220.752)" font-family="'Consolas'" font-size="10.5">:IW1SP2</text>
+	<text transform="matrix(1 0 0 1 371.0293 293.373)" font-family="'Consolas'" font-size="10.5">:IW3SP4b</text>
+	<text transform="matrix(1 0 0 1 441.2363 293.373)" font-family="'Consolas'" font-size="10.5">:IW3SP5b</text>
+	<text transform="matrix(1 0 0 1 554.125 293.373)" font-family="'Consolas'" font-size="10.5">:IW3SP5a</text>
+	<text transform="matrix(1 0 0 1 372.8496 265.0781)" font-family="'Consolas'" font-size="10.5">:IW3SP2a</text>
+	<text transform="matrix(1 0 0 1 267.8027 293.373)" fill="#5D6162" font-family="'Consolas'" font-size="10.5">:IW3SP4a</text>
+	<text transform="matrix(1 0 0 1 272.5098 265.0781)" fill="#5D6162" font-family="'Consolas'" font-size="10.5">:IW3SP1</text>
+	<text transform="matrix(1 0 0 1 442.3633 265.0781)" font-family="'Consolas'" font-size="10.5">:IW3SP2b</text>
+	<text transform="matrix(1 0 0 1 557.0117 265.0781)" font-family="'Consolas'" font-size="10.5">:IW3SP3</text>
+	<g>
+		<g>
+			<path fill="none" stroke="#BE1E2D" stroke-width="0.5854" stroke-miterlimit="10" d="M436.044,404.966
+				c20.949,23.615-30.281,23.589-8.863-0.029"/>
+			<g>
+				<polygon fill="#BE1E2D" points="435.561,407.675 436.51,405.519 438.72,404.706 433.621,402.445 				"/>
+			</g>
+			<g>
+				<polygon fill="#BE1E2D" points="427.632,407.655 426.705,405.489 424.503,404.654 429.624,402.445 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#BE1E2D" stroke-width="0.5854" stroke-miterlimit="10" d="M363.83,162.189
+				c20.949,23.616-30.281,23.589-8.863-0.028"/>
+			<g>
+				<polygon fill="#BE1E2D" points="363.346,164.899 364.295,162.743 366.506,161.931 361.407,159.669 				"/>
+			</g>
+			<g>
+				<polygon fill="#BE1E2D" points="355.418,164.879 354.491,162.714 352.289,161.878 357.41,159.669 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#BE1E2D" stroke-width="0.5854" stroke-miterlimit="10" d="M366.885,282.302
+				c-23.615,20.949-23.589-30.281,0.029-8.863"/>
+			<g>
+				<polygon fill="#BE1E2D" points="364.176,281.817 366.331,282.767 367.145,284.978 369.405,279.878 				"/>
+			</g>
+			<g>
+				<polygon fill="#BE1E2D" points="364.195,273.89 366.361,272.962 367.196,270.761 369.405,275.882 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#BE1E2D" stroke-width="0.5854" stroke-miterlimit="10" d="M640.562,272.038
+				c23.615-20.949,23.589,30.281-0.029,8.863"/>
+			<g>
+				<polygon fill="#BE1E2D" points="643.271,272.521 641.115,271.572 640.302,269.362 638.041,274.46 				"/>
+			</g>
+			<g>
+				<polygon fill="#BE1E2D" points="643.251,280.449 641.085,281.376 640.25,283.579 638.041,278.458 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#BE1E2D" stroke-width="0.5854" stroke-miterlimit="10" d="M490.346,272.038
+				c23.616-20.949,23.589,30.281-0.028,8.863"/>
+			<g>
+				<polygon fill="#BE1E2D" points="493.056,272.521 490.899,271.572 490.087,269.362 487.825,274.46 				"/>
+			</g>
+			<g>
+				<polygon fill="#BE1E2D" points="493.035,280.449 490.87,281.376 490.034,283.579 487.825,278.458 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#009444" stroke-width="0.75" stroke-miterlimit="10" d="M434.03,393.464
+				c1.259-19.516,16.459-17.696,24.48-7.938"/>
+			<g>
+				<circle fill="#009444" cx="434.095" cy="393.329" r="2.819"/>
+			</g>
+			<g>
+				<polygon fill="#009444" points="454.958,385.431 457.912,384.815 459.521,382.262 460.995,389.253 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#009444" stroke-width="0.75" stroke-miterlimit="10" d="M429.866,387.608
+				c-1.259-19.518-16.46-17.697-24.48-7.939"/>
+			<g>
+				<circle fill="#009444" cx="429.802" cy="387.473" r="2.819"/>
+			</g>
+			<g>
+				<polygon fill="#009444" points="404.377,376.404 405.984,378.958 408.938,379.573 402.9,383.396 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#009444" stroke-width="0.75" stroke-miterlimit="10" d="M361.378,200.813
+				c1.259-19.516,16.46-17.695,24.48-7.938"/>
+			<g>
+				<circle fill="#009444" cx="361.442" cy="200.679" r="2.819"/>
+			</g>
+			<g>
+				<polygon fill="#009444" points="382.306,192.781 385.26,192.165 386.867,189.612 388.344,196.604 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#009444" stroke-width="0.75" stroke-miterlimit="10" d="M357.214,194.958
+				c-1.259-19.517-16.46-17.697-24.48-7.939"/>
+			<g>
+				<circle fill="#009444" cx="357.149" cy="194.823" r="2.819"/>
+			</g>
+			<g>
+				<polygon fill="#009444" points="331.725,183.755 333.332,186.308 336.286,186.924 330.248,190.746 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#009444" stroke-width="0.75" stroke-miterlimit="10" d="M613.653,278.654
+				c19.516,1.259,17.697,16.46,7.938,24.48"/>
+			<g>
+				<circle fill="#009444" cx="613.789" cy="278.719" r="2.819"/>
+			</g>
+			<g>
+				<polygon fill="#009444" points="621.687,299.582 622.302,302.536 624.856,304.144 617.864,305.62 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#009444" stroke-width="0.75" stroke-miterlimit="10" d="M619.51,274.49
+				c19.517-1.259,17.697-16.46,7.938-24.48"/>
+			<g>
+				<circle fill="#009444" cx="619.645" cy="274.426" r="2.819"/>
+			</g>
+			<g>
+				<polygon fill="#009444" points="630.714,249.001 628.159,250.608 627.544,253.562 623.722,247.524 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#009444" stroke-width="0.75" stroke-miterlimit="10" d="M438.835,278.654
+				c19.516,1.259,17.696,16.46,7.938,24.48"/>
+			<g>
+				<circle fill="#009444" cx="438.97" cy="278.719" r="2.819"/>
+			</g>
+			<g>
+				<polygon fill="#009444" points="446.867,299.582 447.483,302.536 450.037,304.144 443.045,305.62 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#009444" stroke-width="0.75" stroke-miterlimit="10" d="M444.691,274.49
+				c19.517-1.259,17.696-16.46,7.938-24.48"/>
+			<g>
+				<circle fill="#009444" cx="444.826" cy="274.426" r="2.819"/>
+			</g>
+			<g>
+				<polygon fill="#009444" points="455.895,249.001 453.341,250.608 452.726,253.562 448.903,247.524 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#009444" stroke-width="0.75" stroke-miterlimit="10" d="M427.246,274.49
+				c-19.516-1.259-17.696-16.46-7.938-24.48"/>
+			<g>
+				<circle fill="#009444" cx="427.111" cy="274.426" r="2.819"/>
+			</g>
+			<g>
+				<polygon fill="#009444" points="419.213,253.563 418.598,250.608 416.044,249.001 423.035,247.524 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#009444" stroke-width="0.75" stroke-miterlimit="10" d="M421.39,278.654
+				c-19.517,1.259-17.696,16.46-7.938,24.48"/>
+			<g>
+				<circle fill="#009444" cx="421.255" cy="278.719" r="2.819"/>
+			</g>
+			<g>
+				<polygon fill="#009444" points="410.187,304.144 412.74,302.536 413.355,299.583 417.178,305.62 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<path fill="none" stroke="#BE1E2D" stroke-width="0.75" stroke-miterlimit="10" d="M630.774,85.979
+			c2.135-24.522,22.168-21.309,32.064-8.137"/>
+		<g>
+			<polygon fill="#BE1E2D" points="633.693,84.019 630.86,85.057 628.146,83.739 630.589,90.454 			"/>
+		</g>
+		<g>
+			<polygon fill="#BE1E2D" points="659.278,77.689 662.243,77.129 663.899,74.606 665.243,81.624 			"/>
+		</g>
+	</g>
+</g>
+</svg>

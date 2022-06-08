@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="462.774px" height="517.338px" viewBox="0 0 462.774 517.338" enable-background="new 0 0 462.774 517.338"
+	 xml:space="preserve">
+<text transform="matrix(1 0 0 1 341.542 250.7578)"><tspan x="0" y="0" font-family="'Consolas'" font-size="10.5">ex:maxWallHeight|6,2</tspan><tspan x="0" y="12.6" font-family="'Consolas'" font-size="10.5">ex:wallThickness|0,15</tspan></text>
+<text transform="matrix(1 0 0 1 11.1221 440.2295)"><tspan x="0" y="0" font-family="'Consolas'" font-size="10.5">bot:Element</tspan><tspan x="0" y="12.6" font-family="'Consolas'" font-size="10.5">ifc2x3:IfcWall</tspan></text>
+<text transform="matrix(1 0 0 1 11.1221 440.2295)"><tspan x="0" y="0" stroke="#000000" stroke-width="0.1" stroke-miterlimit="10" font-family="'Consolas'" font-size="10.5">bot:Element</tspan><tspan x="0" y="12.6" stroke="#000000" stroke-width="0.1" stroke-miterlimit="10" font-family="'Consolas'" font-size="10.5">ifc2x3:IfcWall</tspan></text>
+<text transform="matrix(1 0 0 1 341.541 198.7002)" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'Consolas'" font-size="10.5">:IW3</text>
+<g>
+	<g>
+		<polyline fill="#C1C3C3" points="216.236,419.067 223.627,416.993 223.626,112.964 153.901,68.985 146.512,71.059 
+			146.512,372.614 216.236,419.067 		"/>
+		
+			<polyline fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			153.901,68.985 223.626,112.964 223.627,416.993 		"/>
+		<g>
+			
+				<polygon fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				216.236,419.067 146.512,372.614 146.512,71.059 216.235,115.038 			"/>
+		</g>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="216.236" y1="419.067" x2="223.627" y2="416.993"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="146.512" y1="71.059" x2="153.901" y2="68.985"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="216.235" y1="115.038" x2="223.627" y2="112.964"/>
+	</g>
+	<g>
+		<g>
+			<polygon fill="#C1C3C3" points="35.723,286.653 35.723,408.688 105.447,455.142 111.538,452.341 111.538,329.522 41.813,284.077 
+							"/>
+		</g>
+		<g>
+			
+				<polygon fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				35.723,286.653 35.723,408.688 105.447,455.142 111.538,452.341 111.538,329.522 41.813,284.077 			"/>
+		</g>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="105.447" y1="332.354" x2="111.538" y2="329.522"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="35.723" y1="286.653" x2="105.447" y2="332.354"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="105.447" y1="332.354" x2="105.447" y2="455.142"/>
+	</g>
+	<g>
+		<polygon fill="#C1C3C3" points="0.75,488.12 0.75,365.618 166.08,312.562 166.08,131.4 328.747,79.713 338.098,86.996 
+			338.098,389.122 7.908,493.392 		"/>
+		<path fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" d="M333.599,383.927"/>
+		<polygon fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" points="0.75,488.12 0.75,365.618 
+			166.08,312.562 166.08,131.4 328.326,79.713 338.098,86.996 338.098,389.122 7.908,493.392 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" points="7.908,493.392 8.152,370.388 
+			176.693,316.698 178.031,138.674 338.098,86.996 		"/>
+		<line fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" x1="0.75" y1="365.618" x2="8.152" y2="370.388"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" x1="166.08" y1="312.562" x2="176.693" y2="316.698"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" x1="166.08" y1="131.4" x2="178.031" y2="138.674"/>
+	</g>
+	<g>
+		<polygon fill="#C1C3C3" points="288.264,320.64 292.928,319.353 292.928,403.474 251.336,416.21 251.595,413.028 288.264,401.347 
+					"/>
+		
+			<polyline fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			288.264,401.544 292.928,403.474 292.928,319.353 251.595,332.519 251.595,416.128 		"/>
+		<polyline fill="#036936" points="251.595,413.028 251.595,332.321 288.264,320.64 288.264,401.347 251.595,413.028 
+			288.264,401.347 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" points="251.595,413.028 288.264,401.347 
+			288.264,320.64 		"/>
+	</g>
+	<g>
+		<polygon fill="#C1C3C3" points="170.38,318.282 170.38,441.964 241.424,489.864 247.938,486.923 247.938,364.31 176.693,316.698 
+					"/>
+		
+			<polyline fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			170.38,318.282 241.424,366.181 241.424,489.864 		"/>
+		
+			<polygon fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			170.38,318.282 170.38,441.964 241.424,489.864 247.938,486.923 247.938,364.31 176.693,316.698 		"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="241.424" y1="366.181" x2="247.938" y2="364.31"/>
+	</g>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 341.541 217.0615)"><tspan x="0" y="0" font-family="'Consolas'" font-size="10.5">bot:Element</tspan><tspan x="0" y="12.6" font-family="'Consolas'" font-size="10.5">ifc2x3:IfcWall</tspan></text>
+</g>
+<text transform="matrix(1 0 0 1 172.0557 60.7578)"><tspan x="0" y="0" font-family="'Consolas'" font-size="10.5">ex:maxWallHeight|6,2</tspan><tspan x="0" y="12.6" font-family="'Consolas'" font-size="10.5">ex:wallThickness|0,15</tspan></text>
+<text transform="matrix(1 0 0 1 172.0557 8.7002)" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'Consolas'" font-size="10.5">:IW2</text>
+<g>
+	<text transform="matrix(1 0 0 1 172.0557 27.0615)"><tspan x="0" y="0" font-family="'Consolas'" font-size="10.5">bot:Element</tspan><tspan x="0" y="12.6" font-family="'Consolas'" font-size="10.5">ifc2x3:IfcWall</tspan></text>
+</g>
+<text transform="matrix(1 0 0 1 258.0654 501.5645)"><tspan x="0" y="0" font-family="'Consolas'" font-size="10.5">ex:maxWallHeight|2,7</tspan><tspan x="0" y="12.6" font-family="'Consolas'" font-size="10.5">ex:wallThickness|0,15</tspan></text>
+<text transform="matrix(1 0 0 1 258.0645 449.5068)" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'Consolas'" font-size="10.5">:IW4</text>
+<g>
+	<text transform="matrix(1 0 0 1 258.0645 467.8662)"><tspan x="0" y="0" font-family="'Consolas'" font-size="10.5">bot:Element</tspan><tspan x="0" y="12.6" font-family="'Consolas'" font-size="10.5">ifc2x3:IfcWall</tspan></text>
+</g>
+<text transform="matrix(1 0 0 1 8.1514 264.4492)"><tspan x="0" y="0" font-family="'Consolas'" font-size="10.5">ex:maxWallHeight|2,7</tspan><tspan x="0" y="12.6" font-family="'Consolas'" font-size="10.5">ex:wallThickness|0,15</tspan></text>
+<g>
+	<text transform="matrix(1 0 0 1 8.1523 230.7529)"><tspan x="0" y="0" font-family="'Consolas'" font-size="10.5">bot:Element</tspan><tspan x="0" y="12.6" font-family="'Consolas'" font-size="10.5">ifc2x3:IfcWall</tspan></text>
+</g>
+</svg>
