@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1920px" height="1080px" viewBox="1992.199 0 1920 1080" enable-background="new 1992.199 0 1920 1080"
+	 xml:space="preserve">
+<rect x="2700.883" y="429.204" fill="#DCD5CF" stroke="#000000" stroke-miterlimit="10" width="59.508" height="494.134"/>
+<polygon fill="#DCD5CF" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	2760.389,923.338 2760.389,429.204 3203.514,253.867 3203.514,748 "/>
+<polygon opacity="0.5" fill="#F68B1F" stroke="#000000" stroke-miterlimit="10" enable-background="new    " points="
+	2925.028,923.338 2925.028,429.204 3368.151,253.867 3368.151,748 "/>
+<polygon fill="#DCD5CF" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	3203.516,253.867 3144.008,253.867 2700.883,429.204 2760.391,429.204 "/>
+<text transform="matrix(1 0 0 1 2336.844 961.4463)" font-family="'GeosansLight'" font-size="40">&lt;http://some-arch.com/projects/100100/Walls/123&gt;</text>
+<text transform="matrix(1 0 0 1 3094.7659 886.4492)" fill="#3F726B" font-family="'GeosansLight'" font-size="40">&lt;http://some-eng.com/projects/100222/Interfaces/23&gt;</text>
+<text transform="matrix(1 0 0 1 2642.2981 144.9883)" font-family="'GeosansLight'" font-size="40">bot:Element</text>
+<text transform="matrix(1 0 0 1 2726.6907 288.3652)" font-family="'GeosansLight'" font-size="30">rdf:type</text>
+<g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M2885.639,366.977c0-97.679-146.438-99-154.645-199.541"/>
+		<g>
+			<polygon points="2736.805,171.377 2731.145,169.282 2725.709,171.902 2730.637,158.487 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 3550.7209 151.8174)" fill="#3F726B" font-family="'GeosansLight'" font-size="40">bot:Interface</text>
+<g>
+	<text transform="matrix(1 0 0 1 2444.8909 827.6582)" fill="#3F726B" font-family="'GeosansLight'" font-size="30">props:uValue</text>
+	<text transform="matrix(1 0 0 1 2415.3547 863.6582)" fill="#3F726B" font-family="'GeosansLight'" font-size="30">bsdd:heatTransfer</text>
+</g>
+<g>
+	<g>
+		<path fill="none" stroke="#3F726B" stroke-miterlimit="10" d="M3345.748,262.731c0-97.644,89.66-110.25,191.324-117.152"/>
+		<g>
+			<polygon fill="#3F726B" points="3533.289,151.507 3535.229,145.792 3532.463,140.429 3546.008,144.988 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<path fill="none" stroke="#3F726B" stroke-miterlimit="10" d="M2730.637,836.246c-142.955,46.104-151.053-75.24-220.889-84.891"/>
+		<g>
+			<polygon fill="#3F726B" points="2514.377,746.252 2511.586,751.604 2513.5,757.326 2500.811,750.752 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 2547.5637 225.7207)" font-family="'GeosansLight'" font-size="40">prod:Wall</text>
+<text transform="matrix(1 0 0 1 2611.6165 334.0361)" font-family="'GeosansLight'" font-size="30">rdf:type</text>
+<g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M2845.795,384.098c0-88.624-210.24-34.732-222.203-132.008"/>
+		<g>
+			<polygon points="2629.533,255.891 2623.824,253.93 2618.451,256.676 2623.061,243.149 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 2760.0881 102.3281)" font-family="'GeosansLight'" font-size="40">ifc:IfcWall</text>
+<text transform="matrix(1 0 0 1 2994.5979 50.3809)" font-family="'GeosansLight'" font-size="40">“20.3</text>
+<text transform="matrix(1 0 0 1 3076.3987 50.3809)" font-family="'GeosansLight'" font-size="40"> m</text>
+<text transform="matrix(1 0 0 1 3112.3167 37.0605)" font-family="'GeosansLight'" font-size="23.32">2</text>
+<text transform="matrix(1 0 0 1 3125.0256 50.3809)" font-family="'GeosansLight'" font-size="40">”</text>
+<text transform="matrix(1 0 0 1 3292.6721 59.2363)" font-family="'GeosansLight'" font-size="40">“360</text>
+<text transform="matrix(1 0 0 1 3369.9524 59.2363)" font-family="'GeosansLight'" font-size="40"> mm”</text>
+<text transform="matrix(1 0 0 1 2285.5647 765.1836)" fill="#3F726B" font-family="'GeosansLight'" font-size="40">“0.21 W/m</text>
+<text transform="matrix(1 0 0 1 2449.803 751.8633)" fill="#3F726B" font-family="'GeosansLight'" font-size="23.32">2</text>
+<text transform="matrix(1 0 0 1 2462.512 765.1836)" fill="#3F726B" font-family="'GeosansLight'" font-size="40">K”</text>
+<g>
+	<g>
+		<path fill="none" stroke="#3F726B" stroke-miterlimit="10" d="M3368.151,508.315c101.699-26.226,52.92-106.63,270.211-108.77"/>
+		<g>
+			<polygon fill="#3F726B" points="3634.217,405.208 3636.512,399.626 3634.09,394.1 3647.319,399.502 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 3651.0627 414.4746)" fill="#3F726B" font-family="'GeosansLight'" font-size="40">“10.5 m</text>
+<text transform="matrix(1 0 0 1 3768.7815 401.1553)" fill="#3F726B" font-family="'GeosansLight'" font-size="23.32">2</text>
+<text transform="matrix(1 0 0 1 3781.4905 414.4746)" fill="#3F726B" font-family="'GeosansLight'" font-size="40">”</text>
+<text transform="matrix(1 0 0 1 2866.679 209.708)" font-family="'GeosansLight'" font-size="30">rdf:type</text>
+<text transform="matrix(1 0 0 1 2933.5247 112.7393)" font-family="'GeosansLight'" font-size="30">props:area</text>
+<text transform="matrix(1 0 0 1 2937.6497 148.7393)" font-family="'GeosansLight'" font-size="30">bsdd:area</text>
+<text transform="matrix(1 0 0 1 3161.7444 112.7393)" font-family="'GeosansLight'" font-size="30">props:thickness</text>
+<text transform="matrix(1 0 0 1 3392.5042 200.376)" fill="#3F726B" font-family="'GeosansLight'" font-size="30">rdf:type</text>
+<text transform="matrix(1 0 0 1 3433.9338 477.5684)" fill="#3F726B" font-family="'GeosansLight'" font-size="30">ds418:heatTransmissionArea</text>
+<text transform="matrix(1 0 0 1 3438.7639 513.5684)" fill="#3F726B" font-family="'GeosansLight'" font-size="30">props:heatTransmissionArea</text>
+<g>
+	<g>
+		<path fill="none" stroke="#3F726B" stroke-miterlimit="10" d="M3368.151,648.814c101.715-26.229,34.086,40.885,253.098,23.363"/>
+		<g>
+			<polygon fill="#3F726B" points="3617.426,677.887 3619.395,672.182 3616.655,666.803 3630.176,671.43 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 3624.76 685.1035)" fill="#3F726B" font-family="'GeosansLight'" font-size="40">“0.13 m</text>
+<text transform="matrix(1 0 0 1 3742.4788 671.7842)" fill="#3F726B" font-family="'GeosansLight'" font-size="23.32">2</text>
+<text transform="matrix(1 0 0 1 3755.1877 685.1035)" fill="#3F726B" font-family="'GeosansLight'" font-size="40">K/W”</text>
+<text transform="matrix(1 0 0 1 3419.594 631.7578)" fill="#3F726B" font-family="'GeosansLight'" font-size="30">props:surfaceResistance</text>
+<g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M2925.028,350.054c0-97.694-85.432-119.862-90.193-221.612"/>
+		<g>
+			<polygon points="2840.541,132.499 2834.924,130.292 2829.436,132.804 2834.627,119.489 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M3017.43,314.624c0-97.708,45.754-139.532,48.293-242.412"/>
+		<g>
+			<polygon points="3071.196,76.504 3065.676,74.064 3060.088,76.343 3065.832,63.257 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M3112.379,277.5c0-123.148,23.33-223.019,165.891-226.997"/>
+		<g>
+			<polygon points="3274.18,56.216 3276.42,50.612 3273.942,45.109 3287.225,50.38 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 3147.262 200.376)" fill="#3F726B" font-family="'GeosansLight'" font-size="30">bot:interfaceOf</text>
+</g>
+<g>
+	<g>
+		<path fill="none" stroke="#3F726B" stroke-miterlimit="10" d="M3297.992,281.627c0-104.373-140.971-78.393-150.855-24.839"/>
+		<g>
+			<polygon fill="#3F726B" points="3143.865,253.602 3147.375,255.569 3151.227,254.409 3146.59,262.731 			"/>
+		</g>
+	</g>
+</g>
+</svg>

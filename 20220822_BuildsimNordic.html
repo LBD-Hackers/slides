@@ -130,22 +130,114 @@ TODO
 			<section>
 				<h1>Agenda</h1>
 				<ul>
-					<li class="fragment fade-up">BIM silo thinking</li>
-					<li class="fragment fade-up">Takeaways <span class="highlight-container"><span class="highlight">highlighted</span></span> along the way</li>
-					<li class="fragment fade-up"><span style="font-style: oblique">If there is time:</span> More details on selected projects</li>
+					<li class="fragment fade-up">Current state of BIM and how to improve it</li>
+					<li class="fragment fade-up">Towards a modular and extendable data representation</li>
+					<li class="fragment fade-up">Demos</li>
 				</ul>
 			</section>
 
-			<section>
-				<h1>BIM silo thinking</h1>
-				<p>The problem with "One data model to rule them all"</p>
-				<p>Towards a modular data representation</p>
 
-				<p>Based on the web - material registries</p>
+			<!-- Fly-in. Challenges -->
+			<section>
+
+				<section>
+				  <h1>Current state of BIM and how to improve it</h1>
+				</section>
+		
+				<section>
+				  <h4>"Our industry works in a document-centric manner rather than a data-centric one"</h4>
+				  <aside class="notes">
+					- Exchange of files rather than data integration<br>
+					- A bim is one database - we need multiple
+				  </aside>
+				</section>
+		
+				<section  data-background-image="./static/images/HeatLossCalc-01.svg" data-background-size="80%"></section>
+		
+				<section data-background-image="./static/images/HeatLossCalc-02.svg" data-background-size="80%"></section>
+		
+				<section data-background-image="./static/images/HeatLossCalc-03.svg" data-background-size="80%"></section>
+		
+				<section data-background-image="./static/images/HeatLossCalc-04.svg" data-background-size="80%"></section>
+		
+				<section data-background-image="./static/images/HeatLossCalc-05.svg" data-background-size="80%"></section>
+
+				<section data-background-image="./static/images/HeatLossCalc-07.svg" data-background-size="80%"></section>
+		
+				<section>
+				  <h4 class="center">"Exchange of BIM-data as files makes data integration impossible"</h4>
+				  <aside class="notes">
+					- BCF as an example<br>
+					- You cannot exchange issues in a file. How about the ones you resolve in the mean time?
+				  </aside>
+				</section>
+		
+				<section data-background-image="./static/images/monolitic-01.svg" data-background-size="70%"></section>
+				<section data-background-image="./static/images/monolitic-02.svg" data-background-size="70%"></section>
+
+				<section data-background-image="./static/images/BIM-islands.svg" data-background-size="70%"></section>
+		
+				<section>
+				  <h4 class="center">"We need to move from Today's monolitic nature of BIM to a network based one"</h4>
+				  <aside class="notes">
+					- Fine that the different BIM systems rely on an integrated data model, but they should be able to exchange resulting geometry and derived properties
+				  </aside>
+				</section>
+		
+				<section data-background-image="./static/images/bs-wall-01.svg" data-background-size="70%"></section>
+				<section data-background-image="./static/images/bs-wall-02.svg" data-background-size="70%"></section>
+				<section data-background-image="./static/images/bs-wall-03.svg" data-background-size="70%"></section>
+		
+			  </section>
+		
+			  <section>
+		
+				<section>
+				  <h4 class="center">So how do we do this?</h4>
+				</section>
+		
+				<section>
+				  <h4 class="center">The idea is to use the existing infrastructure of the World Wide Web to mediate a distributed, network-based BIM</h4>
+				</section>
+		
+				<section data-background-image="./static/images/web1-01.svg">
+				  <h4 style="margin-top: 30vh;" class="box">Web of documents</h4>
+				</section>
+		
+				<section data-background-image="./static/images/web3-01.svg">
+				  <h4 style="margin-top: 30vh;" class="box">Web of data</h4>
+				</section>
+		
+				<section>
+				  <h4 class="center">Data is stored and hosted by the stakeholder who generated it and is responsible for it</h4>
+				</section>
+		
+				<section>
+				  <h4 class="center">Data can be shared with authenticated people or be made publicly available</h4>
+				</section>
+		
+				<section>
+				  <h4 class="center">The model data can be extended with Linked Open Data (product- and material properties, IoT, GIS)</h4>
+				</section>
+		
+				<section>
+				  <h4 class="center">Even the schemas are distributed, and can therefore extend one another</h4>
+				</section>
+		
+				<section data-background-image="./static/images/CWA.svg" data-background-size="90%">
+				  <h4 style="margin-top: 50vh;" class="box">Current situation: Open standards in isolated closed worlds</h4>
+				</section>
+		
+				<section data-background-image="./static/images/OWA_en.svg" data-background-size="90%">
+				  <h4 style="margin-top: 50vh;" class="box">Linked data benefit: Standards use, extend and refer to one another</h4>
+				</section>
+				
 			</section>
+
 
 			<section>
 				<h1>BIM bots in a distributed environment</h1>
+				<p>Prerequisite: data validation</p>
 				<p>Some service will expose a validation - if it complies, the calculation can be performed</p>
 				<p>Not much use with "model not compliant" - with SHACL we have a formal way of expressing rules</p>
 			</section>
@@ -153,8 +245,7 @@ TODO
 			<section>
 
 				<section>
-					<h3>Tech intro</h3>
-					<h4>What is Linked Building Data?</h4>
+					<h2>A modular and extendable building representation</h2>
 				</section>
 
 				<!-- BOT -->
@@ -231,11 +322,7 @@ TODO
 			</section>
 
 			<section>
-				<h1>BOT</h1>
-			</section>
-
-			<section>
-				<h1>Interfaces</h1>
+				<h1>Extending BOT</h1>
 			</section>
 
 			<section>
