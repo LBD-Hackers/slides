@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1920px" height="1080px" viewBox="0 0 1920 1080" enable-background="new 0 0 1920 1080" xml:space="preserve">
+<g>
+	<path fill="#EDEDED" d="M693.385,544.141l624.677-176.674l-1.111,0.313c3.115-1.304,7.301,0.721,9.629,4.776
+		c2.469,4.299,1.912,9.251-1.242,11.062c-0.25,0.144-0.51,0.264-0.777,0.36L703.764,563.413c3.492-2.004,3.879-7.883,0.865-13.133
+		C701.766,545.292,696.862,542.669,693.385,544.141z"/>
+	<g>
+		<path fill="#EDEDED" d="M703.764,563.616c3.492-2.004,3.879-7.883,0.865-13.134c-2.861-4.986-7.768-7.609-11.244-6.139
+			c-0.184,0.077-0.359,0.166-0.533,0.266c-3.49,2.004-3.877,7.883-0.863,13.133C695,562.991,700.274,565.621,703.764,563.616z"/>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M703.764,563.413c-3.49,2.004-8.766-0.625-11.775-5.875
+			c-3.014-5.25-2.627-11.129,0.863-13.133c0.174-0.101,0.352-0.188,0.533-0.265"/>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M693.385,544.141c3.479-1.472,8.383,1.151,11.244,6.139
+			c3.014,5.25,2.627,11.129-0.865,13.133"/>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1316.953,367.779c3.115-1.304,7.301,0.721,9.627,4.776
+			c2.469,4.299,1.912,9.251-1.24,11.062c-0.252,0.144-0.512,0.264-0.777,0.36"/>
+	</g>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="693.385" y1="544.141" x2="1318.063" y2="367.467"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="703.764" y1="563.413" x2="1324.563" y2="383.976"/>
+</g>
+<g>
+	<polygon opacity="0.1" fill="#008D36" enable-background="new    " points="1078.139,352.894 1204.635,322.001 1495.527,412.007 
+		1468.416,628.543 1346.719,686.89 1081.139,552.008 	"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="663.782,696.374 618.417,465.171 1204.635,322.001 
+		1495.527,412.007 1468.416,628.543 891.581,905.085 663.782,696.374 	"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="1200.625" y1="510.678" x2="663.782" y2="696.374"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="1468.416" y1="628.543" x2="1200.625" y2="510.678"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="1204.635" y1="322.001" x2="1200.625" y2="510.678"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="1363.742" y1="458.569" x2="1078.139" y2="352.894"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="861.213" y1="636.125" x2="1495.527" y2="412.007"/>
+	<polyline opacity="0.1" fill="#95C11F" enable-background="new    " points="618.417,465.171 1078.139,352.894 1363.742,458.569 
+		1346.719,686.89 891.581,905.085 663.782,696.374 	"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="861.213" y1="636.125" x2="618.417" y2="465.171"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="1081.139" y1="552.008" x2="1078.139" y2="352.894"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="861.213" y1="636.125" x2="891.581" y2="905.085"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="1363.742" y1="458.569" x2="1346.719" y2="686.89"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="1081.139" y1="552.008" x2="1346.719" y2="686.89"/>
+</g>
+<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1188.998,403.968c3.209-0.583,6.955,1.413,9.08,5.112
+	c2.555,4.453,1.797,9.687-1.695,11.691c-0.205,0.118-0.414,0.222-0.629,0.313"/>
+<g>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M691.811,901.717c0,6.627-5.373,12-12,12
+		H549.184c-6.627,0-12-5.373-12-12v-36.885c0-6.628,5.373-12,12-12h130.627c6.627,0,12,5.372,12,12V901.717z"/>
+	<text transform="matrix(1 0 0 1 552.1626 893.2793)" font-family="'GeosansLight'" font-size="30">Zone A</text>
+	
+		<text transform="matrix(1 0 0 1 552.1626 845.6738)" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'GeosansLight'" font-size="15">bot:Zone</text>
+	
+		<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="688.137" y1="856.276" x2="773.807" y2="770.605"/>
+</g>
+<g>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M1623.633,776.721c0,6.627-5.373,12-12,12
+		h-130.627c-6.627,0-12-5.373-12-12v-36.885c0-6.628,5.373-12,12-12h130.627c6.627,0,12,5.372,12,12V776.721z"/>
+	<text transform="matrix(1 0 0 1 1483.9844 768.2832)" font-family="'GeosansLight'" font-size="30">Zone B</text>
+	
+		<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="1471.928" y1="732.313" x2="1391.471" y2="651.855"/>
+</g>
+<g>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M948.354,322.562c0,6.627-5.373,12-12,12
+		H805.727c-6.627,0-12-5.373-12-12v-36.885c0-6.628,5.373-12,12-12h130.627c6.627,0,12,5.372,12,12V322.562z"/>
+	<text transform="matrix(1 0 0 1 808.7056 314.124)" font-family="'GeosansLight'" font-size="30">Pipe A</text>
+	<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="944.68" y1="330.67" x2="1062.924" y2="448.914"/>
+	<text transform="matrix(1 0 0 1 808.7061 248.4854)"><tspan x="0" y="0" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'GeosansLight'" font-size="15">bot:Element</tspan><tspan x="0" y="18" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'GeosansLight'" font-size="15">fso:Segment</tspan></text>
+</g>
+<g>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M662.018,404.221c0,6.627-5.373,12-12,12
+		H492.405c-6.629,0-12-5.373-12-12v-36.443c0-6.628,5.371-12,12-12h157.613c6.627,0,12,5.372,12,12V404.221z"/>
+	<text transform="matrix(1 0 0 1 495.3823 396.2256)" font-family="'GeosansLight'" font-size="30">PipeSurface X</text>
+	
+		<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="658.344" y1="413.117" x2="776.588" y2="531.361"/>
+	<text transform="matrix(1 0 0 1 495.3853 330.6699)"><tspan x="0" y="0" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'GeosansLight'" font-size="15">bot:Interface</tspan><tspan x="0" y="18" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'GeosansLight'" font-size="15">ex:PipeSurface</tspan></text>
+</g>
+<g>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M1553.139,266.271c0,6.627-5.373,12-12,12
+		h-157.613c-6.627,0-12-5.373-12-12v-36.322c0-6.628,5.373-12,12-12h157.613c6.627,0,12,5.372,12,12V266.271z"/>
+	<text transform="matrix(1 0 0 1 1386.5039 258.3965)" font-family="'GeosansLight'" font-size="30">PipeSurface Y</text>
+	
+		<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="1374.484" y1="273.475" x2="1256.242" y2="391.72"/>
+	<text transform="matrix(1 0 0 1 1386.5059 192.8408)"><tspan x="0" y="0" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'GeosansLight'" font-size="15">bot:Interface</tspan><tspan x="0" y="18" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'GeosansLight'" font-size="15">ex:PipeSurface</tspan></text>
+</g>
+<g>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M373.801,114.813c0,6.627-5.373,12-12,12
+		H198.553c-6.629,0-12-5.373-12-12V77.928c0-6.628,5.371-12,12-12h163.248c6.627,0,12,5.372,12,12V114.813z"/>
+	<text transform="matrix(1 0 0 1 201.5298 106.375)" font-family="'GeosansLight'" font-size="30">System HS1</text>
+	
+		<text transform="matrix(1 0 0 1 201.5313 58.7256)" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'GeosansLight'" font-size="15">fso:System</text>
+</g>
+<text transform="matrix(1 0 0 1 1483.9844 720.1924)" stroke="#000000" stroke-width="0.2" stroke-miterlimit="10" font-family="'GeosansLight'" font-size="15">bot:Zone</text>
+</svg>
