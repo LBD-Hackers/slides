@@ -48,7 +48,7 @@ TODO
 			align-items: center;
 		}
 
-		.footer-left img{
+		.footer-left img {
 			height: 2vh;
 		}
 
@@ -82,7 +82,7 @@ TODO
 			background-color: red;
 		}
 
-		.logo-container{
+		.logo-container {
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
@@ -90,10 +90,32 @@ TODO
 			gap: 40px;
 		}
 
-		.logo-container img{
+		.logo-container img {
 			height: 50px;
 		}
-		
+
+
+		.assumption1 {
+			display: flex;
+			justify-content: center;
+		}
+
+		.assumption2 {
+			display: flex;
+			flex-direction: column;
+			width: 500px;
+		}
+
+		.assumption2 div:first-of-type {
+			border-bottom: 2px solid black
+		}
+
+		.footnote {
+			display: flex;
+			justify-content: end;
+			font-size: 15px;
+			height: 50;
+		}
 	</style>
 
 </head>
@@ -141,108 +163,256 @@ TODO
 			<section>
 
 				<section>
-				  <h1>Current state of BIM and how to improve it</h1>
+					<h1>Current state of BIM and how to improve it</h1>
 				</section>
-		
-				<section>
-				  <h4>"Our industry works in a document-centric manner rather than a data-centric one"</h4>
-				  <aside class="notes">
-					- Exchange of files rather than data integration<br>
-					- A bim is one database - we need multiple
-				  </aside>
-				</section>
-		
-				<section  data-background-image="./static/images/HeatLossCalc-01.svg" data-background-size="80%"></section>
-		
-				<section data-background-image="./static/images/HeatLossCalc-02.svg" data-background-size="80%"></section>
-		
-				<section data-background-image="./static/images/HeatLossCalc-03.svg" data-background-size="80%"></section>
-		
-				<section data-background-image="./static/images/HeatLossCalc-04.svg" data-background-size="80%"></section>
-		
-				<section data-background-image="./static/images/HeatLossCalc-05.svg" data-background-size="80%"></section>
 
-				<section data-background-image="./static/images/HeatLossCalc-07.svg" data-background-size="80%"></section>
-		
 				<section>
-				  <h4 class="center">"Exchange of BIM-data as files makes data integration impossible"</h4>
-				  <aside class="notes">
-					- BCF as an example<br>
-					- You cannot exchange issues in a file. How about the ones you resolve in the mean time?
-				  </aside>
+					<h4>"Our industry works in a document-centric manner rather than a data-centric one"</h4>
+					<aside class="notes">
+						- Exchange of files rather than data integration<br>
+						- A bim is one database - we need multiple
+					</aside>
 				</section>
-		
+
+				<section data-background-image="./static/images/HeatLossCalc-01.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-02.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-03.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-04.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-05.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-07.svg" data-background-size="80%">
+				</section>
+
+				<section>
+					<h4 class="center">"Exchange of BIM-data as files makes data integration impossible"</h4>
+					<aside class="notes">
+						- BCF as an example<br>
+						- You cannot exchange issues in a file. How about the ones you resolve in the mean time?
+					</aside>
+				</section>
+
 				<section data-background-image="./static/images/monolitic-01.svg" data-background-size="70%"></section>
 				<section data-background-image="./static/images/monolitic-02.svg" data-background-size="70%"></section>
 
 				<section data-background-image="./static/images/BIM-islands.svg" data-background-size="70%"></section>
-		
+
 				<section>
-				  <h4 class="center">"We need to move from Today's monolitic nature of BIM to a network based one"</h4>
-				  <aside class="notes">
-					- Fine that the different BIM systems rely on an integrated data model, but they should be able to exchange resulting geometry and derived properties
-				  </aside>
+					<h4 class="center">"We need to move from Today's monolitic nature of BIM to a network based one"
+					</h4>
+					<aside class="notes">
+						- Fine that the different BIM systems rely on an integrated data model, but they should be able
+						to exchange resulting geometry and derived properties
+					</aside>
 				</section>
-		
+
 				<section data-background-image="./static/images/bs-wall-01.svg" data-background-size="70%"></section>
 				<section data-background-image="./static/images/bs-wall-02.svg" data-background-size="70%"></section>
 				<section data-background-image="./static/images/bs-wall-03.svg" data-background-size="70%"></section>
-		
-			  </section>
-		
-			  <section>
-		
+
+			</section>
+
+			<section>
+
 				<section>
-				  <h4 class="center">So how do we do this?</h4>
+					<h4 class="center">So how do we do this?</h4>
 				</section>
-		
+
 				<section>
-				  <h4 class="center">The idea is to use the existing infrastructure of the World Wide Web to mediate a distributed, network-based BIM</h4>
+					<h4 class="center">The idea is to use the existing infrastructure of the World Wide Web to mediate a
+						distributed, network-based BIM</h4>
 				</section>
-		
+
 				<section data-background-image="./static/images/web1-01.svg">
-				  <h4 style="margin-top: 30vh;" class="box">Web of documents</h4>
+					<h4 style="margin-top: 30vh;" class="box">Web of documents</h4>
 				</section>
-		
+
 				<section data-background-image="./static/images/web3-01.svg">
-				  <h4 style="margin-top: 30vh;" class="box">Web of data</h4>
+					<h4 style="margin-top: 30vh;" class="box">Web of data</h4>
 				</section>
-		
+
 				<section>
-				  <h4 class="center">Data is stored and hosted by the stakeholder who generated it and is responsible for it</h4>
+					<h4 class="center">Data is stored and hosted by the stakeholder who generated it and is responsible
+						for it</h4>
 				</section>
-		
+
 				<section>
-				  <h4 class="center">Data can be shared with authenticated people or be made publicly available</h4>
+					<h4 class="center">Data can be shared with authenticated people or be made publicly available</h4>
 				</section>
-		
+
 				<section>
-				  <h4 class="center">The model data can be extended with Linked Open Data (product- and material properties, IoT, GIS)</h4>
+					<h4 class="center">The model data can be extended with Linked Open Data (product- and material
+						properties, IoT, GIS)</h4>
 				</section>
-		
+
 				<section>
-				  <h4 class="center">Even the schemas are distributed, and can therefore extend one another</h4>
+					<h4 class="center">Even the schemas are distributed, and can therefore extend one another</h4>
 				</section>
-		
+
 				<section data-background-image="./static/images/CWA.svg" data-background-size="90%">
-				  <h4 style="margin-top: 50vh;" class="box">Current situation: Open standards in isolated closed worlds</h4>
+					<h4 style="margin-top: 50vh;" class="box">Current situation: Open standards in isolated closed
+						worlds</h4>
 				</section>
-		
+
 				<section data-background-image="./static/images/OWA_en.svg" data-background-size="90%">
-				  <h4 style="margin-top: 50vh;" class="box">Linked data benefit: Standards use, extend and refer to one another</h4>
+					<h4 style="margin-top: 50vh;" class="box">Linked data benefit: Standards use, extend and refer to
+						one another</h4>
 				</section>
-				
-			</section>
 
-
-			<section>
-				<h1>BIM bots in a distributed environment</h1>
-				<p>Prerequisite: data validation</p>
-				<p>Some service will expose a validation - if it complies, the calculation can be performed</p>
-				<p>Not much use with "model not compliant" - with SHACL we have a formal way of expressing rules</p>
 			</section>
 
 			<section>
+				<section>
+					<h1>Increasing Building Information</h1>
+
+					<img src="./static/images/alikuc/increasing.png" alt="">
+
+				</section>
+				<section>
+					<h4 class="center">How do we ensure the data quality in BIM models?</h4>
+				</section>
+				<section>
+					<h4 class="center">The 4-step Compliance Checking Method</h4>
+					<div><img src="./static/images/alikuc/bimquality.jpg" alt=""></div>
+					<div class="footnote">
+						C. Eastman, J. min Lee, Y. suk Jeong, J. kook Lee, Automatic rule-based checking of
+						building designs (2009)
+					</div>
+				</section>
+				<section>
+					Why don't we interpret rules using OWL as we do for everything else?
+				</section>
+				<section>
+					<div>
+						<div class="assumption1">
+							<div class="assumption2">
+								<div>Open World Assumption</div>
+								<div>OWL</div>
+								<div style="padding-top: 40px ;font-style: italic;">"A car can have 4 wheels"</div>
+							</div>
+							<div style="width: 100px"></div>
+							<div class="assumption2">
+								<div>Close World Assumption</div>
+								<div>SHACL</div>
+								<div style="padding-top: 40px ;font-style: italic;">"A car <strong>must</strong> have 4
+									wheels"</div>
+							</div>
+						</div>
+					</div>
+					<div class="r-stack" style="height: 400px; width: 1000px; object-fit: cover;">
+						<img class="fragment  current-visible fade-out" data-fragment-index="0"
+							src="./static/images/alikuc/300ppi/assumptionPic1.png" alt="">
+						<img class="fragment current-visible" data-fragment-index="1"
+							src="./static/images/alikuc/300ppi/assumptionPic2.png" alt="">
+						<img class="fragment current-visible" data-fragment-index="2"
+							src="./static/images/alikuc/300ppi/assumptionPic3.png" alt="">
+						<img class="fragment current-visible" data-fragment-index="3"
+							src="./static/images/alikuc/300ppi/assumptionPic4.png" alt="">
+						<img class="fragment" src="./static/images/alikuc/300ppi/assumptionPic5.png" alt="">
+					</div>
+				</section>
+				<section>
+					<div><img src="./static/images/alikuc/shacl.jpg" alt=""></div>
+				</section>
+				<section>
+					<h4 class="center">Expressing an HVAC rules explicitly</h4>
+					<pre>
+						<code data-trim data-noescape>
+								fso:PipeComponsition
+								a sh:NodeShape;
+								sh:nodeKind sh:IRI ;
+								sh:targetClass fpo:Pipe ;
+								sh:property [
+									sh:path fso:hasPort ;
+									sh:dataType xsd:anyURI;
+									sh:minCount 2;
+									sh:maxCount 2;
+									sh:message "A pipe must have minimum/maximum two flow ports"
+									]; 
+								//... the shape continues
+							
+						</code></pre>
+				</section>
+				<section>
+					<h4 class="center">Expressing an HVAC rules implicitly</h4>
+					<pre>
+										<code data-trim data-shacl>
+												fso:PipeMaxPressureDrop
+												a sh:NodeShape;
+												sh:nodeKind sh:IRI ;
+												sh:targetClass fpo:Pipe ;
+												sh:sparql [
+												a sh:sh:SPARQLConstraint ;
+												sh:message "The pressure drop for a pipe shall not exceed 100 Pa/m";
+												sh:prefixes (fpo: fso: inst:) ;
+												sh:select """
+												PREFIX fso: http://w3id.org/fso#
+												PREFIX fpo: http://w3id.org/fpo# 
+												PREFIX inst: https//example.com/inst#
+												SELECT ?this ?value
+												WHERE {
+													?this a fpo:Pipe .
+													?this fpo:length ?length .
+													?length fpo:value ?lengthvalue .
+													?this fso:hasPort ?port .
+													?port fpo:flowDirection ?flowDirection .
+													?flowDirection fpo:value "Out" .
+													?port fpo:pressureDrop ?pressureDrop .
+													?pressureDrop fpo:value ?pressureDropValue .
+													BIND ((?pressureDropValue / ?lengthvalue) AS ?value) .
+													FILTER (?value > 100)} """ ;
+												] .
+											
+										</code></pre>
+				</section>
+				<section>
+					<h4 class="center">Expressing an HVAC rules by inference</h4>
+					<pre>
+														<code data-trim data-shacl>
+																fso:PipeSizingPex
+																sh:NodeShape ;
+																sh:targetClass fpo:Pipe ;
+																sh:rule [
+																a sh:SPARQLRule ;
+																sh:prefixes (fpo: fso: ex: );
+																sh:construct """
+																CONSTRUCT {?diameter fpo:value ?newSize.}
+																WHERE {
+																?this a fpo:Pipe .
+																?this fpo:materialType ?type .
+																?type fpo:value "PEX" .
+																?this fso:hasPort ?port .
+																?port fpo:outerDiameter ?diameter .
+																?diameter fpo:value ?diameterValue .
+																BIND (
+																	IF( ?diameterValue = 0.012, 0.015,
+																	IF(?diameterValue = 0.015, 0.018,
+																	IF(?diameterValue = 0.018, 0.020,
+																	IF(?diameterValue = 0.020, 0.022,
+																	IF(?diameterValue = 0.022, 0.028,
+																	IF(?diameterValue = 0.028, 0.032,
+																	IF(?diameterValue = 0.032, 0.040,
+																	IF(?diameterValue = 0.040, 0.050,
+																	?diameterValue
+																	)))))))) AS ?newSize)} """ ;
+																condition: fso:PipeMaxPressureDrop
+																] .
+															
+														</code></pre>
+				</section>
+			</section>
+
+			<section>
+
+
 
 				<section>
 					<h2>A modular and extendable building representation</h2>
@@ -271,7 +441,7 @@ TODO
 				<section data-background-image="./static/images/BOT-content-01.svg" data-background-size="80vw"
 					data-background-position="50% 60%">
 					<h4 class="box-top-left">7 classes</h4>
-        		</section>
+				</section>
 
 				<!-- BOT ZONE -->
 				<section>
@@ -312,19 +482,19 @@ TODO
 
 				<section data-background-image="./static/images/BOT-Interfaces-03.svg" data-background-size="80vw">
 				</section>
-
-				<!-- <section data-background-image="./static/images/BOT-Interfaces-04.svg" data-background-size="80vw">
+			</section>
+			<!-- <section data-background-image="./static/images/BOT-Interfaces-04.svg" data-background-size="80vw">
 				</section>
 
 				<section data-background-image="./static/images/BOT-Interfaces-05.svg" data-background-size="80vw">
 				</section> -->
 
-				<section data-background-image="./static/images/Pipe-Interfaces-01.svg" data-background-size="80vw">
-				</section>
-				<section data-background-image="./static/images/Pipe-Interfaces-02.svg" data-background-size="80vw">
-				</section>
-				<section data-background-image="./static/images/Pipe-Interfaces-03.svg" data-background-size="80vw">
-				</section>
+			<section data-background-image="./static/images/Pipe-Interfaces-01.svg" data-background-size="80vw">
+			</section>
+			<section data-background-image="./static/images/Pipe-Interfaces-02.svg" data-background-size="80vw">
+			</section>
+			<section data-background-image="./static/images/Pipe-Interfaces-03.svg" data-background-size="80vw">
+			</section>
 
 			</section>
 
@@ -335,7 +505,7 @@ TODO
 			<section>
 				<h1>FSO</h1>
 			</section>
-			
+
 
 		</div>
 	</div>
