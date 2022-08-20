@@ -116,6 +116,126 @@ TODO
 			font-size: 15px;
 			height: 50;
 		}
+
+		.ruleinter {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 700px;
+			border: 5px dotted grey;
+		}
+
+		.buildingprep {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 450px;
+			border: 5px dotted grey;
+		}
+
+		.ruleexec {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 200px;
+			border: 5px dotted grey;
+		}
+
+		.reporting {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: -20px;
+			border: 5px dotted grey;
+		}
+
+		.case1 {
+			position: fixed;
+			height: 100px;
+			width: 425px;
+			bottom: 250px;
+			right: 525px;
+			border: 4px dotted blue;
+			opacity: 0.5;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case2 {
+			position: fixed;
+			height: 150px;
+			width: 200px;
+			bottom: 350px;
+			right: 475px;
+			border: 4px dotted blue;
+			opacity: 0.5;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case3 {
+			position: fixed;
+			height: 250px;
+			width: 400px;
+			bottom: 250px;
+			right: 275px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case4 {
+			position: fixed;
+			height: 100px;
+			width: 110px;
+			bottom: 325px;
+			right: 165px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case5 {
+			position: fixed;
+			height: 110px;
+			width: 110px;
+			bottom: 130px;
+			right: 300px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+		}
 	</style>
 
 </head>
@@ -288,6 +408,59 @@ TODO
 					</div>
 				</section>
 				<section>
+					<h2>Rule interpretation</h2>
+					<h4 class="center"><strong>Definition</strong>: Human-readable rules are converted into a
+						machine-interpretable format, also known as the rule model.
+					</h4>
+				</section>
+				<section>
+					<h2>Building model preparation</h2>
+					<h4 class="center"><strong>Definition</strong>: Building information is converted into a
+						machine-readable format, also known as the data model.
+					</h4>
+				</section>
+				<section>
+					<h2>Rule execution</h2>
+					<h4 class="center"><strong>Definition</strong>: The data model is validated against the rule model.
+					</h4>
+				</section>
+				<section>
+					<h2>Reporting</h2>
+					<h4 class="center"><strong>Definition</strong>: A validation report describing whether the data
+						model has passed or violated any constraints.
+					</h4>
+				</section>
+				<section>
+					<h4 class="center"> Lets try to implement the validation method to the HVAC domain in a semantic web
+						context!
+					</h4>
+				</section>
+				<section>
+					<h3>The Case</h3>
+					<div><img src="./static/images/alikuc/process-diagram.png" alt=""></div>
+					<div class="case1 fragment current-visible">Building model Preperation</div>
+					<div class="case2  fragment current-visible ">Rule interpretation</div>
+					<div class="case3  fragment current-visible ">Rule execution</div>
+					<div class="fragment">
+						<div class="case4">Reporting</div>
+						<div class="case5">Reporting</div>
+					</div>
+
+				</section>
+			</section>
+			<section>
+				<section>
+					<div><img src="./static/images/alikuc/bimquality.jpg" alt=""></div>
+					<div class="footnote">
+						C. Eastman, J. min Lee, Y. suk Jeong, J. kook Lee, Automatic rule-based checking of
+						building designs (2009)
+					</div>
+					<div class="ruleinter"></div>
+				</section>
+				<section>
+					<h3>A semantic and expressive rule language</h3>
+				</section>
+				<!-- <section>
 					Why don't we interpret rules using OWL as we do for everything else?
 				</section>
 				<section>
@@ -318,7 +491,7 @@ TODO
 							src="./static/images/alikuc/300ppi/assumptionPic4.png" alt="">
 						<img class="fragment" src="./static/images/alikuc/300ppi/assumptionPic5.png" alt="">
 					</div>
-				</section>
+				</section> -->
 				<section>
 					<div><img src="./static/images/alikuc/shacl.jpg" alt=""></div>
 				</section>
@@ -344,8 +517,8 @@ TODO
 				<section>
 					<h4 class="center">Expressing an HVAC rules implicitly</h4>
 					<pre>
-										<code data-trim data-shacl>
-												fso:PipeMaxPressureDrop
+										<code data-trim data-noescape>
+												fsosh:PipeMaxPressureDrop
 												a sh:NodeShape;
 												sh:nodeKind sh:IRI ;
 												sh:targetClass fpo:Pipe ;
@@ -376,8 +549,8 @@ TODO
 				<section>
 					<h4 class="center">Expressing an HVAC rules by inference</h4>
 					<pre>
-														<code data-trim data-shacl>
-																fso:PipeSizingPex
+														<code data-trim data-noescape>
+																fsosh:PipeSizingPex
 																sh:NodeShape ;
 																sh:targetClass fpo:Pipe ;
 																sh:rule [
@@ -403,17 +576,291 @@ TODO
 																	IF(?diameterValue = 0.040, 0.050,
 																	?diameterValue
 																	)))))))) AS ?newSize)} """ ;
-																condition: fso:PipeMaxPressureDrop
+																condition: fsosh:PipeMaxPressureDrop
 																] .
 															
 														</code></pre>
 				</section>
 			</section>
 
+
 			<section>
+				<section>
+					<div><img src="./static/images/alikuc/bimquality.jpg" alt=""></div>
+					<div class="footnote">
+						C. Eastman, J. min Lee, Y. suk Jeong, J. kook Lee, Automatic rule-based checking of
+						building designs (2009)
+					</div>
+					<div class="buildingprep"></div>
+				</section>
+				<section>
+					<h3>The BIM model</h3>
+				</section>
+				<section>
+					<div><img src="./static/images/alikuc/BIMmodel.jpg" alt=""></div>
 
+				</section>
+				<section>
+					<h3>The Parser</h3>
+				</section>
+				<section>
+					<pre>
+																				<code data-trim data-noescape>
+			//Get all pipes
+			FilteredElementCollector pipeCollector = new FilteredElementCollector(doc);
+			ICollection<Element> pipes = pipeCollector.OfClass(typeof(Pipe)).ToElements();
+			List<Pipe> pipeList = new List<Pipe>();
+			foreach (Pipe component in pipeCollector){
+				Pipe w = component as Pipe;
+				
+				//Type
+				string componentID = component.UniqueId.ToString();
+				sb.Append($"inst:{componentID} a fpo:Pipe ." + "\n");
+			}
+			</code></pre>
 
+				</section>
+				<section>
+					<h3>The Data Model</h3>
+				</section>
+				<section>
+					<pre>
+																				<code data-trim data-noescape>
+																inst:3d9e74df-96ef-4b4d-8037-52c7e9eede41
+																rdf:type fpo:PressureDrop ;
+																fpo:unit "Pascal" ;
+																fpo:value 7.01453354891659e0 .
 
+																inst:b610fba7-ddd4-4a9e-bce1-10f7006b8a74
+																rdf:type fpo:FlowDirection ;
+																fpo:value "Out" .
+
+																inst:dc33b4fc-43c8-4150-80d7-d94a710bbf0d
+																rdf:type fpo:Angle ;
+																fpo:unit "Degree" ;
+																fpo:value 5.15353125588877e0 .
+
+																inst:1f40b32e-d90a-4cbb-8953-deeedcf76f7d
+																rdf:type fpo:FlowDirection ;
+																fpo:value "Out" .
+
+																inst:d2a288e3-00e6-488c-8b41-10b0c55555bc
+																rdf:type fpo:OuterDiameter ;
+																fpo:unit "Meter" ;
+																fpo:value 0.025e0 .
+
+																inst:91f28fac-59d5-4dca-8e67-bf2f4e43ff18
+																rdf:type fpo:FlowDirection ;
+																fpo:value "In" .
+
+																inst:d3443ff8-17df-4246-8e69-05a1ac4af2c6
+																rdf:type fpo:FlowDirection ;
+																fpo:value "In" .
+
+																inst:84318bcc-79e3-431e-9b3a-63b440846414
+																rdf:type fpo:OuterDiameter ;
+																fpo:unit "Meter" ;
+																fpo:value 0.2e0 .
+
+																inst:9b066918-4499-49ef-be44-0c67e9d437b8-0016431a-2
+																rdf:type fso:Port ;
+																fpo:flowDirection
+																inst:f94625d6-f90b-42f0-9bbc-1802c1becdb3 ;
+																fpo:outerDiameter
+																inst:2db66227-4cda-42a7-8035-00c105cc75e7 ;
+																fpo:pressureDrop
+																inst:ec8646b2-edef-4185-b95f-59de062938b1 ;
+																fso:returnsFluidTo
+																inst:98b42094-4ebd-4882-b7fb-379dd917857d-00116f6b-2 .
+</code></pre>
+				</section>
+				<section>
+					<h4>10319 triples</h4>
+					<div><img src="./static/images/alikuc/triples.JPG" alt=""></div>
+
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div><img src="./static/images/alikuc/bimquality.jpg" alt=""></div>
+					<div class="footnote">
+						C. Eastman, J. min Lee, Y. suk Jeong, J. kook Lee, Automatic rule-based checking of
+						building designs (2009)
+					</div>
+					<div class="ruleexec"></div>
+				</section>
+				<section>
+					<div style=" object-fit: cover; display:flex; justify-content: center; position: fixed;
+			height: 300px;
+			width: 400px;
+			bottom: 250px;
+			right: 275px;"><img src="./static/images/alikuc/shaclengine.png" alt=""></div>
+
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div><img src="./static/images/alikuc/bimquality.jpg" alt=""></div>
+					<div class="footnote">
+						C. Eastman, J. min Lee, Y. suk Jeong, J. kook Lee, Automatic rule-based checking of
+						building designs (2009)
+					</div>
+					<div class="reporting"></div>
+				</section>
+				<section>
+					<h3>Conforming validation report</h3>
+				</section>
+				<section>
+					<pre> <code data-trim data-noescape>
+					{
+					"@id": "_:b0",
+					"@type": "sh:ValidationReport",
+					"sh:conforms": true,
+					"@context": {
+						"conforms": {
+							"@id": "http://www.w3.org/ns/shacl#conforms",
+							"@type": "http://www.w3.org/2001/XMLSchema#boolean"
+						},
+					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+					"sh": "http://www.w3.org/ns/shacl#",
+					"xsd": "http://www.w3.org/2001/XMLSchema#",
+					"rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+						}
+					}
+				</code></pre>
+				</section>
+				<section>
+					<h3>Violating validation report</h3>
+				</section>
+				<section>
+					<pre> <code data-trim data-noescape>
+									{
+										{
+										"@graph": [
+										{
+										"@id": "_:b0",
+										"@type": "sh:ValidationReport",
+										"sh:conforms": false,
+										"result": [
+										"_:b1",
+										"_:b2"
+										]
+										},
+										{
+										"@id": "_:b1",
+										"@type": "sh:ValidationResult",
+										"focusNode": "inst:363b06c9-b642-4ae9-8377-2bc412234dc5-001450df",
+										"resultMessage": "A fan must have minimum/maximum two flow ports",
+										"resultPath": "fsosh:hasPort",
+										"resultSeverity": "sh:Violation",
+										"sourceConstraintComponent": "sh:MaxCountConstraintComponent",
+										"sourceShape": "_:b3"
+										},
+										{
+										"@id": "_:b2",
+										"@type": "sh:ValidationResult",
+										"focusNode": "inst:363b06c9-b642-4ae9-8377-2bc412234dc5-0014535a",
+										"resultMessage": "A fan must have minimum/maximum two flow ports",
+										"resultPath": "fsosh:hasPort",
+										"resultSeverity": "sh:Violation",
+										"sourceConstraintComponent": "sh:MaxCountConstraintComponent",
+										"sourceShape": "_:b3"
+										}
+										],
+										"@context": {
+										"conforms": {
+										"@id": "http://www.w3.org/ns/shacl#conforms",
+										"@type": "http://www.w3.org/2001/XMLSchema#boolean"
+										},
+										"result": {
+										"@id": "http://www.w3.org/ns/shacl#result",
+										"@type": "@id"
+										},
+										"resultPath": {
+										"@id": "http://www.w3.org/ns/shacl#resultPath",
+										"@type": "@id"
+										},
+										"sourceShape": {
+										"@id": "http://www.w3.org/ns/shacl#sourceShape",
+										"@type": "@id"
+										},
+										"resultMessage": {
+										"@id": "http://www.w3.org/ns/shacl#resultMessage"
+										},
+										"sourceConstraintComponent": {
+										"@id": "http://www.w3.org/ns/shacl#sourceConstraintComponent",
+										"@type": "@id"
+										},
+										"resultSeverity": {
+										"@id": "http://www.w3.org/ns/shacl#resultSeverity",
+										"@type": "@id"
+										},
+										"focusNode": {
+										"@id": "http://www.w3.org/ns/shacl#focusNode",
+										"@type": "@id"
+										},
+										"@vocab": "https://w3id.org/fso#",
+										"schema": "https://schema.org/",
+										"fso": "http://w3id.org/fso#",
+										"fpo": "http://w3id.org/fpo#",
+										"owl": "http://www.w3.org/2002/07/owl#",
+										"bot": "https://w3id.org/bot#",
+										"dce": "http://purl.org/dc/elements/1.1/",
+										"xsd": "http://www.w3.org/2001/XMLSchema#",
+										"voaf": "http://purl.org/vocommons/voaf#",
+										"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+										"vcard": "http://www.w3.org/2006/vcard/ns#",
+										"dbo": "http://dbpedia.org/ontology/",
+										"ex": "https://ex/",
+										"sh": "http://www.w3.org/ns/shacl#",
+										"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+										"xml": "http://www.w3.org/XML/1998/namespace",
+										"inst": "https://example.com/inst#",
+										"dcterms": "http://purl.org/dc/terms/",
+										"vann": "http://purl.org/vocab/vann/",
+										"dash": "http://datashapes.org/dash#",
+										"vs": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+										"foaf": "http://xmlns.com/foaf/0.1/"
+											}
+										}
+									</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>We have the necessary information to calculate the flow rate and head of each flow moving
+						devices in the data model
+					</h3>
+				</section>
+				<section>
+					<div><img src="./static/images/alikuc/pi-diagram.png" alt=""></div>
+				</section>
+				<section>
+					<h3>Calculating the flow rate using SPAQRL
+					</h3>
+				</section>
+				<section>
+					<pre> <code data-trim data-noescape>
+						INSERT CODE
+									</code></pre>
+				</section>
+				<section>
+					<h3>Calculating the HEAD using SPAQRL
+					</h3>
+				</section>
+				<section>
+					<pre> <code data-trim data-noescape>
+										INSERT CODE
+													</code></pre>
+				</section>
+			</section>
+			<section>
+				<h1>Case Demo</h1>
+			</section>
+
+			<section>
 				<section>
 					<h2>A modular and extendable building representation</h2>
 				</section>
