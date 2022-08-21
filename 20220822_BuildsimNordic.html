@@ -499,7 +499,7 @@ TODO
 					<h4 class="center">Expressing an HVAC rules explicitly</h4>
 					<pre>
 						<code class="hljs turtle" data-line-numbers="|4|6|7-11" data-trim data-noescape>
-								fso:PipeComponsition
+								fsosh:PipeComponsition
 								a sh:NodeShape;
 								sh:nodeKind sh:IRI ;
 								sh:targetClass fpo:Pipe ;
@@ -604,7 +604,7 @@ TODO
 				</section>
 				<section>
 					<pre>
-																				<code data-trim data-noescape>
+						<code data-trim data-noescape class="hljs c#" data-line-numbers="|2-4|5|9|10">
 			//Get all pipes
 			FilteredElementCollector pipeCollector = new FilteredElementCollector(doc);
 			ICollection<Element> pipes = pipeCollector.OfClass(typeof(Pipe)).ToElements();
@@ -622,7 +622,7 @@ TODO
 				<section>
 					<h3>The Data Model</h3>
 				</section>
-				<section>
+				<!-- <section>
 					<pre>
 																				<code data-trim data-noescape>
 																inst:3d9e74df-96ef-4b4d-8037-52c7e9eede41
@@ -672,9 +672,9 @@ TODO
 																fso:returnsFluidTo
 																inst:98b42094-4ebd-4882-b7fb-379dd917857d-00116f6b-2 .
 </code></pre>
-				</section>
+				</section> -->
 				<section>
-					<h4>10319 triples</h4>
+					<h4>10319 facts</h4>
 					<div><img src="./static/images/alikuc/triples.JPG" alt=""></div>
 
 				</section>
