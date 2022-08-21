@@ -498,7 +498,7 @@ TODO
 				<section>
 					<h4 class="center">Expressing an HVAC rules explicitly</h4>
 					<pre>
-						<code data-trim data-noescape>
+						<code class="hljs turtle" data-line-numbers="|4|6|7-10" data-trim data-noescape>
 								fso:PipeComponsition
 								a sh:NodeShape;
 								sh:nodeKind sh:IRI ;
@@ -508,7 +508,7 @@ TODO
 									sh:dataType xsd:anyURI;
 									sh:minCount 2;
 									sh:maxCount 2;
-									sh:message "A pipe must have minimum/maximum two flow ports"
+									sh:message "A pipe must have exactly two flow ports"
 									]; 
 								//... the shape continues
 							
