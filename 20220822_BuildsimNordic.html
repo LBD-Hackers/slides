@@ -498,14 +498,15 @@ TODO
 				<section>
 					<h4 class="center">Expressing an HVAC rules explicitly</h4>
 					<pre>
-						<code class="hljs turtle" data-line-numbers="|4|6|7-10" data-trim data-noescape>
+						<code class="hljs turtle" data-line-numbers="|4|6|7-11" data-trim data-noescape>
 								fso:PipeComponsition
 								a sh:NodeShape;
 								sh:nodeKind sh:IRI ;
 								sh:targetClass fpo:Pipe ;
 								sh:property [
 									sh:path fso:hasPort ;
-									sh:dataType xsd:anyURI;
+									sh:nodeKind sh:IRI ;
+									sh:class fpo:Port ;
 									sh:minCount 2;
 									sh:maxCount 2;
 									sh:message "A pipe must have exactly two flow ports"
@@ -517,69 +518,67 @@ TODO
 				<section>
 					<h4 class="center">Expressing an HVAC rules implicitly</h4>
 					<pre>
-										<code data-trim data-noescape>
-												fsosh:PipeMaxPressureDrop
-												a sh:NodeShape;
-												sh:nodeKind sh:IRI ;
-												sh:targetClass fpo:Pipe ;
-												sh:sparql [
-												a sh:sh:SPARQLConstraint ;
-												sh:message "The pressure drop for a pipe shall not exceed 100 Pa/m";
-												sh:prefixes (fpo: fso: inst:) ;
-												sh:select """
-												PREFIX fso: http://w3id.org/fso#
-												PREFIX fpo: http://w3id.org/fpo# 
-												PREFIX inst: https//example.com/inst#
-												SELECT ?this ?value
-												WHERE {
-													?this a fpo:Pipe .
-													?this fpo:length ?length .
-													?length fpo:value ?lengthvalue .
-													?this fso:hasPort ?port .
-													?port fpo:flowDirection ?flowDirection .
-													?flowDirection fpo:value "Out" .
-													?port fpo:pressureDrop ?pressureDrop .
-													?pressureDrop fpo:value ?pressureDropValue .
-													BIND ((?pressureDropValue / ?lengthvalue) AS ?value) .
-													FILTER (?value > 100)} """ ;
-												] .
-											
-										</code></pre>
+						<code class="hljs turtle" data-line-numbers="|4|7|10-22|15|16|17|18|19|20|21" data-trim data-noescape>
+								fsosh:PipeMaxPressureDrop
+								a sh:NodeShape;
+								sh:nodeKind sh:IRI ;
+								sh:targetClass fpo:Pipe ;
+								sh:sparql [
+								a sh:sh:SPARQLConstraint ;
+								sh:message "The pressure drop for a pipe shall not exceed 100 Pa/m";
+								sh:prefixes (fpo: fso: inst:) ;
+								sh:select """
+								PREFIX fso: http://w3id.org/fso#
+								PREFIX fpo: http://w3id.org/fpo# 
+								PREFIX inst: https//example.com/inst#
+								SELECT ?this ?value
+								WHERE {
+									?this a fpo:Pipe .
+									?this fpo:length/fpo:value ?length .
+									?this fso:hasPort ?port .
+									?port fpo:flowDirection/fpo:value "Out" .
+									?port fpo:pressureDrop/fpo:value ?pressureDrop .
+									BIND ((?pressureDrop / ?length) AS ?value) .
+									FILTER (?value > 100)
+								} 
+								""" ] .
+							
+						</code></pre>
 				</section>
 				<section>
 					<h4 class="center">Expressing an HVAC rules by inference</h4>
 					<pre>
-														<code data-trim data-noescape>
-																fsosh:PipeSizingPex
-																sh:NodeShape ;
-																sh:targetClass fpo:Pipe ;
-																sh:rule [
-																a sh:SPARQLRule ;
-																sh:prefixes (fpo: fso: ex: );
-																sh:construct """
-																CONSTRUCT {?diameter fpo:value ?newSize.}
-																WHERE {
-																?this a fpo:Pipe .
-																?this fpo:materialType ?type .
-																?type fpo:value "PEX" .
-																?this fso:hasPort ?port .
-																?port fpo:outerDiameter ?diameter .
-																?diameter fpo:value ?diameterValue .
-																BIND (
-																	IF( ?diameterValue = 0.012, 0.015,
-																	IF(?diameterValue = 0.015, 0.018,
-																	IF(?diameterValue = 0.018, 0.020,
-																	IF(?diameterValue = 0.020, 0.022,
-																	IF(?diameterValue = 0.022, 0.028,
-																	IF(?diameterValue = 0.028, 0.032,
-																	IF(?diameterValue = 0.032, 0.040,
-																	IF(?diameterValue = 0.040, 0.050,
-																	?diameterValue
-																	)))))))) AS ?newSize)} """ ;
-																condition: fsosh:PipeMaxPressureDrop
-																] .
-															
-														</code></pre>
+						<code data-trim data-noescape class="hljs turtle" data-line-numbers="|3|6|9-28|11|12|13|14|15|16-26|9">
+								fsosh:PipeSizingPex
+								sh:NodeShape ;
+								sh:targetClass fpo:Pipe ;
+								sh:rule [
+									a sh:SPARQLRule ;
+									sh:condition fsosh:PipeMaxPressureDrop ;
+									sh:prefixes (fpo: fso: ex: ) ;
+									sh:construct """
+										CONSTRUCT {?diameter fpo:inferredValue ?newDiameter}
+										WHERE {
+											?this a fpo:Pipe .
+											?this fpo:materialType/fpo:value "PEX" .
+											?this fso:hasPort ?port .
+											?port fpo:outerDiameter ?diameter .
+											?diameter fpo:value ?actualOuterDiameter .
+											BIND (
+												IF(?actualOuterDiameter = 0.012, 0.015,
+												IF(?actualOuterDiameter = 0.015, 0.018,
+												IF(?actualOuterDiameter = 0.018, 0.020,
+												IF(?actualOuterDiameter = 0.020, 0.022,
+												IF(?actualOuterDiameter = 0.022, 0.028,
+												IF(?actualOuterDiameter = 0.028, 0.032,
+												IF(?actualOuterDiameter = 0.032, 0.040,
+												IF(?actualOuterDiameter = 0.040, 0.050,
+												?actualOuterDiameter
+											)))))))) AS ?newDiameter)
+										}
+									"""] .
+							
+						</code></pre>
 				</section>
 			</section>
 
