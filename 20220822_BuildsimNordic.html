@@ -391,6 +391,107 @@ TODO
 
 			<section>
 				<section>
+					<h2>A modular and extendable building representation</h2>
+				</section>
+
+				<!-- BOT -->
+				<section data-background-image="./static/images/BOT-papers.svg" data-background-size="80vw"
+					data-state="cap-bot3">
+					<h4 class="box">BOT: The Building Topology Ontology</h4>
+					<style>
+						.cap-bot3 cap:after {
+							content: "Rasmussen, M. H., Lefrançois, Maxime, Schneider, G. F., Pauwels, P. (2020). BOT: the Building Topology Ontology of the W3C Linked Building Data Group. Semantic Web Journal.";
+						}
+					</style>
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-03.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-01.svg" data-background-size="80vw"
+					data-background-position="50% 60%">
+					<h4 class="box-top-left">7 classes</h4>
+				</section>
+
+				<!-- BOT ZONE -->
+				<section>
+					<h4 class="center">bot:Zone</h4>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Zones-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Zones-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- BOT ELEMENT -->
+				<section>
+					<h4 class="center">bot:Element</h4>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- BOT INTERFACE -->
+
+				<section>
+					<h4 class="center">bot:Interface</h4>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-03.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-iframe="https://ld-bim.web.app?duplex=true" data-background-interactive>
+				</section>
+
+			</section>
+			<!-- <section data-background-image="./static/images/BOT-Interfaces-04.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-05.svg" data-background-size="80vw">
+				</section> -->
+
+			<!-- <section data-background-image="./static/images/Pipe-Interfaces-01.svg" data-background-size="80vw">
+			</section>
+			<section data-background-image="./static/images/Pipe-Interfaces-02.svg" data-background-size="80vw">
+			</section>
+			<section data-background-image="./static/images/Pipe-Interfaces-03.svg" data-background-size="80vw">
+			</section> -->
+
+			</section>
+
+			<section>
+				<h1>Extending BOT</h1>
+			</section>
+
+			<section>
+				<h1>FSO</h1>
+			</section>
+
+
+
+
+
+			<section>
+				<section>
 					<h1>Increasing Building Information</h1>
 
 					<img src="./static/images/alikuc/increasing.png" alt="">
@@ -712,21 +813,14 @@ TODO
 					<h3>Conforming validation report</h3>
 				</section>
 				<section>
-					<pre> <code data-trim data-noescape>
+					<pre> <code data-trim data-noescape class="hljs javascript" data-line-numbers="|7">
 					{
-					"@id": "_:b0",
-					"@type": "sh:ValidationReport",
-					"sh:conforms": true,
-					"@context": {
-						"conforms": {
-							"@id": "http://www.w3.org/ns/shacl#conforms",
-							"@type": "http://www.w3.org/2001/XMLSchema#boolean"
+						"@context": {
+							"sh": "http://www.w3.org/ns/shacl#"
 						},
-					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-					"sh": "http://www.w3.org/ns/shacl#",
-					"xsd": "http://www.w3.org/2001/XMLSchema#",
-					"rdfs": "http://www.w3.org/2000/01/rdf-schema#"
-						}
+						"@id": "_:b0",
+						"@type": "sh:ValidationReport",
+						"sh:conforms": true
 					}
 				</code></pre>
 				</section>
@@ -734,97 +828,56 @@ TODO
 					<h3>Violating validation report</h3>
 				</section>
 				<section>
-					<pre> <code data-trim data-noescape>
-									{
-										{
-										"@graph": [
-										{
-										"@id": "_:b0",
-										"@type": "sh:ValidationReport",
-										"sh:conforms": false,
-										"result": [
-										"_:b1",
-										"_:b2"
-										]
-										},
-										{
-										"@id": "_:b1",
-										"@type": "sh:ValidationResult",
-										"focusNode": "inst:363b06c9-b642-4ae9-8377-2bc412234dc5-001450df",
-										"resultMessage": "A fan must have minimum/maximum two flow ports",
-										"resultPath": "fsosh:hasPort",
-										"resultSeverity": "sh:Violation",
-										"sourceConstraintComponent": "sh:MaxCountConstraintComponent",
-										"sourceShape": "_:b3"
-										},
-										{
-										"@id": "_:b2",
-										"@type": "sh:ValidationResult",
-										"focusNode": "inst:363b06c9-b642-4ae9-8377-2bc412234dc5-0014535a",
-										"resultMessage": "A fan must have minimum/maximum two flow ports",
-										"resultPath": "fsosh:hasPort",
-										"resultSeverity": "sh:Violation",
-										"sourceConstraintComponent": "sh:MaxCountConstraintComponent",
-										"sourceShape": "_:b3"
-										}
-										],
-										"@context": {
-										"conforms": {
-										"@id": "http://www.w3.org/ns/shacl#conforms",
-										"@type": "http://www.w3.org/2001/XMLSchema#boolean"
-										},
-										"result": {
-										"@id": "http://www.w3.org/ns/shacl#result",
-										"@type": "@id"
-										},
-										"resultPath": {
-										"@id": "http://www.w3.org/ns/shacl#resultPath",
-										"@type": "@id"
-										},
-										"sourceShape": {
-										"@id": "http://www.w3.org/ns/shacl#sourceShape",
-										"@type": "@id"
-										},
-										"resultMessage": {
-										"@id": "http://www.w3.org/ns/shacl#resultMessage"
-										},
-										"sourceConstraintComponent": {
-										"@id": "http://www.w3.org/ns/shacl#sourceConstraintComponent",
-										"@type": "@id"
-										},
-										"resultSeverity": {
-										"@id": "http://www.w3.org/ns/shacl#resultSeverity",
-										"@type": "@id"
-										},
-										"focusNode": {
-										"@id": "http://www.w3.org/ns/shacl#focusNode",
-										"@type": "@id"
-										},
-										"@vocab": "https://w3id.org/fso#",
-										"schema": "https://schema.org/",
-										"fso": "http://w3id.org/fso#",
-										"fpo": "http://w3id.org/fpo#",
-										"owl": "http://www.w3.org/2002/07/owl#",
-										"bot": "https://w3id.org/bot#",
-										"dce": "http://purl.org/dc/elements/1.1/",
-										"xsd": "http://www.w3.org/2001/XMLSchema#",
-										"voaf": "http://purl.org/vocommons/voaf#",
-										"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-										"vcard": "http://www.w3.org/2006/vcard/ns#",
-										"dbo": "http://dbpedia.org/ontology/",
-										"ex": "https://ex/",
-										"sh": "http://www.w3.org/ns/shacl#",
-										"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-										"xml": "http://www.w3.org/XML/1998/namespace",
-										"inst": "https://example.com/inst#",
-										"dcterms": "http://purl.org/dc/terms/",
-										"vann": "http://purl.org/vocab/vann/",
-										"dash": "http://datashapes.org/dash#",
-										"vs": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
-										"foaf": "http://xmlns.com/foaf/0.1/"
-											}
-										}
-									</code></pre>
+					<pre> <code data-trim data-noescape class="hljs javascript" data-line-numbers="|7|9-25|11|12-14|14-17|18-20">
+						{
+							"@context": {
+							  "sh": "http://www.w3.org/ns/shacl#",
+							  "fso": "http://w3id.org/fso#"
+							},
+							"@type": "sh:ValidationReport",
+							"sh:conforms": false,
+							"sh:result": [
+							  {
+									"@type": "sh:ValidationResult",
+									"sh:resultMessage": "A fan must have exactly two flow ports",
+									"sh:focusNode": {
+										"@id": "https://example.com/inst#363b06c9-b642-4ae9-8377-2bc412234dc5-001450df"
+									},
+									"sh:resultPath": {
+										"@id": "fso:hasPort"
+									},
+									"sh:resultSeverity": {
+										"@id": "sh:Violation"
+									},
+									"sh:sourceConstraintComponent": {
+										"@id": "sh:MaxCountConstraintComponent"
+									},
+									"sh:sourceShape": {
+										"@id": "_:b3"
+									}
+							  },
+							  {
+									"@type": "sh:ValidationResult",
+									"sh:resultMessage": "A fan must have exactly two flow ports",
+									"sh:focusNode": {
+										"@id": "https://example.com/inst#363b06c9-b642-4ae9-8377-2bc412234dc5-0014535a"
+									},
+									"sh:resultPath": {
+										"@id": "fso:hasPort"
+									},
+									"sh:resultSeverity": {
+										"@id": "sh:Violation"
+									},
+									"sh:sourceConstraintComponent": {
+									"@id": "sh:MaxCountConstraintComponent"
+									},
+									"sh:sourceShape": {
+										"@id": "_:b3"
+									}
+							  }
+							]
+						  }		
+					</code></pre>
 				</section>
 			</section>
 			<section>
@@ -850,6 +903,7 @@ TODO
 					<h1>Case Demo</h1>
 				</section>
 
+<<<<<<< HEAD
 				<section>
 					<section>
 						<h2>A modular and extendable building representation</h2>
@@ -944,6 +998,8 @@ TODO
 			</section>
 
 
+=======
+>>>>>>> 70b24e8bde588748a238be24d1380d228c21cae7
 		</div>
 	</div>
 
