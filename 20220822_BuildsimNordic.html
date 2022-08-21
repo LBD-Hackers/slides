@@ -843,7 +843,58 @@ TODO
 				</section>
 				<section>
 					<pre> <code data-trim data-noescape>
-						INSERT CODE
+						PREFIX rdf: <http: //www.w3.org/1999/02/22-rdf-syntax-ns#>
+							PREFIX rdfs: <http: //www.w3.org/2000/01/rdf-schema#>
+								PREFIX ex: <https: //example.com/ex#>
+									PREFIX fo:
+									<http: //purl.org/ontology/fo />
+									PREFIX bot: <https: //w3id.org/bot#>
+										PREFIX fpo: <http: //w3id.org/fpo#>
+											PREFIX fso: <http: //w3id.org/fso#>
+												PREFIX xsd: <http: //www.w3.org/2001/XMLSchema#>
+													PREFIX inst: <https: //example.com/inst#>
+						
+														select ?flowMovingDeviceType ?flowMovingDevice (SUM(?flowRateValue) AS ?totalFlow)
+						
+														WHERE{
+														{
+														#SupplyFans
+														?flowMovingDevice a fpo:Fan .
+														?flowMovingDevice a ?flowMovingDeviceType .
+														?terminal a fpo:AirTerminal .
+														?system fso:hasComponent ?terminal, ?flowMovingDevice .
+														?flowMovingDevice fso:feedsFluidTo+ ?terminal .
+														?terminal fso:hasPort ?port .
+														?port fpo:flowRate ?flowRate .
+														?flowRate fpo:value ?flowRateValue .
+														}
+														union
+														{
+														#ReturnFans
+														?flowMovingDevice a fpo:Fan .
+														?flowMovingDevice a ?flowMovingDeviceType .
+														?terminal a fpo:AirTerminal .
+														?system fso:hasComponent ?terminal, ?flowMovingDevice .
+														?terminal fso:feedsFluidTo+ ?flowMovingDevice .
+														?terminal fso:hasPort ?port .
+														?port fpo:flowRate ?flowRate .
+														?flowRate fpo:value ?flowRateValue .
+														}
+														union
+														{
+														#SupplyPumps
+														?flowMovingDevice a fpo:Pump .
+														?flowMovingDevice a ?flowMovingDeviceType .
+														?flowMovingDevice fso:feedsFluidTo+ ?terminal .
+														VALUES ?type {fpo:SpaceHeater fpo:HeatExchanger} ?terminal a ?type .
+														?system fso:hasComponent ?terminal, ?flowMovingDevice .
+														?terminal fso:hasPort ?supplyPort .
+														?supplyPort fso:returnsFluidTo ?anotherComponent .
+														?supplyPort fpo:flowRate ?flowRate .
+														?flowRate fpo:value ?flowRateValue .
+														}
+														} group by ?flowMovingDevice ?flowMovingDeviceType
+
 									</code></pre>
 				</section>
 				<section>
@@ -852,7 +903,56 @@ TODO
 				</section>
 				<section>
 					<pre> <code data-trim data-noescape>
-										INSERT CODE
+																		select ?fan (Max(?sumOfPressureDrop)*0.00010199773339984 as ?head)
+																		where{
+										
+																		{
+																		#Supply Fan
+																		select ?fan ?terminal( sum(?returnValue) as ?sumOfPressureDrop)
+																		where {
+																		?fan a fpo:Fan .
+																		VALUES ?terminalType {fpo:AirTerminal}
+																		?terminal a ?terminalType .
+																		?system fso:hasComponent ?fan .
+																		?component fso:feedsFluidTo+ ?terminal .
+																		?system fso:hasComponent ?component .
+																		?system fso:hasComponent ?fan, ?terminal .
+										
+																		#Get the pressuredrop value of each component
+																		?component fso:hasPort ?port .
+																		?port fpo:flowDirection ?flowDirection .
+																		?flowDirection fpo:value "Out" .
+																		?port fpo:pressureDrop ?pressureDrop .
+																		?pressureDrop fpo:value ?returnValue .
+
+																		#Exclude component of other systems
+																		?port fso:suppliesFluidTo ?connectedPort .
+																		?connectedComponent fso:hasPort ?connectedPort .
+																		?system fso:hasComponent ?connectedComponent .
+										
+																		} group by ?fan ?terminal}
+																		union
+																		{
+																		#Return Fan
+																		select ?fan ?terminal( sum(?returnValue) as ?sumOfPressureDrop)
+																		where {
+																		?fan a fpo:Fan .
+																		VALUES ?terminalType {fpo:AirTerminal}
+																		?terminal a ?terminalType .
+																		?system fso:hasComponent ?fan .
+																		?component ^fso:feedsFluidTo+ ?terminal .
+																		?system fso:hasComponent ?component .
+																		?system fso:hasComponent ?fan, ?terminal .
+										
+																		#Get the pressuredrop value of each component
+																		?component fso:hasPort ?port .
+																		?port fpo:flowDirection ?flowDirection .
+																		?flowDirection fpo:value "Out" .
+																		?port fpo:pressureDrop ?pressureDrop .
+																		?pressureDrop fpo:value ?returnValue .
+																		} group by ?fan ?terminal
+																		}
+																		} group by ?fan
 													</code></pre>
 				</section>
 			</section>
