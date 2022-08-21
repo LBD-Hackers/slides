@@ -712,21 +712,14 @@ TODO
 					<h3>Conforming validation report</h3>
 				</section>
 				<section>
-					<pre> <code data-trim data-noescape>
+					<pre> <code data-trim data-noescape class="hljs javascript" data-line-numbers="|7">
 					{
-					"@id": "_:b0",
-					"@type": "sh:ValidationReport",
-					"sh:conforms": true,
-					"@context": {
-						"conforms": {
-							"@id": "http://www.w3.org/ns/shacl#conforms",
-							"@type": "http://www.w3.org/2001/XMLSchema#boolean"
+						"@context": {
+							"sh": "http://www.w3.org/ns/shacl#"
 						},
-					"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-					"sh": "http://www.w3.org/ns/shacl#",
-					"xsd": "http://www.w3.org/2001/XMLSchema#",
-					"rdfs": "http://www.w3.org/2000/01/rdf-schema#"
-						}
+						"@id": "_:b0",
+						"@type": "sh:ValidationReport",
+						"sh:conforms": true
 					}
 				</code></pre>
 				</section>
@@ -734,7 +727,7 @@ TODO
 					<h3>Violating validation report</h3>
 				</section>
 				<section>
-					<pre> <code data-trim data-noescape class="hljs javascript" data-line-numbers="|6|9-25|11|12-14|14-17|18-20">
+					<pre> <code data-trim data-noescape class="hljs javascript" data-line-numbers="|7|9-25|11|12-14|14-17|18-20">
 						{
 							"@context": {
 							  "sh": "http://www.w3.org/ns/shacl#",
