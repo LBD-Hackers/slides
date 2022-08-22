@@ -463,15 +463,16 @@
 				</section>
 
 			</section>
-			
+
 
 			<section>
-				
+
 				<section>
 					<h1>Extending BOT</h1>
 				</section>
 
-				<section data-background-image="./static/images/BROT.png" data-background-size="30vw" data-state="cap-brot">
+				<section data-background-image="./static/images/BROT.png" data-background-size="30vw"
+					data-state="cap-brot">
 					<style>
 						.cap-brot cap:after {
 							content: "Hamdan, A. H., & Scherer, R. J. (2020). Integration of BIM-related bridge information in an ontological knowledgebase. In Proceedings of the 8th linked data in architecture and construction workshop-LDAC.";
@@ -806,7 +807,7 @@
 </code></pre>
 				</section> -->
 				<section>
-					<h4>10319 facts</h4>
+					<h4>10139 facts</h4>
 					<div><img src="./static/images/alikuc/triples.JPG" alt=""></div>
 
 				</section>
@@ -918,129 +919,35 @@
 					</h3>
 				</section>
 				<section>
-					<div><img src="./static/images/alikuc/pi-diagram.png" alt=""></div>
-				</section>
-				<section>
-					<h3>Calculating the flow rate using SPAQRL
-					</h3>
-				</section>
-				<section>
-					<pre> <code data-trim data-noescape>
-						PREFIX rdf: <http: //www.w3.org/1999/02/22-rdf-syntax-ns#>
-							PREFIX rdfs: <http: //www.w3.org/2000/01/rdf-schema#>
-								PREFIX ex: <https: //example.com/ex#>
-									PREFIX fo:
-									<http: //purl.org/ontology/fo />
-									PREFIX bot: <https: //w3id.org/bot#>
-										PREFIX fpo: <http: //w3id.org/fpo#>
-											PREFIX fso: <http: //w3id.org/fso#>
-												PREFIX xsd: <http: //www.w3.org/2001/XMLSchema#>
-													PREFIX inst: <https: //example.com/inst#>
-						
-														select ?flowMovingDeviceType ?flowMovingDevice (SUM(?flowRateValue) AS ?totalFlow)
-						
-														WHERE{
-														{
-														#SupplyFans
-														?flowMovingDevice a fpo:Fan .
-														?flowMovingDevice a ?flowMovingDeviceType .
-														?terminal a fpo:AirTerminal .
-														?system fso:hasComponent ?terminal, ?flowMovingDevice .
-														?flowMovingDevice fso:feedsFluidTo+ ?terminal .
-														?terminal fso:hasPort ?port .
-														?port fpo:flowRate ?flowRate .
-														?flowRate fpo:value ?flowRateValue .
-														}
-														union
-														{
-														#ReturnFans
-														?flowMovingDevice a fpo:Fan .
-														?flowMovingDevice a ?flowMovingDeviceType .
-														?terminal a fpo:AirTerminal .
-														?system fso:hasComponent ?terminal, ?flowMovingDevice .
-														?terminal fso:feedsFluidTo+ ?flowMovingDevice .
-														?terminal fso:hasPort ?port .
-														?port fpo:flowRate ?flowRate .
-														?flowRate fpo:value ?flowRateValue .
-														}
-														union
-														{
-														#SupplyPumps
-														?flowMovingDevice a fpo:Pump .
-														?flowMovingDevice a ?flowMovingDeviceType .
-														?flowMovingDevice fso:feedsFluidTo+ ?terminal .
-														VALUES ?type {fpo:SpaceHeater fpo:HeatExchanger} ?terminal a ?type .
-														?system fso:hasComponent ?terminal, ?flowMovingDevice .
-														?terminal fso:hasPort ?supplyPort .
-														?supplyPort fso:returnsFluidTo ?anotherComponent .
-														?supplyPort fpo:flowRate ?flowRate .
-														?flowRate fpo:value ?flowRateValue .
-														}
-														} group by ?flowMovingDevice ?flowMovingDeviceType
+					<div class="r-stack">
+						<div class="fragment current-visible" data-fragment-index="0">
+							<h4>PI-Diagram</h4>
+							<img src="./static/images/alikuc/pi-diagram.png" alt="">
+						</div>
+						<div class=" fragment current-visible" data-fragment-index="1">
+							<h4>Flow rate of an flow moving device</h4>
+							<img src="./static/images/alikuc/IBPSA-use-case-flow-rate.png" alt="">
+						</div>
+						<div class="fragment current-visible">
+							<h4>Head of an flow moving device</h4><img
+								src="./static/images/alikuc/IBPSA-use-case-head.png" alt="">
+						</div>
 
-									</code></pre>
-				</section>
-				<section>
-					<h3>Calculating the HEAD using SPAQRL
-					</h3>
-				</section>
-				<section>
-					<pre> <code data-trim data-noescape>
-																		select ?fan (Max(?sumOfPressureDrop)*0.00010199773339984 as ?head)
-																		where{
-										
-																		{
-																		#Supply Fan
-																		select ?fan ?terminal( sum(?returnValue) as ?sumOfPressureDrop)
-																		where {
-																		?fan a fpo:Fan .
-																		VALUES ?terminalType {fpo:AirTerminal}
-																		?terminal a ?terminalType .
-																		?system fso:hasComponent ?fan .
-																		?component fso:feedsFluidTo+ ?terminal .
-																		?system fso:hasComponent ?component .
-																		?system fso:hasComponent ?fan, ?terminal .
-										
-																		#Get the pressuredrop value of each component
-																		?component fso:hasPort ?port .
-																		?port fpo:flowDirection ?flowDirection .
-																		?flowDirection fpo:value "Out" .
-																		?port fpo:pressureDrop ?pressureDrop .
-																		?pressureDrop fpo:value ?returnValue .
+					</div>
 
-																		#Exclude component of other systems
-																		?port fso:suppliesFluidTo ?connectedPort .
-																		?connectedComponent fso:hasPort ?connectedPort .
-																		?system fso:hasComponent ?connectedComponent .
-										
-																		} group by ?fan ?terminal}
-																		union
-																		{
-																		#Return Fan
-																		select ?fan ?terminal( sum(?returnValue) as ?sumOfPressureDrop)
-																		where {
-																		?fan a fpo:Fan .
-																		VALUES ?terminalType {fpo:AirTerminal}
-																		?terminal a ?terminalType .
-																		?system fso:hasComponent ?fan .
-																		?component ^fso:feedsFluidTo+ ?terminal .
-																		?system fso:hasComponent ?component .
-																		?system fso:hasComponent ?fan, ?terminal .
-										
-																		#Get the pressuredrop value of each component
-																		?component fso:hasPort ?port .
-																		?port fpo:flowDirection ?flowDirection .
-																		?flowDirection fpo:value "Out" .
-																		?port fpo:pressureDrop ?pressureDrop .
-																		?pressureDrop fpo:value ?returnValue .
-																		} group by ?fan ?terminal
-																		}
-																		} group by ?fan
-													</code></pre>
 				</section>
+
 			</section>
 			<section>
-				<h1>Case Demo</h1>
+				<section>
+					<h1>Case Demo</h1>
+
+				</section>
+				<section>
+
+					<video data-autoplay controls src="./static/videos/ali/validatorvideo1.mp4"></video>
+
+				</section>
 			</section>
 
 		</div>
@@ -1056,6 +963,7 @@
 		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
+			autoPlayMedia: true,
 
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
