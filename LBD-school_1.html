@@ -97,8 +97,7 @@ TODO
 
 		<!-- Footer left -->
 		<div class="footer-left">
-			<img src="./static/images/logos/LDAC.png" height="35vw"> <img src="./static/images/logos/niras.svg"
-				height="35vw">
+			<span style="font-size: 0.6em">LBD School Lecture 1</span>
 		</div>
 
 		<!-- Slides -->
@@ -110,21 +109,37 @@ TODO
 			</section>
 
 			<section>
+				<h2>What you will learn</h2>
+				<ul>
+					<li>the Linked Data principles</li>
+					<li>intro to Resource Description Framework (RDF)</li>
+					<li>different serializations of RDF</li>
+					<li>the Building Topology Ontology (BOT) and other LBD ontologies</li>
+				</ul>
+			</section>
+
+			<!-- Intro -->
+			<section>
 				
 				<section>
-					<h2>Linked Building Data?</h2>
+					<h2>Linked Building Data? 🤔</h2>
 				</section>
 
 				<section>
 					<p>Linked Building Data (LBD) encapsulates all the ontologies that are being developed and maintained by the <a href="https://www.w3.org/community/lbd/">W3C Linked Building Data Community Group</a></p>
-					<p class="fragment fade-up">They are an alternative to the <a href="https://www.w3.org/TR/owl-primer/">Web Ontology Language (OWL)</a> version of <a href="https://www.buildingsmart.org/standards/bsi-standards/industry-foundation-classes/">IFC</a> (ifcOWL) that are easier to understand, extend and query</p>
-					<p class="fragment fade-up">...but before we can dig into the content of these we will need to learn the basics. So press the arrow down and we will get to it!</p>
+					<p class="fragment fade-up">They are an alternative to the <a href="https://www.w3.org/TR/owl-primer/">Web Ontology Language (OWL)</a> version of <a href="https://www.buildingsmart.org/standards/bsi-standards/industry-foundation-classes/">IFC</a> (ifcOWL) that are easier to understand, extend and query 👌</p>
+					<p class="fragment fade-up">...but before we can dig into the content of these we will need to learn the basics. So jump to next slide and we will get to it! 💪🏃💨</p>
 				</section>
+
+			</section>
+
+			<!-- Linked Data -->
+			<section>
 
 				<section>
 					<h2>Linked Data</h2>
-					<p>The concept of Linked Data was <a href="https://www.w3.org/DesignIssues/LinkedData">coined in 2006</a> by Tim Berners-Lee, the inventor of the web, and is therfore not entirely new</p>
-					<p class="fragment fade-up">It basically refers to a set of best practices for publishing structured data on the Web.</p>
+					<p>The concept of Linked Data was <a href="https://www.w3.org/DesignIssues/LinkedData">coined in 2006</a> by sir Tim Berners-Lee, the inventor of the web, and is therfore not entirely new 👴👵</p>
+					<p class="fragment fade-up">It basically refers to a set of best practices for publishing structured data on the Web</p>
 					
 					<style>
 						.cap-ld cap:after {
@@ -134,24 +149,29 @@ TODO
 				</section>
 
 				<section>
-					<h2>Linked Data Principles</h2>
+					<h2>Linked Data Principles 🤓</h2>
 					<ol>
 						<li>Use URIs <span class="note">(Uniform Resource Identifiers)</span> as names for things</li>
-						<li class="fragment fade-up">Use HTTP URIs <span class="note">(web addresses)</span> so that people can look up those names</li>
-						<li class="fragment fade-up">When someone looks up a URI, provide useful information, using the standards (RDF, SPARQL) <span class="note">(more on this later)</span></li>
-						<li class="fragment fade-up">Include links to other URIs so that they can discover more things</li>
+						<li class="fragment fade-up">Use HTTP URIs <span class="note">(web addresses)</span> so that people can look up those names 👀</li>
+						<li class="fragment fade-up">When someone looks up a URI, provide useful information, using the standards (RDF, SPARQL) <span class="note">(more on this later)</span> 💡</li>
+						<li class="fragment fade-up">Include links to other URIs so that they can discover more things 🔭🧭🗺️</li>
 					</ol>
 				</section>
 
 				<section>
 					<h2>Summary</h2>
-					<p>So basically a network of resources that all are identified with web addresses and that link to each other.</p> 
-					<p class="fragment fade-up">Beware that you will often see resorces that are described in a namespace that doesn't really exist <span class="note">(e.g. https://example.com/my-resource).</span> This is not preferred but yet perfectly okay in order to learn and get started.</p>
+					<p>A network of resources that are interlinked and identified by web addresses.</p> 
+					<p class="fragment fade-up">Beware that you will often see resorces that are described in a namespace that doesn't really exist <span class="note">(e.g. https://example.com/my-resource).</span> This is not preferred but yet perfectly okay in order to learn and get started. 🩹</p>
+					<p class="fragment fade-up">Also note that not all linked data needs to be open data. You can restrict the access to it 🚦🦺</p>
 				</section>
 
 			</section>
 
-			
+			<section>
+				<h2>The Resource Description Framework</h2>
+				<p>As the name reveils, RDF is a framework and not a format. It includes the terminology you need to describe Linked Data resources <span class="note">(e.g. the type of resource, its attributes and its relationships to other resources)</span>.</p>
+				<p class="fragment fade-up">This is all done by creating statements: so-called "triples".</p>
+			</section>
 
 		</div>
 	</div>
