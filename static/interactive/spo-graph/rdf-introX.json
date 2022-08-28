@@ -1,0 +1,27 @@
+[
+    {
+        "subject": "lvl_01",
+        "predicate": "type",
+        "object": "Storey"
+    },
+    {
+        "subject": "R-K1.01",
+        "predicate": "type",
+        "object": "Space"
+    },
+    {
+        "subject": "R-K1.02",
+        "predicate": "type",
+        "object": "Space"
+    },
+    {
+        "subject": "lvl_01",
+        "predicate": "hasSpace",
+        "object": "R-K1.01"
+    },
+    {
+        "subject": "lvl_01",
+        "predicate": "hasSpace",
+        "object": "R-K1.02"
+    }
+]

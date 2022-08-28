@@ -1,0 +1,84 @@
+[
+    {
+        "subject": "Wall_002",
+        "predicate": "has_window",
+        "object": "Window_022"
+    },
+    {
+        "subject": "Space_013",
+        "predicate": "adjacent_element",
+        "object": "Wall_002"
+    },
+    {
+        "subject": "Wall_002",
+        "predicate": "U_value",
+        "object": "0.21 W/m2K",
+        "isLiteral": true
+    },
+    {
+        "subject": "Wall_002",
+        "predicate": "thickness",
+        "object": "240 mm",
+        "isLiteral": true
+    },
+    {
+        "subject": "Space_013",
+        "predicate": "area",
+        "object": "12.4 m2",
+        "isLiteral": true
+    },
+    {
+        "subject": "Space_013",
+        "predicate": "number_of_occupants",
+        "object": "2",
+        "isLiteral": true
+    },
+    {
+        "subject": "Space_013",
+        "predicate": "heated",
+        "object": "true",
+        "isLiteral": true
+    },
+    {
+        "subject": "Window_022",
+        "predicate": "height",
+        "object": "1200 mm",
+        "isLiteral": true
+    },
+    {
+        "subject": "Window_022",
+        "predicate": "width",
+        "object": "900 mm",
+        "isLiteral": true
+    },
+    {
+        "subject": "Wall_002",
+        "predicate": "a",
+        "object": "Wall"
+    },
+    {
+        "subject": "Wall_002",
+        "predicate": "a",
+        "object": "Element"
+    },
+    {
+        "subject": "Space_013",
+        "predicate": "a",
+        "object": "Space"
+    },
+    {
+        "subject": "Space_013",
+        "predicate": "a",
+        "object": "Zone"
+    },
+    {
+        "subject": "Window_022",
+        "predicate": "a",
+        "object": "Window"
+    },
+    {
+        "subject": "Window_022",
+        "predicate": "a",
+        "object": "Element"
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "subject": "Wall_002",
+        "predicate": "has_window",
+        "object": "Window_022"
+    },
+    {
+        "subject": "Space_013",
+        "predicate": "adjacent_element",
+        "object": "Wall_002"
+    }
+]

@@ -381,3 +381,13 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   border-radius: 20% 25% 20% 24%;
   padding: 10px 3px 3px 10px;
 }
+
+.coffee-btn{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.coffee-btn img{
+  height: 40px !important;
+  width: 145px !important;
+}

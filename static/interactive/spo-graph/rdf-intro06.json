@@ -1,0 +1,84 @@
+[
+    {
+        "subject": "inst:Wall_002",
+        "predicate": "ont:has_window",
+        "object": "inst:Window_022"
+    },
+    {
+        "subject": "inst:Space_013",
+        "predicate": "ont:adjacent_element",
+        "object": "inst:Wall_002"
+    },
+    {
+        "subject": "inst:Wall_002",
+        "predicate": "ont:U_value",
+        "object": "0.21 W/m2K",
+        "isLiteral": true
+    },
+    {
+        "subject": "inst:Wall_002",
+        "predicate": "ont:thickness",
+        "object": "240 mm",
+        "isLiteral": true
+    },
+    {
+        "subject": "inst:Space_013",
+        "predicate": "area",
+        "object": "12.4 m2",
+        "isLiteral": true
+    },
+    {
+        "subject": "inst:Space_013",
+        "predicate": "ont:number_of_occupants",
+        "object": "2",
+        "isLiteral": true
+    },
+    {
+        "subject": "inst:Space_013",
+        "predicate": "ont:heated",
+        "object": "true",
+        "isLiteral": true
+    },
+    {
+        "subject": "inst:Window_022",
+        "predicate": "ont:height",
+        "object": "1200 mm",
+        "isLiteral": true
+    },
+    {
+        "subject": "inst:Window_022",
+        "predicate": "ont:width",
+        "object": "900 mm",
+        "isLiteral": true
+    },
+    {
+        "subject": "inst:Wall_002",
+        "predicate": "a",
+        "object": "ont:Wall"
+    },
+    {
+        "subject": "inst:Wall_002",
+        "predicate": "a",
+        "object": "ont:Element"
+    },
+    {
+        "subject": "inst:Space_013",
+        "predicate": "a",
+        "object": "ont:Space"
+    },
+    {
+        "subject": "inst:Space_013",
+        "predicate": "a",
+        "object": "ont:Zone"
+    },
+    {
+        "subject": "inst:Window_022",
+        "predicate": "a",
+        "object": "ont:Window"
+    },
+    {
+        "subject": "inst:Window_022",
+        "predicate": "a",
+        "object": "ont:Element"
+    }
+]
