@@ -1,0 +1,84 @@
+[
+    {
+        "subject": "<https://my-company.com/Wall_002>",
+        "predicate": "<https://my-ontology.com#has_window>",
+        "object": "<https://my-company.com/Window_022>"
+    },
+    {
+        "subject": "<https://my-company.com/Space_013>",
+        "predicate": "<https://my-ontology.com#adjacent_element>",
+        "object": "<https://my-company.com/Wall_002>"
+    },
+    {
+        "subject": "<https://my-company.com/Wall_002>",
+        "predicate": "<https://my-ontology.com#U_value>",
+        "object": "0.21 W/m2K",
+        "isLiteral": true
+    },
+    {
+        "subject": "<https://my-company.com/Wall_002>",
+        "predicate": "<https://my-ontology.com#thickness>",
+        "object": "240 mm",
+        "isLiteral": true
+    },
+    {
+        "subject": "<https://my-company.com/Space_013>",
+        "predicate": "<https://my-ontology.com#area>",
+        "object": "12.4 m2",
+        "isLiteral": true
+    },
+    {
+        "subject": "<https://my-company.com/Space_013>",
+        "predicate": "<https://my-ontology.com#number_of_occupants>",
+        "object": "2",
+        "isLiteral": true
+    },
+    {
+        "subject": "<https://my-company.com/Space_013>",
+        "predicate": "<https://my-ontology.com#heated>",
+        "object": "true",
+        "isLiteral": true
+    },
+    {
+        "subject": "<https://my-company.com/Window_022>",
+        "predicate": "<https://my-ontology.com#height>",
+        "object": "1200 mm",
+        "isLiteral": true
+    },
+    {
+        "subject": "<https://my-company.com/Window_022>",
+        "predicate": "<https://my-ontology.com#width>",
+        "object": "900 mm",
+        "isLiteral": true
+    },
+    {
+        "subject": "<https://my-company.com/Wall_002>",
+        "predicate": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "object": "<https://my-ontology.com#Wall>"
+    },
+    {
+        "subject": "<https://my-company.com/Wall_002>",
+        "predicate": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "object": "<https://my-ontology.com#Element>"
+    },
+    {
+        "subject": "<https://my-company.com/Space_013>",
+        "predicate": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "object": "<https://my-ontology.com#Space>"
+    },
+    {
+        "subject": "<https://my-company.com/Space_013>",
+        "predicate": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "object": "<https://my-ontology.com#Zone>"
+    },
+    {
+        "subject": "<https://my-company.com/Window_022>",
+        "predicate": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "object": "<https://my-ontology.com#Window>"
+    },
+    {
+        "subject": "<https://my-company.com/Window_022>",
+        "predicate": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "object": "<https://my-ontology.com#Element>"
+    }
+]

@@ -3,7 +3,7 @@
 1. Copy JSON file and make corrections
 1. Load in slide like so:
     ```html
-    <section data-background-iframe="./static/timelines/timeline.html?file=example.json">
+    <section data-background-iframe="./static/interactive/timelines/timeline.html?file=example.json">
     </section>
     ```
 1. Tune settings
@@ -11,6 +11,6 @@
 
 To link to a specific event in the timeline, use hash:
 ```html
-<section data-background-iframe="./static/timelines/timeline.html?file=example.json#event-the-early-years">
+<section data-background-iframe="./static/interactive/timelines/timeline.html?file=example.json#event-the-early-years">
 </section>
 ```

@@ -1,0 +1,27 @@
+[
+    {
+        "subject": "<lvl_01>",
+        "predicate": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "object": "<https://w3id.org/bot#Storey>"
+    },
+    {
+        "subject": "<http://hok.com/projects/1111/R-K1.01>",
+        "predicate": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "object": "<https://w3id.org/bot#Space"
+    },
+    {
+        "subject": "<http://hok.com/projects/1111/R-K1.02>",
+        "predicate": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "object": "<https://w3id.org/bot#Space>"
+    },
+    {
+        "subject": "<http://hok.com/projects/1111/lvl_01>",
+        "predicate": "<https://w3id.org/bot#hasSpace>",
+        "object": "<http://hok.com/projects/1111/R-K1.01>"
+    },
+    {
+        "subject": "<http://hok.com/projects/1111/lvl_01>",
+        "predicate": "<https://w3id.org/bot#hasSpace>",
+        "object": "<http://hok.com/projects/1111/R-K1.02>"
+    }
+]
