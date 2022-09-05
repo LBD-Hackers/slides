@@ -1,7 +1,7 @@
 {
     "title": {
         "media": {
-          "url": "../images/mhra/me.jpg",
+          "url": "../../images/mhra/me.jpg",
           "caption": "",
           "credit": ""
         },
@@ -13,8 +13,8 @@
     "events": [
       {
         "media": {
-            "url":"../images/mhra/ae.jpg",
-            "thumbnail": "../images/mhra/ae.jpg",
+            "url":"../../images/mhra/ae.jpg",
+            "thumbnail": "../../images/mhra/ae.jpg",
             "credit":"https://www.dtu.dk/uddannelse/bachelor/uddannelsesretninger/bygningsdesign",
             "caption":"\"Polystyrene/cardboard engineer\""
         },
@@ -35,8 +35,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/bryghusgrunden.png",
-            "thumbnail": "../images/mhra/bryghusgrunden.png",
+            "url":"../../images/mhra/bryghusgrunden.png",
+            "thumbnail": "../../images/mhra/bryghusgrunden.png",
             "credit":"",
             "caption":"Our proposal for an office building / kindergarden"
         },
@@ -57,8 +57,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/columna.png",
-            "thumbnail": "../images/mhra/columna.png",
+            "url":"../../images/mhra/columna.png",
+            "thumbnail": "../../images/mhra/columna.png",
             "credit":"",
             "caption":"Our proposal for a bridge at DTU"
         },
@@ -79,8 +79,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/culture-house.png",
-            "thumbnail": "../images/mhra/culture-house.png",
+            "url":"../../images/mhra/culture-house.png",
+            "thumbnail": "../../images/mhra/culture-house.png",
             "credit":"",
             "caption":"Our proposal for a culture house"
         },
@@ -101,8 +101,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/architect.jpg",
-            "thumbnail": "../images/mhra/architect.jpg",
+            "url":"../../images/mhra/architect.jpg",
+            "thumbnail": "../../images/mhra/architect.jpg",
             "credit":"https://www.inc.com/linda-naiman/what-architects-can-teach-the-rest-of-us-about-thinking-like-a-designer.html",
             "caption":"Internship as an architect"
         },
@@ -123,8 +123,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/arch-zero.png",
-            "thumbnail": "../images/mhra/arch-zero.png",
+            "url":"../../images/mhra/arch-zero.png",
+            "thumbnail": "../../images/mhra/arch-zero.png",
             "credit":"",
             "caption":"Effect of angled window opening"
         },
@@ -145,8 +145,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/bachelor.png",
-            "thumbnail": "../images/mhra/bachelor.png",
+            "url":"../../images/mhra/bachelor.png",
+            "thumbnail": "../../images/mhra/bachelor.png",
             "credit":"",
             "caption":"Radiance-derived window shade and the effect on daylight access"
         },
@@ -167,8 +167,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/aec-global-teamwork.png",
-            "thumbnail": "../images/mhra/aec-global-teamwork.png",
+            "url":"../../images/mhra/aec-global-teamwork.png",
+            "thumbnail": "../../images/mhra/aec-global-teamwork.png",
             "credit":"",
             "caption":"Students from all over the world"
         },
@@ -189,8 +189,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/id-bim.png",
-            "thumbnail": "../images/mhra/id-bim.png",
+            "url":"../../images/mhra/id-bim.png",
+            "thumbnail": "../../images/mhra/id-bim.png",
             "credit":"",
             "caption":"iD-BIM"
         },
@@ -211,8 +211,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/dtu-116.png",
-            "thumbnail": "../images/mhra/dtu-116.png",
+            "url":"../../images/mhra/dtu-116.png",
+            "thumbnail": "../../images/mhra/dtu-116.png",
             "credit":"",
             "caption":"Our proposal for an educational facility at DTU"
         },
@@ -233,8 +233,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/ventilation-course.png",
-            "thumbnail": "../images/mhra/ventilation-course.png",
+            "url":"../../images/mhra/ventilation-course.png",
+            "thumbnail": "../../images/mhra/ventilation-course.png",
             "credit":"",
             "caption":"Measurement results from full-scale experiment"
         },
@@ -255,8 +255,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/thesis.png",
-            "thumbnail": "../images/mhra/thesis.png",
+            "url":"../../images/mhra/thesis.png",
+            "thumbnail": "../../images/mhra/thesis.png",
             "credit":"",
             "caption":"Data flow for HVAC design"
         },
@@ -277,8 +277,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/alectia.jpg",
-            "thumbnail": "../images/mhra/alectia.jpg",
+            "url":"../../images/mhra/alectia.jpg",
+            "thumbnail": "../../images/mhra/alectia.jpg",
             "credit":"",
             "caption":""
         },
@@ -294,8 +294,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/at.png",
-            "thumbnail": "../images/mhra/at.png",
+            "url":"../../images/mhra/at.png",
+            "thumbnail": "../../images/mhra/at.png",
             "credit":"",
             "caption":""
         },
@@ -316,8 +316,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/busy.jpg",
-            "thumbnail": "../images/mhra/busy.jpg",
+            "url":"../../images/mhra/busy.jpg",
+            "thumbnail": "../../images/mhra/busy.jpg",
             "credit":"https://www.plays-in-business.com/too-busy-to-improve-performance-management-square-wheels/",
             "caption":"Pretty happy with my job but tired of putting out fires"
         },
@@ -333,8 +333,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/bbh.png",
-            "thumbnail": "../images/mhra/bbh.png",
+            "url":"../../images/mhra/bbh.png",
+            "thumbnail": "../../images/mhra/bbh.png",
             "credit":"",
             "caption":"Mechanical model"
         },
@@ -355,8 +355,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/back-to-uni.jpg",
-            "thumbnail": "../images/mhra/back-to-uni.jpg",
+            "url":"../../images/mhra/back-to-uni.jpg",
+            "thumbnail": "../../images/mhra/back-to-uni.jpg",
             "credit":"https://www.therange.co.uk/blog/uni-essentials/back-to-uni-essentials/",
             "caption":"Back to uni!"
         },
@@ -372,8 +372,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/alectia-niras.jpg",
-            "thumbnail": "../images/mhra/alectia-niras.jpg",
+            "url":"../../images/mhra/alectia-niras.jpg",
+            "thumbnail": "../../images/mhra/alectia-niras.jpg",
             "credit":"",
             "caption":""
         },
@@ -389,8 +389,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/projects/WeBIM.png",
-            "thumbnail": "../images/mhra/projects/WeBIM.png",
+            "url":"../../images/mhra/projects/WeBIM.png",
+            "thumbnail": "../../images/mhra/projects/WeBIM.png",
             "credit":"",
             "caption":"Room history allows you to see how the layout has changed over time"
         },
@@ -411,8 +411,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/projects/AU.png",
-            "thumbnail": "../images/mhra/projects/AU.png",
+            "url":"../../images/mhra/projects/AU.png",
+            "thumbnail": "../../images/mhra/projects/AU.png",
             "credit":"",
             "caption":"Subset of the client report"
         },
@@ -433,8 +433,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/projects/science-city-map.png",
-            "thumbnail": "../images/mhra/projects/science-city-map.png",
+            "url":"../../images/mhra/projects/science-city-map.png",
+            "thumbnail": "../../images/mhra/projects/science-city-map.png",
             "credit":"",
             "caption":"Map with space polygons retrieved from ScienceCity data hub"
         },
@@ -455,8 +455,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/projects/BART.gif",
-            "thumbnail": "../images/mhra/projects/bartbyg.png",
+            "url":"../../images/mhra/projects/BART.gif",
+            "thumbnail": "../../images/mhra/projects/bartbyg.png",
             "credit":"https://bartbyg.dk",
             "caption":"Deliverables in the BART project"
         },
@@ -477,8 +477,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/projects/ConTech5.png",
-            "thumbnail": "../images/mhra/projects/ConTech5.png",
+            "url":"../../images/mhra/projects/ConTech5.png",
+            "thumbnail": "../../images/mhra/projects/ConTech5.png",
             "credit":"",
             "caption":"Test model for the case study"
         },
@@ -499,8 +499,8 @@
       },
       {
         "media": {
-          "url":"../images/mhra/projects/K4A.gif",
-          "thumbnail": "../images/mhra/projects/K4A1.png",
+          "url":"../../images/mhra/projects/K4A.gif",
+          "thumbnail": "../../images/mhra/projects/K4A1.png",
           "credit":"",
           "caption":"Mockup of UI for Examination Declarations"
         },
@@ -521,8 +521,8 @@
       },
       {
         "media": {
-            "url":"../images/mhra/projects/ABP.png",
-            "thumbnail": "../images/mhra/projects/ABP.png",
+            "url":"../../images/mhra/projects/ABP.png",
+            "thumbnail": "../../images/mhra/projects/ABP.png",
             "credit":"",
             "caption":"Mockup of UI for Examination Declarations"
         },
