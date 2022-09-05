@@ -1,15 +1,6 @@
 <!doctype html>
 <html>
 
-<!-- 
-
-TODO 
-1. Tilføj noget om K4A
-2. Fyld mere tekst på timeline
-3. Tilføj lecture notes 
-
--->
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -265,6 +256,9 @@ TODO
 					<img src="./static/images/logos/niras.svg" alt="">
 					<img src="./static/images/logos/Aalto.svg" alt="">
 				</div>
+				<p>Mads Holten Rasmussen</p>
+
+				<p style="font-size: 0.8em;">https://bit.ly/3QqYIvm</p>
 			</section>
 
 			<section>
@@ -272,8 +266,11 @@ TODO
 				<ul>
 					<li class="fragment fade-up">Current state of BIM and how to improve it</li>
 					<li class="fragment fade-up">Towards a modular and extendable data representation 🚀</li>
-					<li class="fragment fade-up">The vision of BIM bots 🤖</li>
-					<li class="fragment fade-up">Automated compliance checking 📜🚨</li>
+					<!-- <li class="fragment fade-up">The vision of BIM bots 🤖</li>
+					<li class="fragment fade-up">Automated compliance checking 📜🚨</li> -->
+					<li class="fragment fade-up">Some examples on flow systems 🧑‍🔧</li>
+					<li class="fragment fade-up">A sneak peak at what we do at NIRAS</li>
+					<li class="fragment fade-up">Rule based flow calculations</li>
 					<li class="fragment fade-up">Interactive demos along the way 🤗 so you don't get bored 🥱</li>
 				</ul>
 			</section>
@@ -387,6 +384,45 @@ TODO
 						one another</h4>
 				</section>
 
+				<!-- Knowledge graph -->
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph1.svg"
+					data-background-size="90vw" data-state="neptune">
+					<style>
+						.neptune cap:after {
+							content: "Amazon Neptune: https://aws.amazon.com/neptune";
+						}
+					</style>
+					<h4 class="fragment fade-up box">Knowledge Graph</h4>
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph2.svg"
+					data-background-size="90vw" data-state="neptune">
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph3.svg"
+					data-background-size="90vw" data-state="neptune">
+				</section>
+
+				<section>
+					<p>Querying the graph is as easy as decribing a path along its edges</p>
+				</section>
+
+				<!-- SPARQL -->
+				<section>
+					<img data-src="./static/images/logos/W3C.svg"></img>
+					<h4>SPARQL: SPARQL Protocol and RDF Query Language</h4>
+				</section>
+
+				<section
+					data-background-iframe="./static/interactive/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true"
+					data-background-interactive>
+				</section>
+
+				<section
+					data-background-iframe="./static/interactive/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true&tab=5"
+					data-background-interactive>
+				</section>
+
 			</section>
 
 			<section>
@@ -465,31 +501,45 @@ TODO
 				</section> -->
 
 				<!-- Query: sites -->
-				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%0A%7D" data-background-interactive>
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%0A%7D"
+					data-background-interactive>
 				</section>
 
 				<!-- Query: sites + buildings -->
-				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%0A%7D" data-background-interactive>
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%0A%7D"
+					data-background-interactive>
 				</section>
 
 				<!-- Query: sites + buildings + storeys -->
-				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%7D" data-background-interactive>
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%7D"
+					data-background-interactive>
 				</section>
 
 				<!-- Query: sites + buildings + storeys + spaces -->
-				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D%0A" data-background-interactive>
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D%0A"
+					data-background-interactive>
 				</section>
 
 				<!-- Query: sites + buildings + storeys + spaces TABLE -->
-				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ASELECT%20%2A%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D" data-background-interactive>
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ASELECT%20%2A%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D"
+					data-background-interactive>
 				</section>
 
 				<!-- Query: adjacent elements -->
-				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20inst%3A0BTBFw6f90Nfh9rP1dlXru%20bot%3AadjacentElement%20%3Fel%20%0A%7D" data-background-interactive>
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20inst%3A0BTBFw6f90Nfh9rP1dlXru%20bot%3AadjacentElement%20%3Fel%20%0A%7D"
+					data-background-interactive>
 				</section>
 
 				<!-- Query: interfaces -->
-				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20ex%3A%20%3Chttps%3A%2F%2Fexample.com%2F%3E%20%0APREFIX%20kg%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fkobl%2Fgeometry%23%3E%20%0APREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ASELECT%20DISTINCT%20%3Fboundary%20%3Fls%20%3Fel%0AWHERE%7B%0A%20%20%20BIND%28inst%3A0BTBFw6f90Nfh9rP1dl_3A%20AS%20%3Fspace%29%0A%20%20%20%3Fboundary%20bot%3AinterfaceOf%20%3Fspace%20%2C%20%3Fel%20%3B%0A%20%20%20%20%20%20%20kg%3Avertices3D%20%3Fver%20%3B%0A%20%20%20%20%20%20%20ex%3AisVertical%20true%20.%0A%20%20%20FILTER%28%3Fel%20%21%3D%20%3Fspace%29%0A%20%20%20BIND%28CONCAT%28%22POLYGON%20Z%20%28%22%2C%20STR%28%20%3Fver%20%29%2C%20%22%29%22%29%20%20%20AS%20%3Fls%20%29%0A%7D" data-background-interactive>
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20ex%3A%20%3Chttps%3A%2F%2Fexample.com%2F%3E%20%0APREFIX%20kg%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fkobl%2Fgeometry%23%3E%20%0APREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ASELECT%20DISTINCT%20%3Fboundary%20%3Fls%20%3Fel%0AWHERE%7B%0A%20%20%20BIND%28inst%3A0BTBFw6f90Nfh9rP1dl_3A%20AS%20%3Fspace%29%0A%20%20%20%3Fboundary%20bot%3AinterfaceOf%20%3Fspace%20%2C%20%3Fel%20%3B%0A%20%20%20%20%20%20%20kg%3Avertices3D%20%3Fver%20%3B%0A%20%20%20%20%20%20%20ex%3AisVertical%20true%20.%0A%20%20%20FILTER%28%3Fel%20%21%3D%20%3Fspace%29%0A%20%20%20BIND%28CONCAT%28%22POLYGON%20Z%20%28%22%2C%20STR%28%20%3Fver%20%29%2C%20%22%29%22%29%20%20%20AS%20%3Fls%20%29%0A%7D"
+					data-background-interactive>
 				</section>
 
 			</section>
@@ -497,12 +547,50 @@ TODO
 
 			<section>
 
+				<!-- Extending -->
 				<section>
 					<h1>Extending BOT</h1>
 				</section>
 
-				<section>NB! MORE ON EXTENDING BOT HERE</section>
+				<section>
+					<h4 class="center">bot:Element? What can I do with that?</h4>
+				</section>
 
+				<section data-background-image="./static/images/BOT-extending-01.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+
+					<style>
+						.cap-bot3 cap:after {
+							content: "Rasmussen, M., Lefrançois, M., Schneider, G. F., Pauwels, P. The BOT ontology: standards within a decentralised web-based AEC industry. Semantic Web Journal. Under review";
+						}
+					</style>
+
+					<p class="center box fragment fade-out">Sub-typing BOT classes</p>
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-02.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-03.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-04.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+					<p class="center box fragment fade-out">Sub-typing BOT properties</p>
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-05.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-06.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+
+				<!-- BROT, DOT -->
 				<section data-background-image="./static/images/BROT.png" data-background-size="30vw"
 					data-state="cap-brot">
 					<style>
@@ -512,6 +600,7 @@ TODO
 					</style>
 				</section>
 
+				<!-- FSO -->
 				<section data-background-image="./static/images/FSO-concepts.svg" data-state="cap-fso">
 					<style>
 						.cap-fso cap:after {
@@ -528,6 +617,77 @@ TODO
 				</section>
 
 				<section data-background-iframe="https://bs-visualizer.web.app" data-background-interactive>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Some practical examples</h2>
+				</section>
+
+				<section data-background-iframe="./static/interactive/timelines/timeline.html?file=mhra-full.json#event-webim">
+				</section>
+
+				<!-- BART -->
+				<section>
+					<h2>BART Stage 2 delivery</h2>
+				</section>
+
+				<section>
+					<img src="./static/images/mhra/projects/ConTech5-fire-cl_ol.svg">
+				</section>
+
+				<section>
+					<img src="./static/images/logos/RDFox.png" height="100vh">
+					<p>Incremential reasoning</p>
+				</section>
+
+				<section data-background-video="./static/videos/mhra-bart.mp4" 
+					data-background-video-loop data-background-video-muted>
+				</section>
+
+				<section>
+					<h2>BART Stage 3 delivery</h2>
+				</section>
+
+				<section data-background-iframe="https://bartchecker.z16.web.core.windows.net/" 
+					data-background-interactive>
+				</section>
+
+			</section>
+
+			<!-- incremential reasoning -->
+			<section>
+
+				<section>
+					<h2>Rule based flow calculations</h2>
+				</section>
+
+				<section data-background-image="./static/images/mhra/projects/RDFox test-01.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-02.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-03.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-04.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-05.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-06.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-07.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-08.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-09.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-10.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-11.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-12.svg" data-background-size="80%">
 				</section>
 
 			</section>
@@ -552,435 +712,10 @@ TODO
 
 			</section>
 
-
-
 			<section>
-				<section>
-					<h1>Increasing Building Information</h1>
-
-					<img src="./static/images/alikuc/increasing.png" alt="">
-
-				</section>
-				<section>
-					<h4 class="center">How do we ensure the data quality in BIM models?</h4>
-				</section>
-				<section>
-					<h4 class="center">The 4-step Compliance Checking Method</h4>
-					<div><img src="./static/images/alikuc/bimquality.jpg" alt=""></div>
-					<div class="footnote">
-						C. Eastman, J. min Lee, Y. suk Jeong, J. kook Lee, Automatic rule-based checking of
-						building designs (2009)
-					</div>
-				</section>
-				<section>
-					<h2>Rule interpretation</h2>
-					<h4 class="center"><strong>Definition</strong>: Human-readable rules are converted into a
-						machine-interpretable format, also known as the rule model.
-					</h4>
-				</section>
-				<section>
-					<h2>Building model preparation</h2>
-					<h4 class="center"><strong>Definition</strong>: Building information is converted into a
-						machine-readable format, also known as the data model.
-					</h4>
-				</section>
-				<section>
-					<h2>Rule execution</h2>
-					<h4 class="center"><strong>Definition</strong>: The data model is validated against the rule model.
-					</h4>
-				</section>
-				<section>
-					<h2>Reporting</h2>
-					<h4 class="center"><strong>Definition</strong>: A validation report describing whether the data
-						model has passed or violated any constraints.
-					</h4>
-				</section>
-				<section>
-					<h4 class="center"> Lets try to implement the validation method to the HVAC domain in a semantic web
-						context!
-					</h4>
-				</section>
-				<section>
-					<h3>The Case</h3>
-					<div><img src="./static/images/alikuc/process-diagram.png" alt=""></div>
-					<div class="case1 fragment current-visible">Building model Preperation</div>
-					<div class="case2  fragment current-visible ">Rule interpretation</div>
-					<div class="case3  fragment current-visible ">Rule execution</div>
-					<div class="fragment">
-						<div class="case4">Reporting</div>
-						<div class="case5">Reporting</div>
-					</div>
-
-				</section>
-			</section>
-			<section>
-				<section>
-					<div><img src="./static/images/alikuc/bimquality.jpg" alt=""></div>
-					<div class="footnote">
-						C. Eastman, J. min Lee, Y. suk Jeong, J. kook Lee, Automatic rule-based checking of
-						building designs (2009)
-					</div>
-					<div class="ruleinter"></div>
-				</section>
-				<section>
-					<h3>A semantic and expressive rule language</h3>
-				</section>
-				<!-- <section>
-					Why don't we interpret rules using OWL as we do for everything else?
-				</section>
-				<section>
-					<div>
-						<div class="assumption1">
-							<div class="assumption2">
-								<div>Open World Assumption</div>
-								<div>OWL</div>
-								<div style="padding-top: 40px ;font-style: italic;">"A car can have 4 wheels"</div>
-							</div>
-							<div style="width: 100px"></div>
-							<div class="assumption2">
-								<div>Close World Assumption</div>
-								<div>SHACL</div>
-								<div style="padding-top: 40px ;font-style: italic;">"A car <strong>must</strong> have 4
-									wheels"</div>
-							</div>
-						</div>
-					</div>
-					<div class="r-stack" style="height: 400px; width: 1000px; object-fit: cover;">
-						<img class="fragment  current-visible fade-out" data-fragment-index="0"
-							src="./static/images/alikuc/300ppi/assumptionPic1.png" alt="">
-						<img class="fragment current-visible" data-fragment-index="1"
-							src="./static/images/alikuc/300ppi/assumptionPic2.png" alt="">
-						<img class="fragment current-visible" data-fragment-index="2"
-							src="./static/images/alikuc/300ppi/assumptionPic3.png" alt="">
-						<img class="fragment current-visible" data-fragment-index="3"
-							src="./static/images/alikuc/300ppi/assumptionPic4.png" alt="">
-						<img class="fragment" src="./static/images/alikuc/300ppi/assumptionPic5.png" alt="">
-					</div>
-				</section> -->
-				<section>
-					<div><img src="./static/images/alikuc/shacl.jpg" alt=""></div>
-				</section>
-				<section>
-					<h4 class="center">Expressing an HVAC rules explicitly</h4>
-					<pre>
-						<code class="hljs turtle" data-line-numbers="|4|6|7-11" data-trim data-noescape>
-								fsosh:PipeComponsition
-								a sh:NodeShape;
-								sh:nodeKind sh:IRI ;
-								sh:targetClass fpo:Pipe ;
-								sh:property [
-									sh:path fso:hasPort ;
-									sh:nodeKind sh:IRI ;
-									sh:class fpo:Port ;
-									sh:minCount 2;
-									sh:maxCount 2;
-									sh:message "A pipe must have exactly two flow ports"
-									]; 
-								//... the shape continues
-							
-						</code></pre>
-				</section>
-				<section>
-					<h4 class="center">Expressing an HVAC rules implicitly</h4>
-					<pre>
-						<code class="hljs turtle" data-line-numbers="|4|7|10-22|15|16|17|18|19|20|21" data-trim data-noescape>
-								fsosh:PipeMaxPressureDrop
-								a sh:NodeShape;
-								sh:nodeKind sh:IRI ;
-								sh:targetClass fpo:Pipe ;
-								sh:sparql [
-								a sh:sh:SPARQLConstraint ;
-								sh:message "The pressure drop for a pipe shall not exceed 100 Pa/m";
-								sh:prefixes (fpo: fso: inst:) ;
-								sh:select """
-								PREFIX fso: http://w3id.org/fso#
-								PREFIX fpo: http://w3id.org/fpo# 
-								PREFIX inst: https//example.com/inst#
-								SELECT ?this ?value
-								WHERE {
-									?this a fpo:Pipe .
-									?this fpo:length/fpo:value ?length .
-									?this fso:hasPort ?port .
-									?port fpo:flowDirection/fpo:value "Out" .
-									?port fpo:pressureDrop/fpo:value ?pressureDrop .
-									BIND ((?pressureDrop / ?length) AS ?value) .
-									FILTER (?value > 100)
-								} 
-								""" ] .
-							
-						</code></pre>
-				</section>
-				<section>
-					<h4 class="center">Expressing an HVAC rules by inference</h4>
-					<pre>
-						<code data-trim data-noescape class="hljs turtle" data-line-numbers="|3|6|9-28|11|12|13|14|15|16-26|9">
-								fsosh:PipeSizingPex
-								sh:NodeShape ;
-								sh:targetClass fpo:Pipe ;
-								sh:rule [
-									a sh:SPARQLRule ;
-									sh:condition fsosh:PipeMaxPressureDrop ;
-									sh:prefixes (fpo: fso: ex: ) ;
-									sh:construct """
-										CONSTRUCT {?diameter fpo:inferredValue ?newDiameter}
-										WHERE {
-											?this a fpo:Pipe .
-											?this fpo:materialType/fpo:value "PEX" .
-											?this fso:hasPort ?port .
-											?port fpo:outerDiameter ?diameter .
-											?diameter fpo:value ?actualOuterDiameter .
-											BIND (
-												IF(?actualOuterDiameter = 0.012, 0.015,
-												IF(?actualOuterDiameter = 0.015, 0.018,
-												IF(?actualOuterDiameter = 0.018, 0.020,
-												IF(?actualOuterDiameter = 0.020, 0.022,
-												IF(?actualOuterDiameter = 0.022, 0.028,
-												IF(?actualOuterDiameter = 0.028, 0.032,
-												IF(?actualOuterDiameter = 0.032, 0.040,
-												IF(?actualOuterDiameter = 0.040, 0.050,
-												?actualOuterDiameter
-											)))))))) AS ?newDiameter)
-										}
-									"""] .
-							
-						</code></pre>
-				</section>
-			</section>
-
-
-			<section>
-				<section>
-					<div><img src="./static/images/alikuc/bimquality.jpg" alt=""></div>
-					<div class="footnote">
-						C. Eastman, J. min Lee, Y. suk Jeong, J. kook Lee, Automatic rule-based checking of
-						building designs (2009)
-					</div>
-					<div class="buildingprep"></div>
-				</section>
-				<section>
-					<h3>The BIM model</h3>
-				</section>
-				<section>
-					<div><img src="./static/images/alikuc/BIMmodel.jpg" alt=""></div>
-
-				</section>
-				<section>
-					<h3>The Parser</h3>
-				</section>
-				<section>
-					<pre>
-						<code data-trim data-noescape class="hljs c#" data-line-numbers="|2-4|5|9|10">
-			//Get all pipes
-			FilteredElementCollector pipeCollector = new FilteredElementCollector(doc);
-			ICollection<Element> pipes = pipeCollector.OfClass(typeof(Pipe)).ToElements();
-			List<Pipe> pipeList = new List<Pipe>();
-			foreach (Pipe component in pipeCollector){
-				Pipe w = component as Pipe;
-				
-				//Type
-				string componentID = component.UniqueId.ToString();
-				sb.Append($"inst:{componentID} a fpo:Pipe ." + "\n");
-			}
-			</code></pre>
-
-				</section>
-				<section>
-					<h3>The Data Model</h3>
-				</section>
-				<!-- <section>
-					<pre>
-																				<code data-trim data-noescape>
-																inst:3d9e74df-96ef-4b4d-8037-52c7e9eede41
-																rdf:type fpo:PressureDrop ;
-																fpo:unit "Pascal" ;
-																fpo:value 7.01453354891659e0 .
-																inst:b610fba7-ddd4-4a9e-bce1-10f7006b8a74
-																rdf:type fpo:FlowDirection ;
-																fpo:value "Out" .
-																inst:dc33b4fc-43c8-4150-80d7-d94a710bbf0d
-																rdf:type fpo:Angle ;
-																fpo:unit "Degree" ;
-																fpo:value 5.15353125588877e0 .
-																inst:1f40b32e-d90a-4cbb-8953-deeedcf76f7d
-																rdf:type fpo:FlowDirection ;
-																fpo:value "Out" .
-																inst:d2a288e3-00e6-488c-8b41-10b0c55555bc
-																rdf:type fpo:OuterDiameter ;
-																fpo:unit "Meter" ;
-																fpo:value 0.025e0 .
-																inst:91f28fac-59d5-4dca-8e67-bf2f4e43ff18
-																rdf:type fpo:FlowDirection ;
-																fpo:value "In" .
-																inst:d3443ff8-17df-4246-8e69-05a1ac4af2c6
-																rdf:type fpo:FlowDirection ;
-																fpo:value "In" .
-																inst:84318bcc-79e3-431e-9b3a-63b440846414
-																rdf:type fpo:OuterDiameter ;
-																fpo:unit "Meter" ;
-																fpo:value 0.2e0 .
-																inst:9b066918-4499-49ef-be44-0c67e9d437b8-0016431a-2
-																rdf:type fso:Port ;
-																fpo:flowDirection
-																inst:f94625d6-f90b-42f0-9bbc-1802c1becdb3 ;
-																fpo:outerDiameter
-																inst:2db66227-4cda-42a7-8035-00c105cc75e7 ;
-																fpo:pressureDrop
-																inst:ec8646b2-edef-4185-b95f-59de062938b1 ;
-																fso:returnsFluidTo
-																inst:98b42094-4ebd-4882-b7fb-379dd917857d-00116f6b-2 .
-</code></pre>
-				</section> -->
-				<section>
-					<h4>10139 facts</h4>
-					<div><img src="./static/images/alikuc/triples.JPG" alt=""></div>
-
-				</section>
-			</section>
-
-			<section>
-				<section>
-					<div><img src="./static/images/alikuc/bimquality.jpg" alt=""></div>
-					<div class="footnote">
-						C. Eastman, J. min Lee, Y. suk Jeong, J. kook Lee, Automatic rule-based checking of
-						building designs (2009)
-					</div>
-					<div class="ruleexec"></div>
-				</section>
-				<section>
-					<div style=" object-fit: cover; display:flex; justify-content: center; position: fixed;
-			height: 300px;
-			width: 400px;
-			bottom: 250px;
-			right: 275px;"><img src="./static/images/alikuc/shaclengine.png" alt=""></div>
-
-				</section>
-			</section>
-
-			<section>
-				<section>
-					<div><img src="./static/images/alikuc/bimquality.jpg" alt=""></div>
-					<div class="footnote">
-						C. Eastman, J. min Lee, Y. suk Jeong, J. kook Lee, Automatic rule-based checking of
-						building designs (2009)
-					</div>
-					<div class="reporting"></div>
-				</section>
-				<section>
-					<h3>Conforming validation report</h3>
-				</section>
-				<section>
-					<pre> <code data-trim data-noescape class="hljs javascript" data-line-numbers="|7">
-					{
-						"@context": {
-							"sh": "http://www.w3.org/ns/shacl#"
-						},
-						"@id": "_:b0",
-						"@type": "sh:ValidationReport",
-						"sh:conforms": true
-					}
-				</code></pre>
-				</section>
-				<section>
-					<h3>Violating validation report</h3>
-				</section>
-				<section>
-					<pre> <code data-trim data-noescape class="hljs javascript" data-line-numbers="|7|9-25|11|12-14|14-17|18-20">
-						{
-							"@context": {
-							  "sh": "http://www.w3.org/ns/shacl#",
-							  "fso": "http://w3id.org/fso#"
-							},
-							"@type": "sh:ValidationReport",
-							"sh:conforms": false,
-							"sh:result": [
-							  {
-									"@type": "sh:ValidationResult",
-									"sh:resultMessage": "A fan must have exactly two flow ports",
-									"sh:focusNode": {
-										"@id": "https://example.com/inst#363b06c9-b642-4ae9-8377-2bc412234dc5-001450df"
-									},
-									"sh:resultPath": {
-										"@id": "fso:hasPort"
-									},
-									"sh:resultSeverity": {
-										"@id": "sh:Violation"
-									},
-									"sh:sourceConstraintComponent": {
-										"@id": "sh:MaxCountConstraintComponent"
-									},
-									"sh:sourceShape": {
-										"@id": "_:b3"
-									}
-							  },
-							  {
-									"@type": "sh:ValidationResult",
-									"sh:resultMessage": "A fan must have exactly two flow ports",
-									"sh:focusNode": {
-										"@id": "https://example.com/inst#363b06c9-b642-4ae9-8377-2bc412234dc5-0014535a"
-									},
-									"sh:resultPath": {
-										"@id": "fso:hasPort"
-									},
-									"sh:resultSeverity": {
-										"@id": "sh:Violation"
-									},
-									"sh:sourceConstraintComponent": {
-									"@id": "sh:MaxCountConstraintComponent"
-									},
-									"sh:sourceShape": {
-										"@id": "_:b3"
-									}
-							  }
-							]
-						  }		
-					</code></pre>
-				</section>
-			</section>
-			<section>
-				<section>
-					<h3>We have the necessary information to calculate the flow rate and head of each flow moving
-						devices in the data model
-					</h3>
-				</section>
-				<section>
-					<div class="r-stack">
-						<div class="fragment current-visible" data-fragment-index="0">
-							<h4>PI-Diagram</h4>
-							<img src="./static/images/alikuc/pi-diagram.png" alt="">
-						</div>
-						<div class="fragment current-visible" data-fragment-index="1">
-							<h4>Flow rate of an flow moving device</h4>
-							<img src="./static/images/alikuc/IBPSA-use-case-flow-rate.png" alt="">
-						</div>
-						<div class="fragment current-visible">
-							<h4>Head of an flow moving device</h4><img
-								src="./static/images/alikuc/IBPSA-use-case-head.png" alt="">
-						</div>
-
-					</div>
-
-				</section>
-
-			</section>
-			<section>
-				<section>
-					<h1>Case Demo</h1>
-
-				</section>
-				<!-- <section data-background-video="./static/videos/ali/validatorvideo1.mp4">
-				</section> -->
-				<section>
-					<video data-autoplay controls src="./static/videos/ali/validatorvideo1.mp4"></video>
-				</section>
-			</section>
-
-			<section>
-
-				<section>
-					<h2>Thank you for your attention!</h2>
-					<p><span style="font-style: oblique">Questions? Thoughts? Ideas? Let's discuss them over a</span> ☕</p>
-				</section>
-
+				<h2>Thank you for your attention!</h2>
+				<p><span style="font-style: oblique">Questions? Thoughts? Ideas? Let's discuss them over a</span> ☕
+				</p>
 			</section>
 
 		</div>
