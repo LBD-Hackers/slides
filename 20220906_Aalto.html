@@ -271,8 +271,10 @@ TODO
 				<h1>Agenda</h1>
 				<ul>
 					<li class="fragment fade-up">Current state of BIM and how to improve it</li>
-					<li class="fragment fade-up">Towards a modular and extendable data representation</li>
-					<li class="fragment fade-up">Demos</li>
+					<li class="fragment fade-up">Towards a modular and extendable data representation 🚀</li>
+					<li class="fragment fade-up">The vision of BIM bots 🤖</li>
+					<li class="fragment fade-up">Automated compliance checking 📜🚨</li>
+					<li class="fragment fade-up">Interactive demos along the way 🤗 so you don't get bored 🥱</li>
 				</ul>
 			</section>
 
@@ -457,34 +459,94 @@ TODO
 				<section data-background-image="./static/images/BOT-Interfaces-03.svg" data-background-size="80vw">
 				</section>
 
-				<section data-background-iframe="https://ld-bim.web.app?duplex=true" data-background-interactive>
+				<!-- <section data-background-image="./static/images/BOT-Interfaces-04.svg" data-background-size="80vw">
 				</section>
-
-			</section>
-			<!-- <section data-background-image="./static/images/BOT-Interfaces-04.svg" data-background-size="80vw">
-				</section>
-
 				<section data-background-image="./static/images/BOT-Interfaces-05.svg" data-background-size="80vw">
 				</section> -->
 
-			<!-- <section data-background-image="./static/images/Pipe-Interfaces-01.svg" data-background-size="80vw">
+				<!-- Query: sites -->
+				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%0A%7D" data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings -->
+				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%0A%7D" data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys -->
+				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%7D" data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys + spaces -->
+				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D%0A" data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys + spaces TABLE -->
+				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ASELECT%20%2A%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D" data-background-interactive>
+				</section>
+
+				<!-- Query: adjacent elements -->
+				<section data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20inst%3A0BTBFw6f90Nfh9rP1dlXru%20bot%3AadjacentElement%20%3Fel%20%0A%7D" data-background-interactive>
+				</section>
+
 			</section>
-			<section data-background-image="./static/images/Pipe-Interfaces-02.svg" data-background-size="80vw">
-			</section>
-			<section data-background-image="./static/images/Pipe-Interfaces-03.svg" data-background-size="80vw">
-			</section> -->
+
+
+			<section>
+
+				<section>
+					<h1>Extending BOT</h1>
+				</section>
+
+				<section>NB! MORE ON EXTENDING BOT HERE</section>
+
+				<section data-background-image="./static/images/BROT.png" data-background-size="30vw"
+					data-state="cap-brot">
+					<style>
+						.cap-brot cap:after {
+							content: "Hamdan, A. H., & Scherer, R. J. (2020). Integration of BIM-related bridge information in an ontological knowledgebase. In Proceedings of the 8th linked data in architecture and construction workshop-LDAC.";
+						}
+					</style>
+				</section>
+
+				<section data-background-image="./static/images/FSO-concepts.svg" data-state="cap-fso">
+					<style>
+						.cap-fso cap:after {
+							content: "Kukkonen, V., Kücükavci, A., Seidenschnur, M., Rasmussen, M. H., Smith, K. M., & Hviid, C. A. (2022). An ontology to support flow system descriptions from design to operation of buildings. Automation in Construction, 134, 104067.";
+						}
+					</style>
+				</section>
+
+				<section data-background-image="./static/images/Pipe-Interfaces-01.svg" data-background-size="80vw">
+				</section>
+				<section data-background-image="./static/images/Pipe-Interfaces-02.svg" data-background-size="80vw">
+				</section>
+				<section data-background-image="./static/images/Pipe-Interfaces-03.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-iframe="https://bs-visualizer.web.app" data-background-interactive>
+				</section>
 
 			</section>
 
 			<section>
-				<h1>Extending BOT</h1>
+
+				<section>
+					<h1>The vision of BIM bots 🤖</h1>
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-01.svg">
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-02.svg">
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-03.svg">
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-04.svg">
+				</section>
+
 			</section>
-
-			<section>
-				<h1>FSO</h1>
-			</section>
-
-
 
 
 
@@ -728,38 +790,30 @@ TODO
 																rdf:type fpo:PressureDrop ;
 																fpo:unit "Pascal" ;
 																fpo:value 7.01453354891659e0 .
-
 																inst:b610fba7-ddd4-4a9e-bce1-10f7006b8a74
 																rdf:type fpo:FlowDirection ;
 																fpo:value "Out" .
-
 																inst:dc33b4fc-43c8-4150-80d7-d94a710bbf0d
 																rdf:type fpo:Angle ;
 																fpo:unit "Degree" ;
 																fpo:value 5.15353125588877e0 .
-
 																inst:1f40b32e-d90a-4cbb-8953-deeedcf76f7d
 																rdf:type fpo:FlowDirection ;
 																fpo:value "Out" .
-
 																inst:d2a288e3-00e6-488c-8b41-10b0c55555bc
 																rdf:type fpo:OuterDiameter ;
 																fpo:unit "Meter" ;
 																fpo:value 0.025e0 .
-
 																inst:91f28fac-59d5-4dca-8e67-bf2f4e43ff18
 																rdf:type fpo:FlowDirection ;
 																fpo:value "In" .
-
 																inst:d3443ff8-17df-4246-8e69-05a1ac4af2c6
 																rdf:type fpo:FlowDirection ;
 																fpo:value "In" .
-
 																inst:84318bcc-79e3-431e-9b3a-63b440846414
 																rdf:type fpo:OuterDiameter ;
 																fpo:unit "Meter" ;
 																fpo:value 0.2e0 .
-
 																inst:9b066918-4499-49ef-be44-0c67e9d437b8-0016431a-2
 																rdf:type fso:Port ;
 																fpo:flowDirection
@@ -773,7 +827,7 @@ TODO
 </code></pre>
 				</section> -->
 				<section>
-					<h4>10319 facts</h4>
+					<h4>10139 facts</h4>
 					<div><img src="./static/images/alikuc/triples.JPG" alt=""></div>
 
 				</section>
@@ -885,129 +939,41 @@ TODO
 					</h3>
 				</section>
 				<section>
-					<div><img src="./static/images/alikuc/pi-diagram.png" alt=""></div>
-				</section>
-				<section>
-					<h3>Calculating the flow rate using SPAQRL
-					</h3>
-				</section>
-				<section>
-					<pre> <code data-trim data-noescape>
-						PREFIX rdf: <http: //www.w3.org/1999/02/22-rdf-syntax-ns#>
-							PREFIX rdfs: <http: //www.w3.org/2000/01/rdf-schema#>
-								PREFIX ex: <https: //example.com/ex#>
-									PREFIX fo:
-									<http: //purl.org/ontology/fo />
-									PREFIX bot: <https: //w3id.org/bot#>
-										PREFIX fpo: <http: //w3id.org/fpo#>
-											PREFIX fso: <http: //w3id.org/fso#>
-												PREFIX xsd: <http: //www.w3.org/2001/XMLSchema#>
-													PREFIX inst: <https: //example.com/inst#>
-						
-														select ?flowMovingDeviceType ?flowMovingDevice (SUM(?flowRateValue) AS ?totalFlow)
-						
-														WHERE{
-														{
-														#SupplyFans
-														?flowMovingDevice a fpo:Fan .
-														?flowMovingDevice a ?flowMovingDeviceType .
-														?terminal a fpo:AirTerminal .
-														?system fso:hasComponent ?terminal, ?flowMovingDevice .
-														?flowMovingDevice fso:feedsFluidTo+ ?terminal .
-														?terminal fso:hasPort ?port .
-														?port fpo:flowRate ?flowRate .
-														?flowRate fpo:value ?flowRateValue .
-														}
-														union
-														{
-														#ReturnFans
-														?flowMovingDevice a fpo:Fan .
-														?flowMovingDevice a ?flowMovingDeviceType .
-														?terminal a fpo:AirTerminal .
-														?system fso:hasComponent ?terminal, ?flowMovingDevice .
-														?terminal fso:feedsFluidTo+ ?flowMovingDevice .
-														?terminal fso:hasPort ?port .
-														?port fpo:flowRate ?flowRate .
-														?flowRate fpo:value ?flowRateValue .
-														}
-														union
-														{
-														#SupplyPumps
-														?flowMovingDevice a fpo:Pump .
-														?flowMovingDevice a ?flowMovingDeviceType .
-														?flowMovingDevice fso:feedsFluidTo+ ?terminal .
-														VALUES ?type {fpo:SpaceHeater fpo:HeatExchanger} ?terminal a ?type .
-														?system fso:hasComponent ?terminal, ?flowMovingDevice .
-														?terminal fso:hasPort ?supplyPort .
-														?supplyPort fso:returnsFluidTo ?anotherComponent .
-														?supplyPort fpo:flowRate ?flowRate .
-														?flowRate fpo:value ?flowRateValue .
-														}
-														} group by ?flowMovingDevice ?flowMovingDeviceType
+					<div class="r-stack">
+						<div class="fragment current-visible" data-fragment-index="0">
+							<h4>PI-Diagram</h4>
+							<img src="./static/images/alikuc/pi-diagram.png" alt="">
+						</div>
+						<div class="fragment current-visible" data-fragment-index="1">
+							<h4>Flow rate of an flow moving device</h4>
+							<img src="./static/images/alikuc/IBPSA-use-case-flow-rate.png" alt="">
+						</div>
+						<div class="fragment current-visible">
+							<h4>Head of an flow moving device</h4><img
+								src="./static/images/alikuc/IBPSA-use-case-head.png" alt="">
+						</div>
 
-									</code></pre>
-				</section>
-				<section>
-					<h3>Calculating the HEAD using SPAQRL
-					</h3>
-				</section>
-				<section>
-					<pre> <code data-trim data-noescape>
-																		select ?fan (Max(?sumOfPressureDrop)*0.00010199773339984 as ?head)
-																		where{
-										
-																		{
-																		#Supply Fan
-																		select ?fan ?terminal( sum(?returnValue) as ?sumOfPressureDrop)
-																		where {
-																		?fan a fpo:Fan .
-																		VALUES ?terminalType {fpo:AirTerminal}
-																		?terminal a ?terminalType .
-																		?system fso:hasComponent ?fan .
-																		?component fso:feedsFluidTo+ ?terminal .
-																		?system fso:hasComponent ?component .
-																		?system fso:hasComponent ?fan, ?terminal .
-										
-																		#Get the pressuredrop value of each component
-																		?component fso:hasPort ?port .
-																		?port fpo:flowDirection ?flowDirection .
-																		?flowDirection fpo:value "Out" .
-																		?port fpo:pressureDrop ?pressureDrop .
-																		?pressureDrop fpo:value ?returnValue .
+					</div>
 
-																		#Exclude component of other systems
-																		?port fso:suppliesFluidTo ?connectedPort .
-																		?connectedComponent fso:hasPort ?connectedPort .
-																		?system fso:hasComponent ?connectedComponent .
-										
-																		} group by ?fan ?terminal}
-																		union
-																		{
-																		#Return Fan
-																		select ?fan ?terminal( sum(?returnValue) as ?sumOfPressureDrop)
-																		where {
-																		?fan a fpo:Fan .
-																		VALUES ?terminalType {fpo:AirTerminal}
-																		?terminal a ?terminalType .
-																		?system fso:hasComponent ?fan .
-																		?component ^fso:feedsFluidTo+ ?terminal .
-																		?system fso:hasComponent ?component .
-																		?system fso:hasComponent ?fan, ?terminal .
-										
-																		#Get the pressuredrop value of each component
-																		?component fso:hasPort ?port .
-																		?port fpo:flowDirection ?flowDirection .
-																		?flowDirection fpo:value "Out" .
-																		?port fpo:pressureDrop ?pressureDrop .
-																		?pressureDrop fpo:value ?returnValue .
-																		} group by ?fan ?terminal
-																		}
-																		} group by ?fan
-													</code></pre>
 				</section>
+
 			</section>
 			<section>
-				<h1>Case Demo</h1>
+				<section>
+					<h1>Case Demo</h1>
+
+				</section>
+				<!-- <section data-background-video="./static/videos/ali/validatorvideo1.mp4">
+				</section> -->
+				<section>
+					<video data-autoplay controls src="./static/videos/ali/validatorvideo1.mp4"></video>
+				</section>
+			</section>
+
+			<section>
+				<h1>Thank you for your attention!</h1>
+				<h3>Reach out if you have questions/comments!</h3>
+				<p style="margin-top: 70px">Mads Holten Rasmussen | mhra@niras.dk<br>Ali Kücükavci | alkc@cowi.com</p>
 			</section>
 
 		</div>
