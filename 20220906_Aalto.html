@@ -238,7 +238,7 @@
 
 		<!-- Captions -->
 		<cap
-			style="position: absolute; bottom: 12vh; left: 0px; width: 100%; z-index:500; text-align: center; font-size: 1.9vw; font-style: italic; color: #65625e">
+			style="position: absolute; bottom: 12vh; left: 0px; width: 100%; z-index:500; text-align: center; font-size: 1.4vw; font-style: italic; color: #65625e; font-family: 'Courier New', Courier, monospace;">
 		</cap>
 
 		<!-- Footer left -->
@@ -266,11 +266,10 @@
 				<ul>
 					<li class="fragment fade-up">Current state of BIM and how to improve it</li>
 					<li class="fragment fade-up">Towards a modular and extendable data representation 🚀</li>
-					<!-- <li class="fragment fade-up">The vision of BIM bots 🤖</li>
-					<li class="fragment fade-up">Automated compliance checking 📜🚨</li> -->
 					<li class="fragment fade-up">Some examples on flow systems 🧑‍🔧</li>
 					<li class="fragment fade-up">A sneak peak at what we do at NIRAS</li>
 					<li class="fragment fade-up">Rule based flow calculations</li>
+					<li class="fragment fade-up">The vision of BIM bots 🤖</li>
 					<li class="fragment fade-up">Interactive demos along the way 🤗 so you don't get bored 🥱</li>
 				</ul>
 			</section>
@@ -340,7 +339,7 @@
 			<section>
 
 				<section>
-					<h4 class="center">So how do we do this?</h4>
+					<h2 class="center">So how do we do this?</h2>
 				</section>
 
 				<section>
@@ -450,9 +449,21 @@
 				<section data-background-image="./static/images/BOT-purpose-03.svg" data-background-size="80vw">
 				</section>
 
-				<section data-background-image="./static/images/BOT-content-01.svg" data-background-size="80vw"
-					data-background-position="50% 60%">
-					<h4 class="box-top-left">7 classes</h4>
+				<section data-background-image="./static/images/BOT-content-01.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
+				<style>
+					.cap-bot2 cap:after {
+					content: "Rasmussen, M., Pauwels, P., Lefrançois, M., Schneider, G. F., Hviid, C., & Karlshøj, J. (2017, November). Recent changes in the building topology ontology. In LDAC2017-5th Linked Data in Architecture and Construction Workshop.";
+					}
+				</style>
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-02.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-03.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
 				</section>
 
 				<!-- BOT ZONE -->
@@ -561,7 +572,7 @@
 
 					<style>
 						.cap-bot3 cap:after {
-							content: "Rasmussen, M., Lefrançois, M., Schneider, G. F., Pauwels, P. The BOT ontology: standards within a decentralised web-based AEC industry. Semantic Web Journal. Under review";
+							content: "Rasmussen, M. H., Lefrançois, M., Schneider, G. F., & Pauwels, P. (2021). BOT: the building topology ontology of the W3C linked building data group. Semantic Web Journal";
 						}
 					</style>
 
@@ -710,12 +721,113 @@
 				<section data-background-image="./static/images/web3-bim-bots-04.svg">
 				</section>
 
+				<section data-background-iframe="https://www.w3.org/TR/shacl/">
+				</section>
+
+				<section data-background-iframe="https://shacl.org/playground/">
+				</section>
+
 			</section>
 
 			<section>
-				<h2>Thank you for your attention!</h2>
-				<p><span style="font-style: oblique">Questions? Thoughts? Ideas? Let's discuss them over a</span> ☕
-				</p>
+
+				<section>
+					<h2>Advanced topic: JSON-LD framing</h2>
+				</section>
+
+				<section>
+					
+					<p style="margin-top: 20vh;">Tree building on demand 🔧🌳</p>
+					
+					<div class="two-col">
+
+						<ul class="col">
+							<li>Space 01A</li>
+							<li>Aalto University Campus</li>
+							<li>Storey 02</li>
+							<li>Space 02C</li>
+							<li>Space 02B</li>
+							<li>Building 118</li>
+							<li>Storey 01</li>
+						</ul>
+
+						<ul class="col">
+							<li>Aalto University Campus</li>
+							<ul>
+								<li>Building 118</li>
+								<ul>
+									<li>Storey 01</li>
+									<ul>
+										<li>Space 01A</li>
+									</ul>
+									<li>Storey 02</li>
+									<ul>
+										<li>Space 02C</li>
+										<li>Space 02B</li>
+									</ul>
+								</ul>
+							</ul>
+						</ul>
+
+					</div>
+					
+				</section>
+
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D%0A"
+					data-background-interactive>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+					  	<pre><code data-trim class="json hljs" data-line-numbers="|3-6|8-12">
+							{
+								"@context": {
+								    "bot": "https://w3id.org/bot#",
+								    "building": {"@id": "bot:hasBuilding"},
+								    "level": {"@id": "bot:hasStorey"},
+								    "room": {"@id": "bot:hasSpace"}
+								},
+								"building": {
+								   "level": {
+								      "room": {}
+								   }
+								}
+							}
+						</code></pre>
+					</div>
+				</section>
+
+				<section
+					data-background-iframe="https://json-ld.org/playground/#startTab=tab-framed&json-ld=%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3Q%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3Q%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_CZ%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_CZ%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXrr%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXrr%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F10mjSDZJj9gPS2PrQaxa4o%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F10mjSDZJj9gPS2PrQaxa4o%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXru%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXru%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXr%2524%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXr%2524%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXr2%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXr2%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3P%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3P%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3S%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3S%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMKI%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F10mjSDZJj9gPS2PrQaxa3z%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F10mjSDZJj9gPS2PrQaxa3z%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F2gRXFgjRn2HPE%2524YoDLX3FC%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F2gRXFgjRn2HPE%2524YoDLX3FC%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXrc%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXrc%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXri%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXri%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3G%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3G%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3A%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3A%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXre%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXre%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXrb%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dlXrb%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_39%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_39%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3C%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0BTBFw6f90Nfh9rP1dl_3C%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNMQJ%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F2gRXFgjRn2HPE%2524YoDLX3FV%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F2gRXFgjRn2HPE%2524YoDLX3FV%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflN%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Site%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasBuilding%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2a6eflK%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNtSE%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F1xS3BCk291UvhgP2dvNtSE%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasSpace%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0pNy6pOyf7JPmXRLgxs3sW%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fweb-bim%2Fresources%2F0pNy6pOyf7JPmXRLgxs3sW%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Space%22%5D%7D%5D&frame=%7B%22%40context%22%3A%7B%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22building%22%3A%7B%22%40id%22%3A%22bot%3AhasBuilding%22%7D%2C%22level%22%3A%7B%22%40id%22%3A%22bot%3AhasStorey%22%7D%2C%22room%22%3A%7B%22%40id%22%3A%22bot%3AhasSpace%22%7D%7D%2C%22building%22%3A%7B%22level%22%3A%7B%22room%22%3A%7B%7D%7D%7D%7D"
+					data-background-interactive>
+				</section>
+
+			</section>
+
+			<!-- END -->
+			<section>
+
+				<section>
+					<h4>To summarize</h4>
+					<ul>
+						<li>Graphs provide a flexible data structure</li>
+						<li>Loose coupling of distributed datasets</li>
+						<li>Multiple schemas/ontologies applied in the same dataset</li>
+						<li>There is already a foundation you can build on!</li>
+					</ul>
+				</section>
+
+				<section data-background-image="./static/images/mhra/ukraine.jpg" data-state="cap-intune">
+					<h3>Thank you for your attention!</h3>
+					<p><span style="font-style: oblique">Questions? Thoughts? Ideas? Let's discuss them over a</span> ☕</p>
+					<style>
+						.cap-intune cap:after {
+							content: "@inga_tuneew_drawings";
+						}
+					</style>
+				</section>
+
 			</section>
 
 		</div>
