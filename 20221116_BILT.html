@@ -1,0 +1,818 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>A hands-on BYOBIM workshop on Linked Building Data | BILT 2022</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/mhra.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	<!-- Custom styles -->
+	<style>
+		.two-col {
+			display: flex;
+			height: 100vh;
+			width: 100%;
+		}
+
+		.col {
+			flex: 1;
+			padding: 50px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		.footer-left {
+			position: absolute;
+			bottom: 27px;
+			left: 80px;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-direction: row;
+			gap: 10px;
+			align-content: flex-start;
+			justify-content: flex-end;
+			align-items: center;
+		}
+
+		.footer-left img {
+			height: 3vh;
+		}
+
+		.box {
+			background-color: rgba(255, 255, 255, 0.5);
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			font-size: 1em !important;
+			color: black;
+			padding: 1vh;
+		}
+
+		.box-top-left {
+			position: absolute;
+			left: 0vw;
+			top: -30vh;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			font-size: 1em !important;
+			color: black;
+			padding: 1vh;
+		}
+
+		.top-right {
+			position: static;
+			right: 0vw;
+			top: 0vh;
+			bottom: 40vh;
+			z-index: 10;
+			background-color: red;
+		}
+
+		.logo-container {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: flex-end;
+			margin-top: 5vh;
+			gap: 40px;
+		}
+
+		.logo-container img {
+			height: 70px;
+		}
+
+
+		.assumption1 {
+			display: flex;
+			justify-content: center;
+		}
+
+		.assumption2 {
+			display: flex;
+			flex-direction: column;
+			width: 500px;
+		}
+
+		.assumption2 div:first-of-type {
+			border-bottom: 2px solid black
+		}
+
+		.footnote {
+			display: flex;
+			justify-content: end;
+			font-size: 15px;
+			height: 50;
+		}
+
+		.ruleinter {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 700px;
+			border: 5px dotted grey;
+		}
+
+		.buildingprep {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 450px;
+			border: 5px dotted grey;
+		}
+
+		.ruleexec {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 200px;
+			border: 5px dotted grey;
+		}
+
+		.reporting {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: -20px;
+			border: 5px dotted grey;
+		}
+
+		.case1 {
+			position: fixed;
+			height: 100px;
+			width: 425px;
+			bottom: 250px;
+			right: 525px;
+			border: 4px dotted blue;
+			opacity: 0.5;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case2 {
+			position: fixed;
+			height: 150px;
+			width: 200px;
+			bottom: 350px;
+			right: 475px;
+			border: 4px dotted blue;
+			opacity: 0.5;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case3 {
+			position: fixed;
+			height: 250px;
+			width: 400px;
+			bottom: 250px;
+			right: 275px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case4 {
+			position: fixed;
+			height: 100px;
+			width: 110px;
+			bottom: 325px;
+			right: 165px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case5 {
+			position: fixed;
+			height: 110px;
+			width: 110px;
+			bottom: 130px;
+			right: 300px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="reveal">
+
+		<!-- Captions -->
+		<cap
+			style="position: absolute; bottom: 12vh; left: 0px; width: 100%; z-index:500; text-align: center; font-size: 1.4vw; font-style: italic; color: #65625e; font-family: 'Courier New', Courier, monospace;">
+		</cap>
+
+		<!-- Footer left -->
+		<div class="footer-left">
+			<img src="./static/images/logos/BILT.png" alt="" style="height: 8vh;">
+			<img src="./static/images/logos/niras.svg" alt="">
+			<img src="./static/images/logos/Aarsleff.svg" alt="">
+		</div>
+
+		<!-- Slides -->
+		<div class="slides">
+
+			<section>
+				<h1>A hands-on BYOBIM workshop on Linked Building Data</h1>
+				<img src="./static/images/logos/BILT.png" style="height: 20vh;">
+				<p style="font-size: 0.8em;">https://bit.ly/3h59mvA</p>
+			</section>
+
+			<section>
+				<h2>About us</h2>
+
+				<!-- Row -->
+				<div style="display: flex; height: 20vh">
+					<div class="col">
+						<p>Mads Holten Rasmussen</p>
+						<span style="font-size: 0.7em; font-style: oblique;">Business Development Director</span>
+						<img src="./static/images/logos/niras.svg" style="height: 3vh;">
+					</div>
+					<div class="col" style="height: 80%;">
+						<img src="static/images/mhra_1x1.png">
+					</div>
+				</div>
+
+				<!-- Row -->
+				<div style="display: flex; height: 20vh">
+					<div class="col">
+						<p>Alexander Schlachter</p>
+						<span style="font-size: 0.7em; font-style: oblique;">VDC Coordinator</span>
+						<img src="./static/images/logos/Aarsleff.svg" style="height: 3vh;">
+					</div>
+					<div class="col" style="height: 80%;">
+						<img src="static/images/ales.jpg">
+					</div>
+				</div>
+				
+			</section>
+
+			<section>
+				<h1>Overall agenda</h1>
+				<ul>
+					<li class="fragment fade-up">Session 3.1 | 10:00-11:15</li>
+					<ul class="fragment fade-up">
+						<li>Why?</li>
+						<li>What tech?</li>
+						<li>Try yourself!</li>
+					</ul>
+					<li class="fragment fade-up">Coffee break ☕</li>
+					<li class="fragment fade-up">Session 3.2 | 11:30-12:45</li>
+					<ul class="fragment fade-up">
+						<li>More advanced stuff 🤓😎💪</li>
+					</ul>
+					<li class="fragment fade-up">Lunch 🥗🥖🍴</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1>Session 3.1</h1>
+				<ul>
+					<li class="fragment fade-up">So why do we need this? 🤷</li>
+					<li class="fragment fade-up">Towards a modular and extendable data representation of BIM data 🚀</li>
+					<li class="fragment fade-up">Introduction to Linked Data and the Resource Description Framework (RDF) 🌐</li>
+					<li class="fragment fade-up">Introduction to Linked Building Data (LBD) 🏠</li>
+					<li class="fragment fade-up">Demonstration: LD-BIM 🕹️</li>
+					<li class="fragment fade-up">Hands on 🤗 hope you're still awake! 🥱</li>
+				</ul>
+			</section>
+
+
+			<!-- Fly-in. Challenges -->
+			<section>
+
+				<section>
+					<h1>Current state of BIM and how to improve it</h1>
+				</section>
+
+				<section>
+					<h4>"Our industry works in a document-centric manner rather than a data-centric one"</h4>
+					<aside class="notes">
+						- Exchange of files rather than data integration<br>
+						- A bim is one database - we need multiple
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-01.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-02.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-03.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-04.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-05.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-07.svg" data-background-size="80%">
+				</section>
+
+				<section>
+					<h4 class="center">"Exchange of BIM-data as files makes data integration impossible"</h4>
+					<aside class="notes">
+						- BCF as an example<br>
+						- You cannot exchange issues in a file. How about the ones you resolve in the mean time?
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/monolitic-01.svg" data-background-size="70%"></section>
+				<section data-background-image="./static/images/monolitic-02.svg" data-background-size="70%"></section>
+
+				<!-- <section data-background-image="./static/images/BIM-islands.svg" data-background-size="70%"></section> -->
+
+				<section>
+					<h4 class="center">"We need to switch from Today's monolitic nature of BIM to a network based one"
+					</h4>
+					<aside class="notes">
+						- Fine that the different BIM systems rely on an integrated data model, but they should be able
+						to exchange resulting geometry and derived properties
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/bs-wall-01.svg" data-background-size="70%"></section>
+				<section data-background-image="./static/images/bs-wall-02.svg" data-background-size="70%"></section>
+				<section data-background-image="./static/images/bs-wall-03.svg" data-background-size="70%"></section>
+
+			</section>
+
+			<!-- How - NB! Extend with more on RDF -->
+			<section>
+
+				<section>
+					<h2 class="center">So how do we do this?</h2>
+				</section>
+
+				<section>
+					<h4 class="center">The idea is to use the existing infrastructure of the World Wide Web to mediate a
+						distributed, network-based BIM</h4>
+				</section>
+
+				<section data-background-image="./static/images/web1-01.svg">
+					<h4 style="margin-top: 30vh;" class="box">Web of documents</h4>
+				</section>
+
+				<section data-background-image="./static/images/web3-01.svg">
+					<h4 style="margin-top: 30vh;" class="box">Web of data</h4>
+				</section>
+
+				<section>
+					<h4 class="center">Data is stored and hosted by the stakeholder who generated it and is responsible
+						for it</h4>
+				</section>
+
+				<section>
+					<h4 class="center">Data can be shared with authenticated people or be made publicly available</h4>
+				</section>
+
+				<section>
+					<h4 class="center">The model data can be extended with Linked Open Data (product- and material
+						properties, IoT, GIS)</h4>
+				</section>
+
+				<section>
+					<h4 class="center">Even the schemas are distributed, and can therefore extend one another</h4>
+				</section>
+
+				<section data-background-image="./static/images/CWA.svg" data-background-size="90%">
+					<h4 style="margin-top: 50vh;" class="box">Current situation: Open standards in isolated closed
+						worlds</h4>
+				</section>
+
+				<section data-background-image="./static/images/OWA_en.svg" data-background-size="90%">
+					<h4 style="margin-top: 50vh;" class="box">Linked data benefit: Standards use, extend and refer to
+						one another</h4>
+				</section>
+
+				<!-- Knowledge graph -->
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph1.svg"
+					data-background-size="90vw" data-state="neptune">
+					<style>
+						.neptune cap:after {
+							content: "Amazon Neptune: https://aws.amazon.com/neptune";
+						}
+					</style>
+					<h4 class="fragment fade-up box">Knowledge Graph</h4>
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph2.svg"
+					data-background-size="90vw" data-state="neptune">
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph3.svg"
+					data-background-size="90vw" data-state="neptune">
+				</section>
+
+				<section>
+					<p>Querying the graph is as easy as decribing a path along its edges</p>
+				</section>
+
+				<!-- SPARQL -->
+				<section>
+					<img data-src="./static/images/logos/W3C.svg"></img>
+					<h4>SPARQL: SPARQL Protocol and RDF Query Language</h4>
+				</section>
+
+				<section
+					data-background-iframe="./static/interactive/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true"
+					data-background-interactive>
+				</section>
+
+				<section
+					data-background-iframe="./static/interactive/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true&tab=5"
+					data-background-interactive>
+				</section>
+
+			</section>
+
+			<!-- LBD -->
+			<section>
+				<section>
+					<h2>A modular and extendable building representation</h2>
+				</section>
+
+				<!-- BOT -->
+				<section data-background-image="./static/images/BOT-papers.svg" data-background-size="80vw"
+					data-state="cap-bot3">
+					<h4 class="box">BOT: The Building Topology Ontology</h4>
+					<style>
+						.cap-bot3 cap:after {
+							content: "Rasmussen, M. H., Lefrançois, Maxime, Schneider, G. F., Pauwels, P. (2020). BOT: the Building Topology Ontology of the W3C Linked Building Data Group. Semantic Web Journal.";
+						}
+					</style>
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-03.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-01.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
+				<style>
+					.cap-bot2 cap:after {
+					content: "Rasmussen, M., Pauwels, P., Lefrançois, M., Schneider, G. F., Hviid, C., & Karlshøj, J. (2017, November). Recent changes in the building topology ontology. In LDAC2017-5th Linked Data in Architecture and Construction Workshop.";
+					}
+				</style>
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-02.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-03.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
+				</section>
+
+				<!-- BOT ZONE -->
+				<section>
+					<h4 class="center">bot:Zone</h4>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Zones-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Zones-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- BOT ELEMENT -->
+				<section>
+					<h4 class="center">bot:Element</h4>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- BOT INTERFACE -->
+
+				<section>
+					<h4 class="center">bot:Interface</h4>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- <section data-background-image="./static/images/BOT-Interfaces-04.svg" data-background-size="80vw">
+				</section>
+				<section data-background-image="./static/images/BOT-Interfaces-05.svg" data-background-size="80vw">
+				</section> -->
+
+				<!-- Query: sites -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys + spaces -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D%0A"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys + spaces TABLE -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ASELECT%20%2A%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: adjacent elements -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20inst%3A0BTBFw6f90Nfh9rP1dlXru%20bot%3AadjacentElement%20%3Fel%20%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: interfaces -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20ex%3A%20%3Chttps%3A%2F%2Fexample.com%2F%3E%20%0APREFIX%20kg%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fkobl%2Fgeometry%23%3E%20%0APREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ASELECT%20DISTINCT%20%3Fboundary%20%3Fls%20%3Fel%0AWHERE%7B%0A%20%20%20BIND%28inst%3A0BTBFw6f90Nfh9rP1dl_3A%20AS%20%3Fspace%29%0A%20%20%20%3Fboundary%20bot%3AinterfaceOf%20%3Fspace%20%2C%20%3Fel%20%3B%0A%20%20%20%20%20%20%20kg%3Avertices3D%20%3Fver%20%3B%0A%20%20%20%20%20%20%20ex%3AisVertical%20true%20.%0A%20%20%20FILTER%28%3Fel%20%21%3D%20%3Fspace%29%0A%20%20%20BIND%28CONCAT%28%22POLYGON%20Z%20%28%22%2C%20STR%28%20%3Fver%20%29%2C%20%22%29%22%29%20%20%20AS%20%3Fls%20%29%0A%7D"
+					data-background-interactive>
+				</section>
+
+			</section>
+
+
+			<section>
+
+				<!-- Extending -->
+				<section>
+					<h1>Extending BOT</h1>
+				</section>
+
+				<section>
+					<h4 class="center">bot:Element? What can I do with that?</h4>
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-01.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+
+					<style>
+						.cap-bot3 cap:after {
+							content: "Rasmussen, M. H., Lefrançois, M., Schneider, G. F., & Pauwels, P. (2021). BOT: the building topology ontology of the W3C linked building data group. Semantic Web Journal";
+						}
+					</style>
+
+					<p class="center box fragment fade-out">Sub-typing BOT classes</p>
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-02.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-03.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-04.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+					<p class="center box fragment fade-out">Sub-typing BOT properties</p>
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-05.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-06.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+
+				<!-- BROT, DOT -->
+				<section data-background-image="./static/images/BROT.png" data-background-size="30vw"
+					data-state="cap-brot">
+					<style>
+						.cap-brot cap:after {
+							content: "Hamdan, A. H., & Scherer, R. J. (2020). Integration of BIM-related bridge information in an ontological knowledgebase. In Proceedings of the 8th linked data in architecture and construction workshop-LDAC.";
+						}
+					</style>
+				</section>
+
+				<!-- FSO -->
+				<section data-background-image="./static/images/FSO-concepts.svg" data-state="cap-fso">
+					<style>
+						.cap-fso cap:after {
+							content: "Kukkonen, V., Kücükavci, A., Seidenschnur, M., Rasmussen, M. H., Smith, K. M., & Hviid, C. A. (2022). An ontology to support flow system descriptions from design to operation of buildings. Automation in Construction, 134, 104067.";
+						}
+					</style>
+				</section>
+
+				<section data-background-image="./static/images/Pipe-Interfaces-01.svg" data-background-size="80vw">
+				</section>
+				<section data-background-image="./static/images/Pipe-Interfaces-02.svg" data-background-size="80vw">
+				</section>
+				<section data-background-image="./static/images/Pipe-Interfaces-03.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-iframe="https://bs-visualizer.web.app" data-background-interactive>
+				</section>
+
+			</section>
+
+			<section>
+				<h1>Demonstration</h1>
+				<h2>LD-BIM 🕹️🎬</h2>
+			</section>
+
+			<section>
+				<h1>Assignment</h1>
+				<h2>Query the model on LD-BIM 🔨🕹️</h2>
+			</section>
+
+
+			
+
+
+
+
+
+
+
+
+			<section>
+				<h1>Session 3.2</h1>
+				<ul>
+					<li class="fragment fade-up">Some practical examples 🎬</li>
+					<li class="fragment fade-up">Introduction to assignment 👨‍🏫</li>
+					<li class="fragment fade-up">Convert your own BIM-model 🛠️👷</li>
+					<li class="fragment fade-up">Extend the graph 🔨🚧</li>
+					<li class="fragment fade-up">The vision of a distributed, cloud based BIM ☁️🤖</li>
+					<li class="fragment fade-up">Open discussion 🙋‍♂️💭</li>
+				</ul>
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Some practical examples</h2>
+				</section>
+
+				<section data-background-iframe="./static/interactive/timelines/timeline.html?file=mhra-full.json#event-webim">
+				</section>
+
+				<!-- BART -->
+				<section>
+					<h2>BART Stage 2 delivery</h2>
+				</section>
+
+				<section>
+					<img src="./static/images/mhra/projects/ConTech5-fire-cl_ol.svg">
+				</section>
+
+				<section>
+					<img src="./static/images/logos/RDFox.png" height="100vh">
+					<p>Incremential reasoning</p>
+				</section>
+
+				<section data-background-video="./static/videos/mhra-bart.mp4" 
+					data-background-video-loop data-background-video-muted>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h1>The vision of BIM bots 🤖</h1>
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-01.svg">
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-02.svg">
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-03.svg">
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-04.svg">
+				</section>
+
+				<section data-background-iframe="https://www.w3.org/TR/shacl/">
+				</section>
+
+			</section>
+
+			<section>
+				<h1>Open discussion 🙋‍♂️💭</h1>
+			</section>
+
+			<!-- END -->
+			<section>
+
+				<section>
+					<h4>To summarize</h4>
+					<ul>
+						<li>Graphs provide a flexible data structure</li>
+						<li>Loose coupling of distributed datasets</li>
+						<li>Multiple schemas/ontologies applied in the same dataset</li>
+						<li>There is already a foundation you can build on!</li>
+					</ul>
+				</section>
+
+				<section data-background-image="./static/images/mhra/ukraine.jpg" data-state="cap-intune">
+					<h3>Thank you for your attention!</h3>
+					<p><span style="font-style: oblique">Questions? Thoughts? Ideas? Let's discuss them over a</span> ☕</p>
+					<style>
+						.cap-intune cap:after {
+							content: "@inga_tuneew_drawings";
+						}
+					</style>
+				</section>
+
+			</section>
+
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/notes/notes.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/markdown/markdown.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+
+</body>
+
+</html>
