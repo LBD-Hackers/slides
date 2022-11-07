@@ -234,6 +234,17 @@
 			justify-content: center;
 			font-weight: bold;
 		}
+
+		.note{
+			font-family: Consolas, monaco, monospace;
+			font-size: 0.4em;
+			font-weight: bold;
+		}
+		.coded{
+			font-family: Consolas, monaco, monospace;
+			font-size: 0.7em;
+			font-weight: 100;
+		}
 	</style>
 
 </head>
@@ -404,6 +415,28 @@
 				</section>
 
 				<section>
+					<h2>Linked Data</h2>
+					<p>The concept of Linked Data was <a href="https://www.w3.org/DesignIssues/LinkedData">coined in 2006</a> by sir Tim Berners-Lee, the inventor of the web, and is therfore not entirely new 👴👵</p>
+					<p class="fragment fade-up">It basically refers to a set of best practices for publishing structured data on the Web</p>
+					
+					<style>
+						.cap-ld cap:after {
+							content: "¹https://www.w3.org/DesignIssues/LinkedData";
+						}
+					</style>
+				</section>
+
+				<section>
+					<h2>Linked Data Principles</h2>
+					<ol>
+						<li>Use URIs <span class="note">(Uniform Resource Identifiers)</span> as names for things</li>
+						<li class="fragment fade-up">Use HTTP URIs <span class="note">(web addresses)</span> so that people can look up those names 👀</li>
+						<li class="fragment fade-up">When someone looks up a URI, provide useful information, using the standards (RDF, SPARQL) <span class="note">(more on this later)</span> 💡</li>
+						<li class="fragment fade-up">Include links to other URIs so that they can discover more things 🔭🧭🗺️</li>
+					</ol>
+				</section>
+
+				<section>
 					<h4 class="center">Data is stored and hosted by the stakeholder who generated it and is responsible
 						for it</h4>
 				</section>
@@ -430,6 +463,79 @@
 					<h4 style="margin-top: 50vh;" class="box">Linked data benefit: Standards use, extend and refer to
 						one another</h4>
 				</section>
+
+			</section>
+
+
+			<!-- RDF vs tables -->
+			<section>
+
+				<section>
+					<h2>RDF vs. tables</h2>
+				</section>
+
+				<section>
+					<p>Most of us are used to storing information in spreadsheets <span class="note">(or relational databases (RDBs) for the more advanced)</span>, but in RDF we use a graph structure.</p>
+				</section>
+
+				<section>
+					<img data-src="./static/images/logos/W3C.svg"></img>
+					<h4>RDF: Resource Description Framework</h4>
+				</section>
+
+				<section data-background-image="./static/images/SPO.svg" data-background-size="120vw"></section>
+				<section data-background-image="./static/images/SPO2.svg" data-background-size="120vw"></section>
+
+				<section>
+					<p>But how do we get from tables to graphs?</p>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-01.svg">
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-02.svg">
+					<aside class="notes">
+						From an RDF perspective we see too subjects. One for each data row. And they are even identified with an ID.
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-03.svg">
+					<aside class="notes">
+						Each column contains a statement about those subjects and the predicate value is given by the column header.
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-04.svg">
+					<aside class="notes">
+						The value of the subject-predicate pair can then be found in the cell.
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-05.svg"></section>
+
+				<section data-background-image="./static/images/RDF-en-simple-06.svg">
+					<aside class="notes">
+						- Combining data stored in different tables into one unified representation is possible if there is a common identifier for the rows.<br>
+						- For example, we could have another table with middle names.<br>
+						- It's not a problem that there is no middle name for Alexander. RDF builds on an open world assumption meaning that if we have the information that's great and if we don't that's also alright. Then Alexanders middle name is simply unknown to us.<br>
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-07.svg">
+					<aside class="notes">
+						In RDBs it's common to have dedicated tables that deal with many-to-many relationships. These are also easily translated.
+					</aside>
+				</section>
+
+				<section>
+					<p>Compared to RDBs, RDF makes sense from a logical perspective and not only from a data management perspective.</p>
+					<p>This benefit will be more obvious when we start to query the datasets!</p>
+				</section>
+
+			</section>
+
+
+			<section>
 
 				<!-- Knowledge graph -->
 				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph1.svg"
