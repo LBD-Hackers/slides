@@ -25,6 +25,9 @@ TODO
 
 	<!-- Custom styles -->
 	<style>
+		p{
+			font-size: 0.8em;
+		}
 		.two-col {
 			display: flex;
 			height: 100vh;
@@ -128,8 +131,1276 @@ TODO
 				<section>
 					<h2>What you will learn</h2>
 					<ul>
-						<li>WIP!</li>
+						<li>The many forms of JSON-LD</li>
+						<li>Compaction and Expansion</li>
+						<li>Framing</li>
 					</ul>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>The many forms of JSON-LD</h2>
+				</section>
+
+				<section>
+					<p>All the following examples express the exact same thing: The fact that resource <b class="code">https://ex.com/a</b> is a <b class="code">bot:Building</b>.</p>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+					  <pre><code data-trim class="json">
+						[
+							{
+								"@id": "https://ex.com/a",
+								"@type": [ "https://w3id.org/bot#Building" ]
+							}
+						]
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+					  <pre><code data-trim class="json">
+						{
+							"@context": {
+								"inst": "https://ex.com/",
+								"bot": "https://w3id.org/bot#"
+							},
+							"@id": "inst:a",
+							"@type": [ "bot:Building" ]
+						}
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+					  <pre><code data-trim class="json">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#"
+							},
+							"@id": "a",
+							"@type": "bot:Building"
+						}
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+					  <pre><code data-trim class="json">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#"
+							},
+							"@graph": [{
+								"@id": "a",
+								"@type": "bot:Building"
+							}]
+						}
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<p>These examples show an expanded version and various compacted versions of the exact same fact and by the end of this lecture, you will understand why.</p>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Compaction and Expansion</h2>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+						<p>The below example is the expanded version of the fact.</p>
+						<pre><code data-trim class="json">
+							[
+								{
+									"@id": "https://ex.com/a",
+									"@type": [ "https://w3id.org/bot#Building" ]
+								}
+							]
+						</code></pre>
+						<p class="fragment fade-up">This is the simplest form of JSON-LD and it will always look the same.</p>
+						<ol>
+							<li class="fragment fade-up">It's an array containing JSON-LD objects</li>
+							<li class="fragment fade-up">The <b>@id</b> specifies the subject with its full URI</li>
+							<li class="fragment fade-up">The <b>@type</b> specifies a specific predicate (rdf:type) and the value of predicates is always returned as a list since as per definition, there can be multiple values of a predicate.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+						<p>Let's extend it with a datatype property.</p>
+						<pre><code data-trim class="json">
+							[
+								{
+									"@id": "https://ex.com/a",
+									"@type": [ "https://w3id.org/bot#Building" ],
+									"http://www.w3.org/2000/01/rdf-schema#label": [{
+										"@value": "My Building"
+									}]
+								}
+							]
+						</code></pre>
+						<p class="fragment fade-up">We see that leteral values are expressed with a <b>@value</b>.</p>
+					</div>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+						<p>The value is implicitly specified as a string, so the below means the same thing.</p>
+						<pre><code data-trim class="json">
+							[
+								{
+									"@id": "https://ex.com/a",
+									"@type": [ "https://w3id.org/bot#Building" ],
+									"http://www.w3.org/2000/01/rdf-schema#label": [{
+										"@value": "My Building",
+										"@type": "http://www.w3.org/2001/XMLSchema#string"
+									}]
+								}
+							]
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+						<p>We can also use the special <b>@language</b> property to specify a language.</p>
+						<pre><code data-trim class="json">
+							[
+								{
+									"@id": "https://ex.com/a",
+									"@type": [ "https://w3id.org/bot#Building" ],
+									"http://www.w3.org/2000/01/rdf-schema#label": [{
+										"@value": "My Building",
+										"@language": "en"
+									}]
+								}
+							]
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+						<p>Or specify more languages, just as in other RDF serializations.</p>
+						<pre><code data-trim class="json">
+							[
+								{
+									"@id": "https://ex.com/a",
+									"@type": [ "https://w3id.org/bot#Building" ],
+									"http://www.w3.org/2000/01/rdf-schema#label": [
+										{
+											"@value": "My Building",
+											"@language": "en"
+										},
+										{
+											"@value": "Min Bygning",
+											"@language": "da"
+										}
+									]
+								}
+							]
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+						<p>We can also extend it with an object property instead by using the <b>@id</b> property and thereby indicate that it is a reference to a URI.</p>
+						<pre><code data-trim class="json">
+							[
+								{
+									"@id": "https://ex.com/a",
+									"@type": [ "https://w3id.org/bot#Building" ],
+									"https://w3id.org/bot#hasStorey": [{
+										"@id": "https://ex.com/b"
+									}]
+								}
+							]
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<div class="row down-5" style="opacity: 0.8">
+						<p>We might even describe this other resource in the same document.</p>
+						<pre><code data-trim class="json">
+							[
+								{
+									"@id": "https://ex.com/a",
+									"@type": [ "https://w3id.org/bot#Building" ],
+									"https://w3id.org/bot#hasStorey": [{
+										"@id": "https://ex.com/b"
+									}]
+								},
+								{
+									"@id": "https://ex.com/b",
+									"@type": [ "https://w3id.org/bot#Storey" ]
+								}
+							]
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<p>The examples you have seen so far introduce the basic principles in JSON-LD. But one of the main strengths of JSON-LD is that it can change form so it fits a specific purpose.</p>
+				</section>
+
+				<section>
+					<p>Let's continue with the below expanded example and make it more compact and simple to read. We use the below example for this:</p>
+					<pre><code data-trim class="json">
+						[
+							{
+								"@id": "https://ex.com/a",
+								"@type": [ "https://w3id.org/bot#Building" ],
+								"http://www.w3.org/2000/01/rdf-schema#label": [{
+									"@value": "My Building"
+								}],
+								"https://example.com#numberOfStoreys": [{
+									"@value": "2",
+									"@type": "http://www.w3.org/2001/XMLSchema#integer"
+								}],
+								"https://w3id.org/bot#hasStorey": [
+									{
+										"@id": "https://ex.com/b"
+									},
+									{
+										"@id": "https://ex.com/c"
+									}
+								]
+							},
+							{
+								"@id": "https://ex.com/b",
+								"@type": [ "https://w3id.org/bot#Storey" ],
+								"http://www.w3.org/2000/01/rdf-schema#label": [{
+									"@value": "Level 1"
+								}]
+							},
+							{
+								"@id": "https://ex.com/c",
+								"@type": [ "https://w3id.org/bot#Storey" ],
+								"http://www.w3.org/2000/01/rdf-schema#label": [{
+									"@value": "Level 2"
+								}]
+							}
+						]
+					</code></pre>
+				</section>
+
+				<section>
+					<p>We can compact the JSON-LD by specifying a <b>@context</b> for it. So first we specify a <b>@base</b> URI for the namespace in which the instances belong.</p>
+					<pre><code data-trim class="json">
+						{
+							"@context": {
+								"@base": "https://ex.com/"
+							}
+						}
+					</code></pre>
+					<p class="fragment fade-up">You can see the results in this <a target="_blank" href="https://json-ld.org/playground/#startTab=tab-compacted&json-ld=%5B%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fa%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22My%20Building%22%7D%5D%2C%22https%3A%2F%2Fexample.com%23numberOfStoreys%22%3A%5B%7B%22%40value%22%3A%222%22%2C%22%40type%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23integer%22%7D%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fb%22%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fc%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fb%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22Level%201%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fc%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22Level%202%22%7D%5D%7D%5D&context=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%7D%7D">JSON-LD playground example</a></p>
+					<p class="fragment fade-up">This will simplify all resource <b>@id</b>s so "https://ex.com/a" becomes "a"</p>
+				</section>
+
+				<section>
+					<p>Next, we specify the prefixes we are using (<a target="_blank" href="https://json-ld.org/playground/#startTab=tab-compacted&json-ld=%5B%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fa%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22My%20Building%22%7D%5D%2C%22https%3A%2F%2Fexample.com%23numberOfStoreys%22%3A%5B%7B%22%40value%22%3A%222%22%2C%22%40type%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23integer%22%7D%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fb%22%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fc%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fb%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22Level%201%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fc%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22Level%202%22%7D%5D%7D%5D&context=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%7D%7D">see results</a>).</p>
+					<pre><code data-trim class="hljs json" data-line-numbers="4-7|">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#"
+							}
+						}
+					</code></pre>
+					<p class="fragment fade-up">You can probably imagine how this shortens all the URIs like in Turtle syntax.</p>
+				</section>
+
+				<section>
+					<p>We can even use the context to specify our own keys that will be used in the JSON. For example, we can use "name" instead of "rdfs:label" (<a target="_blank" href="https://json-ld.org/playground/#startTab=tab-compacted&json-ld=%5B%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fa%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22My%20Building%22%7D%5D%2C%22https%3A%2F%2Fexample.com%23numberOfStoreys%22%3A%5B%7B%22%40value%22%3A%222%22%2C%22%40type%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23integer%22%7D%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fb%22%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fc%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fb%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22Level%201%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fc%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22Level%202%22%7D%5D%7D%5D&context=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%7D%7D%7D">see results</a>).</p>
+					<pre><code data-trim class="hljs json" data-line-numbers="8-10|">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"name": {
+									"@id": "rdfs:label"
+								}
+							}
+						}
+					</code></pre>
+					<p class="fragment fade-up">You can probably imagine how this shortens all the URIs like in Turtle syntax.</p>
+				</section>
+
+				<section>
+					<p>We can also specify datatypes in the @context so they don't need to be part of the dataset (<a target="_blank" href="https://json-ld.org/playground/#startTab=tab-compacted&json-ld=%5B%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fa%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22My%20Building%22%7D%5D%2C%22https%3A%2F%2Fexample.com%23numberOfStoreys%22%3A%5B%7B%22%40value%22%3A%222%22%2C%22%40type%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23integer%22%7D%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fb%22%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fc%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fb%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22Level%201%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fc%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22Level%202%22%7D%5D%7D%5D&context=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%7D%2C%22storeyCount%22%3A%7B%22%40id%22%3A%22ex%3AnumberOfStoreys%22%2C%22%40type%22%3A%22xsd%3Ainteger%22%7D%7D%7D">see results</a>).</p>
+					<pre><code data-trim class="hljs json" data-line-numbers="11-14|13">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"name": {
+									"@id": "rdfs:label"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								}
+							}
+						}
+					</code></pre>
+					<p class="fragment fade-up">The result is that ex:numberOfStoreys is also just returned as a single string value.</p>
+				</section>
+
+				<section>
+					<p>The result is that our JSON body is now way cleaner since the @context specifies all the metadata:</p>
+					<pre><code data-trim class="json" class="hljs json" data-line-numbers="2-15|16-37">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"name": {
+									"@id": "rdfs:label"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								}
+							},
+							"@graph": [
+								{
+									"@id": "a",
+									"@type": "bot:Building",
+									"name": "My Building",
+									"storeyCount": "2",
+									"bot:hasStorey": [
+										{ "@id": "b" },
+										{ "@id": "c" }
+									]
+								},
+								{
+									"@id": "b",
+									"@type": "bot:Storey",
+									"name": "Level 1"
+								},
+								{
+									"@id": "c",
+									"@type": "bot:Storey",
+									"name": "Level 2"
+								}
+							]
+						}
+					</code></pre>
+					<p class="fragment fade-up">Note the <b>@graph</b> array here which is used when there are multiple resources in the dataset. Also, you can see that property values are no longer returned as arrays if there is only one value.</p>
+				</section>
+
+				<section>
+					<p>Sometimes you deal with properties where there can potentially be more values, and then you would like to force it to be returned as an array. If not, you will have situations where it is a string and other where it is a list, which is hard to deal with in implementations.</p>
+					<p>Let's say we might have more names for a resource. We can specify this using <b>@container</b> = <b>@set</b></p>
+					<pre><code data-trim class="hljs json" data-line-numbers="|8-11|10|21">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"name": {
+									"@id": "rdfs:label",
+									"@container": "@set"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								}
+							},
+							"@graph": [
+								{
+									"@id": "a",
+									"@type": "bot:Building",
+									"name": ["My Building"],
+									"storeyCount": "2",
+									"bot:hasStorey": [
+										{ "@id": "b" },
+										{ "@id": "c" }
+									]
+								},
+								{
+									"@id": "b",
+									"@type": "bot:Storey",
+									"name": ["Level 1"]
+								},
+								{
+									"@id": "c",
+									"@type": "bot:Storey",
+									"name": ["Level 2"]
+								}
+							]
+						}
+					</code></pre>
+					
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Framing</h2>
+				</section>
+
+				<section>
+					<p>A flat graph structure like the one from the previous example is super flexible from a data management perspective. However, for application purpuses, it is useful to use a tree representation. With Framing you can do exactly that!</p>
+				</section>
+
+				<section>
+					<p>Let's continue with the dataset from before and add framing instructions (<a target="_blank" href="https://json-ld.org/playground/#startTab=tab-framed&json-ld=%5B%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fa%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Building%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22My%20Building%22%7D%5D%2C%22https%3A%2F%2Fexample.com%23numberOfStoreys%22%3A%5B%7B%22%40value%22%3A%222%22%2C%22%40type%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23integer%22%7D%5D%2C%22https%3A%2F%2Fw3id.org%2Fbot%23hasStorey%22%3A%5B%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fb%22%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fc%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fb%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22Level%201%22%7D%5D%7D%2C%7B%22%40id%22%3A%22https%3A%2F%2Fex.com%2Fc%22%2C%22%40type%22%3A%5B%22https%3A%2F%2Fw3id.org%2Fbot%23Storey%22%5D%2C%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%3A%5B%7B%22%40value%22%3A%22Level%202%22%7D%5D%7D%5D&frame=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%7D%2C%22storeyCount%22%3A%7B%22%40id%22%3A%22ex%3AnumberOfStoreys%22%2C%22%40type%22%3A%22xsd%3Ainteger%22%7D%7D%2C%22%40type%22%3A%22bot%3ABuilding%22%2C%22bot%3AhasStorey%22%3A%7B%7D%7D">see results</a>).</p>
+					<pre><code data-trim class="hljs json" data-line-numbers="|16-17">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"name": {
+									"@id": "rdfs:label"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								}
+							},
+							"@type": "bot:Building",
+							"bot:hasStorey": {}
+						}
+					</code></pre>
+					<p class="fragment fade-up">This specifies that the root of the tree is a bot:Building with the relationship bot:hasStorey to something else.</p>
+				</section>
+
+				<section>
+					<p>The result is a tree structure starting with the building and then having the storeys as children of that building.</p>
+					<pre><code data-trim class="hljs json" data-line-numbers="|17-32">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"name": {
+									"@id": "rdfs:label",
+									"@container": "@set"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								}
+							},
+							"@id": "a",
+							"@type": "bot:Building",
+							"name": "My Building",
+							"storeyCount": "2",
+							"bot:hasStorey": [
+								{
+									"@id": "b",
+									"@type": "bot:Storey",
+									"name": "Level 1"
+								},
+								{
+									"@id": "c",
+									"@type": "bot:Storey",
+									"name": "Level 2"
+								}
+							]
+						}
+					</code></pre>
+				</section>
+
+				<section>
+					<p>Of course, this gets more interesting with deeper structures, so let's extend the example with a site and 6 spaces.</p>
+					<pre><code data-trim class="json" class="hljs json">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"name": {
+									"@id": "rdfs:label"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								},
+								"area": {
+									"@id": "ex:area",
+									"@type": "xsd:decimal"
+								}
+							},
+							"@graph": [
+								{
+									"@id": "s",
+									"@type": "bot:Site",
+									"name": "Our campus",
+									"bot:hasBuilding": [
+										{ "@id": "a" }
+									]
+								},
+								{
+									"@id": "a",
+									"@type": "bot:Building",
+									"name": "My Building",
+									"storeyCount": "2",
+									"bot:hasStorey": [
+										{ "@id": "b" },
+										{ "@id": "c" }
+									]
+								},
+								{
+									"@id": "b",
+									"@type": "bot:Storey",
+									"name": "Level 1",
+									"bot:hasSpace": [
+										{ "@id": "b1" },
+										{ "@id": "b2" },
+										{ "@id": "b3" }
+									]
+								},
+								{
+									"@id": "c",
+									"@type": "bot:Storey",
+									"name": "Level 2",
+									"bot:hasSpace": [
+										{ "@id": "c1" },
+										{ "@id": "c2" },
+										{ "@id": "c3" }
+									]
+								},
+								{
+									"@id": "b1",
+									"@type": "bot:Space",
+									"name": "Space 1.1",
+									"area": "20.2"
+								},
+								{
+									"@id": "b2",
+									"@type": "bot:Space",
+									"name": "Space 1.2",
+									"area": "11.3"
+								},
+								{
+									"@id": "b3",
+									"@type": "bot:Space",
+									"name": "Space 1.3",
+									"area": "5.6"
+								},
+								{
+									"@id": "c1",
+									"@type": "bot:Space",
+									"name": "Space 2.1",
+									"area": "20.2"
+								},
+								{
+									"@id": "c2",
+									"@type": "bot:Space",
+									"name": "Space 2.2",
+									"area": "11.3"
+								},
+								{
+									"@id": "c3",
+									"@type": "bot:Space",
+									"name": "Space 2.3",
+									"area": "5.6"
+								}
+							]
+						}
+					</code></pre>
+				</section>
+
+				<section>
+					<p>All we need to do is extend the frame a bit to include the new relationships (<a target="_blank" href="https://json-ld.org/playground/#startTab=tab-framed&json-ld=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%7D%2C%22storeyCount%22%3A%7B%22%40id%22%3A%22ex%3AnumberOfStoreys%22%2C%22%40type%22%3A%22xsd%3Ainteger%22%7D%2C%22area%22%3A%7B%22%40id%22%3A%22ex%3Aarea%22%2C%22%40type%22%3A%22xsd%3Adecimal%22%7D%7D%2C%22%40graph%22%3A%5B%7B%22%40id%22%3A%22s%22%2C%22%40type%22%3A%22bot%3ASite%22%2C%22name%22%3A%22Our%20campus%22%2C%22bot%3AhasBuilding%22%3A%5B%7B%22%40id%22%3A%22a%22%7D%5D%7D%2C%7B%22%40id%22%3A%22a%22%2C%22%40type%22%3A%22bot%3ABuilding%22%2C%22name%22%3A%22My%20Building%22%2C%22storeyCount%22%3A%222%22%2C%22bot%3AhasStorey%22%3A%5B%7B%22%40id%22%3A%22b%22%7D%2C%7B%22%40id%22%3A%22c%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b%22%2C%22%40type%22%3A%22bot%3AStorey%22%2C%22name%22%3A%22Level%201%22%2C%22bot%3AhasSpace%22%3A%5B%7B%22%40id%22%3A%22b1%22%7D%2C%7B%22%40id%22%3A%22b2%22%7D%2C%7B%22%40id%22%3A%22b3%22%7D%5D%7D%2C%7B%22%40id%22%3A%22c%22%2C%22%40type%22%3A%22bot%3AStorey%22%2C%22name%22%3A%22Level%202%22%2C%22bot%3AhasSpace%22%3A%5B%7B%22%40id%22%3A%22c1%22%7D%2C%7B%22%40id%22%3A%22c2%22%7D%2C%7B%22%40id%22%3A%22c3%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b1%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.1%22%2C%22area%22%3A%2220.2%22%7D%2C%7B%22%40id%22%3A%22b2%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.2%22%2C%22area%22%3A%2211.3%22%7D%2C%7B%22%40id%22%3A%22b3%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.3%22%2C%22area%22%3A%225.6%22%7D%2C%7B%22%40id%22%3A%22c1%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.1%22%2C%22area%22%3A%2220.2%22%7D%2C%7B%22%40id%22%3A%22c2%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.2%22%2C%22area%22%3A%2211.3%22%7D%2C%7B%22%40id%22%3A%22c3%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.3%22%2C%22area%22%3A%225.6%22%7D%5D%7D&frame=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%7D%2C%22storeyCount%22%3A%7B%22%40id%22%3A%22ex%3AnumberOfStoreys%22%2C%22%40type%22%3A%22xsd%3Ainteger%22%7D%2C%22area%22%3A%7B%22%40id%22%3A%22ex%3Aarea%22%2C%22%40type%22%3A%22xsd%3Adecimal%22%7D%7D%2C%22%40type%22%3A%22bot%3ASite%22%2C%22bot%3AhasBuilding%22%3A%7B%22bot%3AhasStorey%22%3A%7B%22bot%3AhasSpace%22%3A%7B%7D%7D%7D%7D&context=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%2C%22%40container%22%3A%22%40set%22%7D%2C%22storeyCount%22%3A%7B%22%40id%22%3A%22ex%3AnumberOfStoreys%22%2C%22%40type%22%3A%22xsd%3Ainteger%22%7D%2C%22storeyOfBuilding%22%3A%7B%22%40reverse%22%3A%22bot%3AhasStorey%22%7D%7D%2C%22%40type%22%3A%22Building%22%7D">see results</a>).</p>
+					<pre><code data-trim class="hljs json" data-line-numbers="|20-25">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"name": {
+									"@id": "rdfs:label"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								},
+								"area": {
+									"@id": "ex:area",
+									"@type": "xsd:decimal"
+								}
+							},
+							"@type": "bot:Site",
+							"bot:hasBuilding": {
+								"bot:hasStorey": {
+									"bot:hasSpace": {}
+								}
+							}
+						}
+					</code></pre>
+				</section>
+
+				<section>
+					<p>The result is a tree structure starting with the site, then the building, its storeys and lastly the spaces of these storeys.</p>
+					<pre><code data-trim class="hljs json">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"name": {
+										"@id": "rdfs:label"
+								},
+								"storeyCount": {
+										"@id": "ex:numberOfStoreys",
+										"@type": "xsd:integer"
+								},
+								"area": {
+										"@id": "ex:area",
+										"@type": "xsd:decimal"
+								}
+							},
+							"@id": "s",
+							"@type": "bot:Site",
+							"name": "Our campus",
+							"bot:hasBuilding": {
+								"@id": "a",
+								"@type": "bot:Building",
+								"name": "My Building",
+								"storeyCount": "2",
+								"bot:hasStorey": [
+									{
+										"@id": "b",
+										"@type": "bot:Storey",
+										"name": "Level 1",
+										"bot:hasSpace": [
+											{	
+												"@id": "b1",
+												"@type": "bot:Space",
+												"name": "Space 1.1",
+												"area": "20.2"
+											},
+											{
+												"@id": "b2",
+												"@type": "bot:Space",
+												"name": "Space 1.2",
+												"area": "11.3"
+											},
+											{
+												"@id": "b3",
+												"@type": "bot:Space",
+												"name": "Space 1.3",
+												"area": "5.6"
+											}
+										]
+										},
+										{
+										"@id": "c",
+										"@type": "bot:Storey",
+										"name": "Level 2",
+										"bot:hasSpace": [
+											{
+												"@id": "c1",
+												"@type": "bot:Space",
+												"name": "Space 2.1",
+												"area": "20.2"
+											},
+											{
+												"@id": "c2",
+												"@type": "bot:Space",
+												"name": "Space 2.2",
+												"area": "11.3"
+											},
+											{
+												"@id": "c3",
+												"@type": "bot:Space",
+												"name": "Space 2.3",
+												"area": "5.6"
+											}
+										]
+									}
+								]
+							}
+						}
+					</code></pre>
+				</section>
+
+				<section>
+					<p>But one problem occurs when more resources are referring to the same resource. Let's for example extend our example by specifying that Space 1.1 and Space 1.2 are both adjacent to the same Wall</p>
+					<pre><code data-trim class="json" class="hljs json"  data-line-numbers="60-77|102-107">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"ifc": "http://ifcowl.openbimstandards.org/IFC2X3_Final#",
+								"name": {
+									"@id": "rdfs:label"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								},
+								"area": {
+									"@id": "ex:area",
+									"@type": "xsd:decimal"
+								}
+							},
+							"@graph": [
+								{
+									"@id": "s",
+									"@type": "bot:Site",
+									"name": "Our campus",
+									"bot:hasBuilding": [
+										{ "@id": "a" }
+									]
+								},
+								{
+									"@id": "a",
+									"@type": "bot:Building",
+									"name": "My Building",
+									"storeyCount": "2",
+									"bot:hasStorey": [
+										{ "@id": "b" },
+										{ "@id": "c" }
+									]
+								},
+								{
+									"@id": "b",
+									"@type": "bot:Storey",
+									"name": "Level 1",
+									"bot:hasSpace": [
+										{ "@id": "b1" },
+										{ "@id": "b2" },
+										{ "@id": "b3" }
+									]
+								},
+								{
+									"@id": "c",
+									"@type": "bot:Storey",
+									"name": "Level 2",
+									"bot:hasSpace": [
+										{ "@id": "c1" },
+										{ "@id": "c2" },
+										{ "@id": "c3" }
+									]
+								},
+								{
+									"@id": "b1",
+									"@type": "bot:Space",
+									"name": "Space 1.1",
+									"area": "20.2",
+									"bot:adjacentElement": [
+										{ "@id": "d" }
+									]
+								},
+								{
+									"@id": "b2",
+									"@type": "bot:Space",
+									"name": "Space 1.2",
+									"area": "11.3",
+									"bot:adjacentElement": [
+										{ "@id": "d" }
+									]
+								},
+								{
+									"@id": "b3",
+									"@type": "bot:Space",
+									"name": "Space 1.3",
+									"area": "5.6"
+								},
+								{
+									"@id": "c1",
+									"@type": "bot:Space",
+									"name": "Space 2.1",
+									"area": "20.2"
+								},
+								{
+									"@id": "c2",
+									"@type": "bot:Space",
+									"name": "Space 2.2",
+									"area": "11.3"
+								},
+								{
+									"@id": "c3",
+									"@type": "bot:Space",
+									"name": "Space 2.3",
+									"area": "5.6"
+								},
+								{
+									"@id": "d",
+									"@type": ["bot:Element", "ifc:IfcWall"],
+									"name": "Wall 222"
+								}
+							]
+						}
+					</code></pre>
+				</section>
+
+				<section>
+					<p>We extend the frame to include this new relationship (<a target="_blank" href="https://json-ld.org/playground/#startTab=tab-framed&json-ld=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22ifc%22%3A%22http%3A%2F%2Fifcowl.openbimstandards.org%2FIFC2X3_Final%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%7D%2C%22storeyCount%22%3A%7B%22%40id%22%3A%22ex%3AnumberOfStoreys%22%2C%22%40type%22%3A%22xsd%3Ainteger%22%7D%2C%22area%22%3A%7B%22%40id%22%3A%22ex%3Aarea%22%2C%22%40type%22%3A%22xsd%3Adecimal%22%7D%7D%2C%22%40graph%22%3A%5B%7B%22%40id%22%3A%22s%22%2C%22%40type%22%3A%22bot%3ASite%22%2C%22name%22%3A%22Our%20campus%22%2C%22bot%3AhasBuilding%22%3A%5B%7B%22%40id%22%3A%22a%22%7D%5D%7D%2C%7B%22%40id%22%3A%22a%22%2C%22%40type%22%3A%22bot%3ABuilding%22%2C%22name%22%3A%22My%20Building%22%2C%22storeyCount%22%3A%222%22%2C%22bot%3AhasStorey%22%3A%5B%7B%22%40id%22%3A%22b%22%7D%2C%7B%22%40id%22%3A%22c%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b%22%2C%22%40type%22%3A%22bot%3AStorey%22%2C%22name%22%3A%22Level%201%22%2C%22bot%3AhasSpace%22%3A%5B%7B%22%40id%22%3A%22b1%22%7D%2C%7B%22%40id%22%3A%22b2%22%7D%2C%7B%22%40id%22%3A%22b3%22%7D%5D%7D%2C%7B%22%40id%22%3A%22c%22%2C%22%40type%22%3A%22bot%3AStorey%22%2C%22name%22%3A%22Level%202%22%2C%22bot%3AhasSpace%22%3A%5B%7B%22%40id%22%3A%22c1%22%7D%2C%7B%22%40id%22%3A%22c2%22%7D%2C%7B%22%40id%22%3A%22c3%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b1%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.1%22%2C%22area%22%3A%2220.2%22%2C%22bot%3AadjacentElement%22%3A%5B%7B%22%40id%22%3A%22d%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b2%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.2%22%2C%22area%22%3A%2211.3%22%2C%22bot%3AadjacentElement%22%3A%5B%7B%22%40id%22%3A%22d%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b3%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.3%22%2C%22area%22%3A%225.6%22%7D%2C%7B%22%40id%22%3A%22c1%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.1%22%2C%22area%22%3A%2220.2%22%7D%2C%7B%22%40id%22%3A%22c2%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.2%22%2C%22area%22%3A%2211.3%22%7D%2C%7B%22%40id%22%3A%22c3%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.3%22%2C%22area%22%3A%225.6%22%7D%2C%7B%22%40id%22%3A%22d%22%2C%22%40type%22%3A%5B%22bot%3AElement%22%2C%22ifc%3AIfcWall%22%5D%2C%22name%22%3A%22Wall%20222%22%7D%5D%7D&frame=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22ifc%22%3A%22http%3A%2F%2Fifcowl.openbimstandards.org%2FIFC2X3_Final%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%7D%2C%22storeyCount%22%3A%7B%22%40id%22%3A%22ex%3AnumberOfStoreys%22%2C%22%40type%22%3A%22xsd%3Ainteger%22%7D%2C%22area%22%3A%7B%22%40id%22%3A%22ex%3Aarea%22%2C%22%40type%22%3A%22xsd%3Adecimal%22%7D%7D%2C%22bot%3AhasBuilding%22%3A%7B%22bot%3AhasStorey%22%3A%7B%22bot%3AhasSpace%22%3A%7B%22bot%3AadjacentElement%22%3A%7B%7D%7D%7D%7D%7D">see results</a>).</p>
+					<pre><code data-trim class="hljs json" data-line-numbers="|23-27">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"ifc": "http://ifcowl.openbimstandards.org/IFC2X3_Final#",
+								"name": {
+									"@id": "rdfs:label"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								},
+								"area": {
+									"@id": "ex:area",
+									"@type": "xsd:decimal"
+								}
+							},
+							"@type": "bot:Site",
+							"bot:hasBuilding": {
+								"bot:hasStorey": {
+									"bot:hasSpace": {
+										"bot:adjacentElement": {}
+									}
+								}
+							}
+						}
+					</code></pre>
+				</section>
+
+				<section>
+					<p>But the result is that the wall is only embedded first time. Next time it is simply referred to by its @id</p>
+					<pre><code data-trim class="json" class="hljs json"  data-line-numbers="40-47|54-56">
+						{
+							"@context": {
+							  "@base": "https://ex.com/",
+							  "bot": "https://w3id.org/bot#",
+							  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+							  "ex": "https://example.com#",
+							  "xsd": "http://www.w3.org/2001/XMLSchema#",
+							  "ifc": "http://ifcowl.openbimstandards.org/IFC2X3_Final#",
+							  "name": {
+								"@id": "rdfs:label"
+							  },
+							  "storeyCount": {
+								"@id": "ex:numberOfStoreys",
+								"@type": "xsd:integer"
+							  },
+							  "area": {
+								"@id": "ex:area",
+								"@type": "xsd:decimal"
+							  }
+							},
+							"@id": "s",
+							"@type": "bot:Site",
+							"name": "Our campus",
+							"bot:hasBuilding": {
+								"@id": 	"a",
+								"@type": "bot:Building",
+								"name": "My Building",
+								"storeyCount": "2",
+								"bot:hasStorey": [
+									{
+										"@id"		: "b",
+										"@type": "bot:Storey",
+										"name": "Level 1",
+										"bot:hasSpace": [
+											{
+												"@id": "b1",
+												"@type": "bot:Space",
+												"name": "Space 1.1",
+												"area": "20.2",
+												"bot:adjacentElement": {
+													"@id": "d",
+													"@type": [
+														"bot:Element",
+														"ifc:IfcWall"
+													],
+													"name": "Wall 222"
+												}
+											},
+											{
+												"@id": "b2",
+												"@type": "bot:Space",
+												"name": "Space 1.2",
+												"area": "11.3",
+												"bot:adjacentElement": {
+													"@id": "d"
+												}
+											}
+										]
+									},
+									{
+										"@id": "c",
+										"@type": "bot:Storey",
+										"name": "Level 2",
+										"bot:hasSpace": null
+									}
+								]
+							}
+						}
+					</code></pre>
+					<p class="fragment fade-up">What's even worse is that all spaces that don't have a bot:adjacentElement are left out.</p>
+				</section>
+
+				<section>
+					<p>So let's fix this by first specifying another property that exists on spaces (since some won't have binidngs to bot:adjacentElement). For example <b>@type</b> = <b>bot:Space</b>.</p> 
+					<p>Further, we add the <b>@embed</b> = <b>@always</b> instruction to specify that the full object reference should be included every time (<a target="_blank" href="https://json-ld.org/playground/#startTab=tab-framed&json-ld=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22ifc%22%3A%22http%3A%2F%2Fifcowl.openbimstandards.org%2FIFC2X3_Final%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%7D%2C%22storeyCount%22%3A%7B%22%40id%22%3A%22ex%3AnumberOfStoreys%22%2C%22%40type%22%3A%22xsd%3Ainteger%22%7D%2C%22area%22%3A%7B%22%40id%22%3A%22ex%3Aarea%22%2C%22%40type%22%3A%22xsd%3Adecimal%22%7D%7D%2C%22%40graph%22%3A%5B%7B%22%40id%22%3A%22s%22%2C%22%40type%22%3A%22bot%3ASite%22%2C%22name%22%3A%22Our%20campus%22%2C%22bot%3AhasBuilding%22%3A%5B%7B%22%40id%22%3A%22a%22%7D%5D%7D%2C%7B%22%40id%22%3A%22a%22%2C%22%40type%22%3A%22bot%3ABuilding%22%2C%22name%22%3A%22My%20Building%22%2C%22storeyCount%22%3A%222%22%2C%22bot%3AhasStorey%22%3A%5B%7B%22%40id%22%3A%22b%22%7D%2C%7B%22%40id%22%3A%22c%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b%22%2C%22%40type%22%3A%22bot%3AStorey%22%2C%22name%22%3A%22Level%201%22%2C%22bot%3AhasSpace%22%3A%5B%7B%22%40id%22%3A%22b1%22%7D%2C%7B%22%40id%22%3A%22b2%22%7D%2C%7B%22%40id%22%3A%22b3%22%7D%5D%7D%2C%7B%22%40id%22%3A%22c%22%2C%22%40type%22%3A%22bot%3AStorey%22%2C%22name%22%3A%22Level%202%22%2C%22bot%3AhasSpace%22%3A%5B%7B%22%40id%22%3A%22c1%22%7D%2C%7B%22%40id%22%3A%22c2%22%7D%2C%7B%22%40id%22%3A%22c3%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b1%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.1%22%2C%22area%22%3A%2220.2%22%2C%22bot%3AadjacentElement%22%3A%5B%7B%22%40id%22%3A%22d%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b2%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.2%22%2C%22area%22%3A%2211.3%22%2C%22bot%3AadjacentElement%22%3A%5B%7B%22%40id%22%3A%22d%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b3%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.3%22%2C%22area%22%3A%225.6%22%7D%2C%7B%22%40id%22%3A%22c1%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.1%22%2C%22area%22%3A%2220.2%22%7D%2C%7B%22%40id%22%3A%22c2%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.2%22%2C%22area%22%3A%2211.3%22%7D%2C%7B%22%40id%22%3A%22c3%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.3%22%2C%22area%22%3A%225.6%22%7D%2C%7B%22%40id%22%3A%22d%22%2C%22%40type%22%3A%5B%22bot%3AElement%22%2C%22ifc%3AIfcWall%22%5D%2C%22name%22%3A%22Wall%20222%22%7D%5D%7D&frame=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22ifc%22%3A%22http%3A%2F%2Fifcowl.openbimstandards.org%2FIFC2X3_Final%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%7D%2C%22storeyCount%22%3A%7B%22%40id%22%3A%22ex%3AnumberOfStoreys%22%2C%22%40type%22%3A%22xsd%3Ainteger%22%7D%2C%22area%22%3A%7B%22%40id%22%3A%22ex%3Aarea%22%2C%22%40type%22%3A%22xsd%3Adecimal%22%7D%7D%2C%22bot%3AhasBuilding%22%3A%7B%22bot%3AhasStorey%22%3A%7B%22bot%3AhasSpace%22%3A%7B%22%40type%22%3A%22bot%3ASpace%22%2C%22bot%3AadjacentElement%22%3A%7B%22%40embed%22%3A%22%40always%22%7D%7D%7D%7D%7D">see results</a>).</p>
+					<pre><code data-trim class="hljs json" data-line-numbers="|23-28">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"ifc": "http://ifcowl.openbimstandards.org/IFC2X3_Final#",
+								"name": {
+									"@id": "rdfs:label"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								},
+								"area": {
+									"@id": "ex:area",
+									"@type": "xsd:decimal"
+								}
+							},
+							"@type": "bot:Site",
+							"bot:hasBuilding": {
+								"bot:hasStorey": {
+									"bot:hasSpace": {
+										"@type": "bot:Space",
+										"bot:adjacentElement": {
+										  "@embed": "@always"
+										}
+									}
+								}
+							}
+						}
+					</code></pre>
+				</section>
+
+				<section>
+					<p>Now we have the tree structure that we wanted!</p>
+					<pre><code data-trim class="json" class="hljs json">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"ifc": "http://ifcowl.openbimstandards.org/IFC2X3_Final#",
+								"name": {
+									"@id": "rdfs:label"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								},
+								"area": {
+									"@id": "ex:area",
+									"@type": "xsd:decimal"
+								}
+							},
+							"@id": "s",
+							"@type": "bot:Site",
+							"name": "Our campus",
+							"bot:hasBuilding": {
+								"@id": "a",
+								"@type": "bot:Building",
+								"name": "My Building",
+								"storeyCount": "2",
+								"bot:hasStorey": [
+									{
+										"@id": "b",
+										"@type": "bot:Storey",
+										"name": "Level 1",
+										"bot:hasSpace": [
+											{
+												"@id": "b1",
+												"@type": "bot:Space",
+												"name": "Space 1.1",
+												"area": "20.2",
+												"bot:adjacentElement": {
+													"@id": "d",
+													"@type": [
+														"bot:Element",
+														"ifc:IfcWall"
+													],
+													"name": "Wall 222"
+												}
+											},
+											{
+												"@id": "b2",
+												"@type": "bot:Space",
+												"name": "Space 1.2",
+												"area": "11.3",
+												"bot:adjacentElement": {
+													"@id": "d",
+													"@type": [
+														"bot:Element",
+														"ifc:IfcWall"
+													],
+													"name": "Wall 222"
+												}
+											},
+											{
+												"@id": "b3",
+												"@type": "bot:Space",
+												"name": "Space 1.3",
+												"area": "5.6",
+												"bot:adjacentElement": null
+											}
+										]
+									},
+									{
+										"@id": "c",
+										"@type": "bot:Storey",
+										"name": "Level 2",
+										"bot:hasSpace": [
+											{
+												"@id": "c1",
+												"@type": "bot:Space",
+												"name": "Space 2.1",
+												"area": "20.2",
+												"bot:adjacentElement": null
+											},
+											{
+												"@id": "c2",
+												"@type": "bot:Space",
+												"name": "Space 2.2",
+												"area": "11.3",
+												"bot:adjacentElement": null
+											},
+											{
+												"@id": "c3",
+												"@type": "bot:Space",
+												"name": "Space 2.3",
+												"area": "5.6",
+												"bot:adjacentElement": null
+											}
+										]
+									}
+								]
+							}
+						}
+					</code></pre>
+					<p class="fragment fade-up">Now spaces that don't have adjacent elements simply have a null reference for that property.</p>
+				</section>
+
+				<section>
+					<p>One last thing we can do with framing is that we can express @reverse relationships. BOT only describes the bot:hasSpace relationship from a storey to a space, but what if we wanted to have a relationship from the space to the storey? We can do that! (<a target="_blank" href="https://json-ld.org/playground/#startTab=tab-framed&json-ld=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22ifc%22%3A%22http%3A%2F%2Fifcowl.openbimstandards.org%2FIFC2X3_Final%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%7D%2C%22storeyCount%22%3A%7B%22%40id%22%3A%22ex%3AnumberOfStoreys%22%2C%22%40type%22%3A%22xsd%3Ainteger%22%7D%2C%22area%22%3A%7B%22%40id%22%3A%22ex%3Aarea%22%2C%22%40type%22%3A%22xsd%3Adecimal%22%7D%7D%2C%22%40graph%22%3A%5B%7B%22%40id%22%3A%22s%22%2C%22%40type%22%3A%22bot%3ASite%22%2C%22name%22%3A%22Our%20campus%22%2C%22bot%3AhasBuilding%22%3A%5B%7B%22%40id%22%3A%22a%22%7D%5D%7D%2C%7B%22%40id%22%3A%22a%22%2C%22%40type%22%3A%22bot%3ABuilding%22%2C%22name%22%3A%22My%20Building%22%2C%22storeyCount%22%3A%222%22%2C%22bot%3AhasStorey%22%3A%5B%7B%22%40id%22%3A%22b%22%7D%2C%7B%22%40id%22%3A%22c%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b%22%2C%22%40type%22%3A%22bot%3AStorey%22%2C%22name%22%3A%22Level%201%22%2C%22bot%3AhasSpace%22%3A%5B%7B%22%40id%22%3A%22b1%22%7D%2C%7B%22%40id%22%3A%22b2%22%7D%2C%7B%22%40id%22%3A%22b3%22%7D%5D%7D%2C%7B%22%40id%22%3A%22c%22%2C%22%40type%22%3A%22bot%3AStorey%22%2C%22name%22%3A%22Level%202%22%2C%22bot%3AhasSpace%22%3A%5B%7B%22%40id%22%3A%22c1%22%7D%2C%7B%22%40id%22%3A%22c2%22%7D%2C%7B%22%40id%22%3A%22c3%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b1%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.1%22%2C%22area%22%3A%2220.2%22%2C%22bot%3AadjacentElement%22%3A%5B%7B%22%40id%22%3A%22d%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b2%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.2%22%2C%22area%22%3A%2211.3%22%2C%22bot%3AadjacentElement%22%3A%5B%7B%22%40id%22%3A%22d%22%7D%5D%7D%2C%7B%22%40id%22%3A%22b3%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%201.3%22%2C%22area%22%3A%225.6%22%7D%2C%7B%22%40id%22%3A%22c1%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.1%22%2C%22area%22%3A%2220.2%22%7D%2C%7B%22%40id%22%3A%22c2%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.2%22%2C%22area%22%3A%2211.3%22%7D%2C%7B%22%40id%22%3A%22c3%22%2C%22%40type%22%3A%22bot%3ASpace%22%2C%22name%22%3A%22Space%202.3%22%2C%22area%22%3A%225.6%22%7D%2C%7B%22%40id%22%3A%22d%22%2C%22%40type%22%3A%5B%22bot%3AElement%22%2C%22ifc%3AIfcWall%22%5D%2C%22name%22%3A%22Wall%20222%22%7D%5D%7D&frame=%7B%22%40context%22%3A%7B%22%40base%22%3A%22https%3A%2F%2Fex.com%2F%22%2C%22bot%22%3A%22https%3A%2F%2Fw3id.org%2Fbot%23%22%2C%22rdfs%22%3A%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%2C%22ex%22%3A%22https%3A%2F%2Fexample.com%23%22%2C%22xsd%22%3A%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%22%2C%22ifc%22%3A%22http%3A%2F%2Fifcowl.openbimstandards.org%2FIFC2X3_Final%23%22%2C%22name%22%3A%7B%22%40id%22%3A%22rdfs%3Alabel%22%7D%2C%22storeyCount%22%3A%7B%22%40id%22%3A%22ex%3AnumberOfStoreys%22%2C%22%40type%22%3A%22xsd%3Ainteger%22%7D%2C%22area%22%3A%7B%22%40id%22%3A%22ex%3Aarea%22%2C%22%40type%22%3A%22xsd%3Adecimal%22%7D%7D%2C%22bot%3AhasBuilding%22%3A%7B%22bot%3AhasStorey%22%3A%7B%22bot%3AhasSpace%22%3A%7B%22%40type%22%3A%22bot%3ASpace%22%2C%22bot%3AadjacentElement%22%3A%7B%22%40embed%22%3A%22%40always%22%7D%7D%7D%7D%7D">see results</a>).</p>
+					<pre><code data-trim class="hljs json" data-line-numbers="20-22|29-31">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"ifc": "http://ifcowl.openbimstandards.org/IFC2X3_Final#",
+								"name": {
+									"@id": "rdfs:label"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								},
+								"area": {
+									"@id": "ex:area",
+									"@type": "xsd:decimal"
+								},
+								"ex:spaceOfStorey": {
+								  "@reverse": "bot:hasSpace"
+								}
+							},
+							"@type": "bot:Site",
+							"bot:hasBuilding": {
+								"bot:hasStorey": {
+									"bot:hasSpace": {
+										"@type": "bot:Space",
+										"ex:spaceOfStorey": {
+											"@embed": "@always"
+										},
+										"bot:adjacentElement": {
+										  "@embed": "@always"
+										}
+									}
+								}
+							}
+						}
+					</code></pre>
+				</section>
+
+				<section>
+					<p>Final result</p>
+					<pre><code data-trim class="json" class="hljs json">
+						{
+							"@context": {
+								"@base": "https://ex.com/",
+								"bot": "https://w3id.org/bot#",
+								"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+								"ex": "https://example.com#",
+								"xsd": "http://www.w3.org/2001/XMLSchema#",
+								"ifc": "http://ifcowl.openbimstandards.org/IFC2X3_Final#",
+								"name": {
+									"@id": "rdfs:label"
+								},
+								"storeyCount": {
+									"@id": "ex:numberOfStoreys",
+									"@type": "xsd:integer"
+								},
+								"area": {
+									"@id": "ex:area",
+									"@type": "xsd:decimal"
+								},
+								"ex:spaceOfStorey": {
+									"@reverse": "bot:hasSpace"
+								}
+							},
+							"@id": "s",
+							"@type": "bot:Site",
+							"name": "Our campus",
+							"bot:hasBuilding": {
+								"@id": "a",
+								"@type": "bot:Building",
+								"name": "My Building",
+								"storeyCount": "2",
+								"bot:hasStorey": [
+									{
+										"@id": "b",
+										"@type": "bot:Storey",
+										"name": "Level 1",
+										"bot:hasSpace": [
+											{
+												"@id": "b1",
+												"ex:spaceOfStorey": { "@id": "b" },
+												"@type": "bot:Space",
+												"name": "Space 1.1",
+												"area": "20.2",
+												"bot:adjacentElement": {
+													"@id": "d",
+													"@type": [
+														"bot:Element",
+														"ifc:IfcWall"
+													],
+													"name": "Wall 222"
+												}
+											},
+											{
+												"@id": "b2",
+												"ex:spaceOfStorey": { "@id": "b" },
+												"@type": "bot:Space",
+												"name": "Space 1.2",
+												"area": "11.3",
+												"bot:adjacentElement": {
+													"@id": "d",
+													"@type": [
+														"bot:Element",
+														"ifc:IfcWall"
+													],
+													"name": "Wall 222"
+												}
+											},
+											{
+												"@id": "b3",
+												"ex:spaceOfStorey": { "@id": "b" },
+												"@type": "bot:Space",
+												"name": "Space 1.3",
+												"area": "5.6",
+												"bot:adjacentElement": null
+											}
+										]
+									},
+									{
+										"@id": "c",
+										"@type": "bot:Storey",
+										"name": "Level 2",
+										"bot:hasSpace": [
+											{
+												"@id": "c1",
+												"ex:spaceOfStorey": { "@id": "c" },
+												"@type": "bot:Space",
+												"name": "Space 2.1",
+												"area": "20.2",
+												"bot:adjacentElement": null
+											},
+											{
+												"@id": "c2",
+												"ex:spaceOfStorey": { "@id": "c" },
+												"@type": "bot:Space",
+												"name": "Space 2.2",
+												"area": "11.3",
+												"bot:adjacentElement": null
+											},
+											{
+												"@id": "c3",
+												"ex:spaceOfStorey": { "@id": "c" },
+												"@type": "bot:Space",
+												"name": "Space 2.3",
+												"area": "5.6",
+												"bot:adjacentElement": null
+											}
+										]
+									}
+								]
+							}
+						}
+					</code></pre>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Congratulations! You are now a JSON-LD framing expert 💪</h2>
 				</section>
 
 			</section>
