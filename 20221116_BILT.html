@@ -480,10 +480,22 @@
 				<section>
 					<img data-src="./static/images/logos/W3C.svg"></img>
 					<h4>RDF: Resource Description Framework</h4>
+					<aside class="notes">
+						(Alex) Linked Data is using a graph structure, based on the Resource Description Framework (RDF), creating an interconnected knowledge graph that is much more powerful than storing data in conventional tables. Knowledge graphs consist of relationships between things, stored as triples.
+					</aside>
 				</section>
 
-				<section data-background-image="./static/images/SPO.svg" data-background-size="120vw"></section>
-				<section data-background-image="./static/images/SPO2.svg" data-background-size="120vw"></section>
+				<section data-background-image="./static/images/SPO.svg" data-background-size="120vw">
+					<aside class="notes">
+						(Alex) A triple always consists of three things - A subject, predicate and an opject.
+					</aside>
+				</section>
+				<section data-background-image="./static/images/SPO2.svg" data-background-size="120vw">
+					<aside class="notes">
+						<p>(Alex) In the context of a building, if we want to declare a relationship between a wall and a window, we can say:</p>
+						<p>Wall_002 has window Window_022</p>
+					</aside>
+				</section>
 
 				<section>
 					<p>But how do we get from tables to graphs?</p>
@@ -494,26 +506,32 @@
 
 				<section data-background-image="./static/images/RDF-en-simple-02.svg">
 					<aside class="notes">
-						From an RDF perspective we see too subjects. One for each data row. And they are even identified with an ID.
+						(Alex) From an RDF perspective we see too subjects. One for each data row. And they are even identified with an ID.
 					</aside>
 				</section>
 
 				<section data-background-image="./static/images/RDF-en-simple-03.svg">
 					<aside class="notes">
-						Each column contains a statement about those subjects and the predicate value is given by the column header.
+						(Alex) Each column contains a statement about those subjects and the predicate value is given by the column header.
 					</aside>
 				</section>
 
 				<section data-background-image="./static/images/RDF-en-simple-04.svg">
 					<aside class="notes">
-						The value of the subject-predicate pair can then be found in the cell.
+						(Alex) The value of the subject-predicate pair can then be found in the cell.
 					</aside>
 				</section>
 
-				<section data-background-image="./static/images/RDF-en-simple-05.svg"></section>
+				<section data-background-image="./static/images/RDF-en-simple-05.svg">
+					<aside class="notes">
+						(Alex) So in RDF perspective the table can be written in <b>raw data</b> like this. <br>
+						And as a <b>graph</b>, we can visualize the data like this. <br>
+					</aside>
+				</section>
 
 				<section data-background-image="./static/images/RDF-en-simple-06.svg">
 					<aside class="notes">
+						(Alex) <br>
 						- Combining data stored in different tables into one unified representation is possible if there is a common identifier for the rows.<br>
 						- For example, we could have another table with middle names.<br>
 						- It's not a problem that there is no middle name for Alexander. RDF builds on an open world assumption meaning that if we have the information that's great and if we don't that's also alright. Then Alexanders middle name is simply unknown to us.<br>
@@ -522,7 +540,7 @@
 
 				<section data-background-image="./static/images/RDF-en-simple-07.svg">
 					<aside class="notes">
-						In RDBs it's common to have dedicated tables that deal with many-to-many relationships. These are also easily translated.
+						(Alex) In RDBs it's common to have dedicated tables that deal with many-to-many relationships. These are also easily translated.
 					</aside>
 				</section>
 
@@ -665,48 +683,6 @@
 				<section data-background-image="./static/images/BOT-Interfaces-05.svg" data-background-size="80vw">
 				</section> -->
 
-				<!-- Query: sites -->
-				<section
-					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%0A%7D"
-					data-background-interactive>
-				</section>
-
-				<!-- Query: sites + buildings -->
-				<section
-					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%0A%7D"
-					data-background-interactive>
-				</section>
-
-				<!-- Query: sites + buildings + storeys -->
-				<section
-					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%7D"
-					data-background-interactive>
-				</section>
-
-				<!-- Query: sites + buildings + storeys + spaces -->
-				<section
-					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D%0A"
-					data-background-interactive>
-				</section>
-
-				<!-- Query: sites + buildings + storeys + spaces TABLE -->
-				<section
-					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ASELECT%20%2A%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D"
-					data-background-interactive>
-				</section>
-
-				<!-- Query: adjacent elements -->
-				<section
-					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20inst%3A0BTBFw6f90Nfh9rP1dlXru%20bot%3AadjacentElement%20%3Fel%20%0A%7D"
-					data-background-interactive>
-				</section>
-
-				<!-- Query: interfaces -->
-				<section
-					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20ex%3A%20%3Chttps%3A%2F%2Fexample.com%2F%3E%20%0APREFIX%20kg%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fkobl%2Fgeometry%23%3E%20%0APREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ASELECT%20DISTINCT%20%3Fboundary%20%3Fls%20%3Fel%0AWHERE%7B%0A%20%20%20BIND%28inst%3A0BTBFw6f90Nfh9rP1dl_3A%20AS%20%3Fspace%29%0A%20%20%20%3Fboundary%20bot%3AinterfaceOf%20%3Fspace%20%2C%20%3Fel%20%3B%0A%20%20%20%20%20%20%20kg%3Avertices3D%20%3Fver%20%3B%0A%20%20%20%20%20%20%20ex%3AisVertical%20true%20.%0A%20%20%20FILTER%28%3Fel%20%21%3D%20%3Fspace%29%0A%20%20%20BIND%28CONCAT%28%22POLYGON%20Z%20%28%22%2C%20STR%28%20%3Fver%20%29%2C%20%22%29%22%29%20%20%20AS%20%3Fls%20%29%0A%7D"
-					data-background-interactive>
-				</section>
-
 			</section>
 
 
@@ -774,11 +750,11 @@
 					</style>
 				</section>
 
-				<section data-background-image="./static/images/Pipe-Interfaces-01.svg" data-background-size="80vw">
+				<section data-background-image="./static/images/Pipe-interfaces-01.svg" data-background-size="80vw">
 				</section>
-				<section data-background-image="./static/images/Pipe-Interfaces-02.svg" data-background-size="80vw">
+				<section data-background-image="./static/images/Pipe-interfaces-02.svg" data-background-size="80vw">
 				</section>
-				<section data-background-image="./static/images/Pipe-Interfaces-03.svg" data-background-size="80vw">
+				<section data-background-image="./static/images/Pipe-interfaces-03.svg" data-background-size="80vw">
 				</section>
 
 				<section data-background-iframe="https://bs-visualizer.web.app" data-background-interactive>
@@ -786,9 +762,87 @@
 
 			</section>
 
+			<!-- LD BIM Introduction -->
 			<section>
-				<h1>Demonstration</h1>
-				<h2>LD-BIM 🕹️🎬</h2>
+				<section>
+					<h1>Introduction to Linked Building Data (LBD)</h1>
+					<h2>👷‍♀️👷‍♂️👨‍🔧👩‍🎓👨‍🏫🙋</h2>
+				</section>
+
+				<section data-background-image="./static/images/LBD-Community-website.png">
+					<h4 style="margin-top: 20vh; background-color: rgba(255, 255, 255, 0.8);" class="box">
+						<img data-src="./static/images/logos/W3C.svg" height="40px" style="vertical-align: middle; margin: 0;"> Linked Building Data (LBD) Community Group</h4>
+					<p class="box small down-5" style="background-color: rgba(255, 255, 255, 0.8);">
+					  Established December 2014<br>
+					  195 members November 2022
+					</p>
+				  </section>
+
+				  <section>
+					<h4>A Community to gather best practice use cases in the field of BIM and Linked Data technologies</h4>
+					<ul style="font-size: 0.6em;">
+						<li>Regular meetings to share and discuss new use cases</li>
+						<li>Develop and share external ontologies within Linked Building Data</li>
+						<li>Current ontologies include <a target="_blank" href="https://w3id.org/omg">OMG</a> (Ontology for Managing Geometry), <a target="_blank" href="https://w3id.org/bot">BOT</a> (Core topological concepts of a building), <a target="_blank" href="https://w3id.org/bpo">BPO</a> (Building Product Ontology) and many more</li>
+						<li>Everyone is invited to build on top of this foundation, extend the existing ontologies and share new ontologies to the group!</li>
+					</ul>
+				</section>
+				
+				
+			</section>
+
+			<section>
+				<!-- LD BIM Demonstration -->
+				<section>
+					<h1>Demonstration</h1>
+					<h2>LD-BIM 🕹️🎬</h2>
+					<a target="_blank" href="https://ld-bim.web.app">ld-bim.web.app</a>
+				</section>
+				
+				<!-- LD BIM -->
+
+				<!-- LD BIM EXAMPLE QUERIES -->
+				<!-- Query: sites -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys + spaces -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D%0A"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys + spaces TABLE -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ASELECT%20%2A%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: adjacent elements -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20inst%3A0BTBFw6f90Nfh9rP1dlXru%20bot%3AadjacentElement%20%3Fel%20%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: interfaces -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20ex%3A%20%3Chttps%3A%2F%2Fexample.com%2F%3E%20%0APREFIX%20kg%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fkobl%2Fgeometry%23%3E%20%0APREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ASELECT%20DISTINCT%20%3Fboundary%20%3Fls%20%3Fel%0AWHERE%7B%0A%20%20%20BIND%28inst%3A0BTBFw6f90Nfh9rP1dl_3A%20AS%20%3Fspace%29%0A%20%20%20%3Fboundary%20bot%3AinterfaceOf%20%3Fspace%20%2C%20%3Fel%20%3B%0A%20%20%20%20%20%20%20kg%3Avertices3D%20%3Fver%20%3B%0A%20%20%20%20%20%20%20ex%3AisVertical%20true%20.%0A%20%20%20FILTER%28%3Fel%20%21%3D%20%3Fspace%29%0A%20%20%20BIND%28CONCAT%28%22POLYGON%20Z%20%28%22%2C%20STR%28%20%3Fver%20%29%2C%20%22%29%22%29%20%20%20AS%20%3Fls%20%29%0A%7D"
+					data-background-interactive>
+				</section>
 			</section>
 
 			<section>
@@ -838,6 +892,13 @@
 
 				<section>
 					<img src="./static/images/mhra/projects/ConTech5-fire-cl_ol.svg">
+					<aside class="notes">
+						(Alex) In this small project, the intention was to check a building model upon fire damper requirements. <br>
+						- If a pipe is going through a wall with fire classification (wall between two different fire sections), a fire damper has to be installed. <br>
+						- If the fire zoning changes, the requirement of fire damper changes as well. This is conidered here by using incremental reasoning with the graph database solution RDFox from Oxford Semantics. <br>
+						- We can write a rule: If two spaces from different fire sections share the same wall interface, this wall interface is classified as a fire protection interface <br>
+						- If a pipe is now intersecting with such a fire classified interface, it must contain a fire damper.
+					</aside>
 				</section>
 
 				<section>
@@ -847,6 +908,13 @@
 
 				<section data-background-video="./static/videos/mhra-bart.mp4" 
 					data-background-video-loop data-background-video-muted>
+					<aside class="notes">
+						(Alex) <br>
+						1. Enter fire sectioning into excel file and visualize in 3D viewer<br>
+						2.  Show fire walls based on the fire sectioning<br>
+						3.  Check if the required fire dampers are installed<br>
+						4.  Change fire sectioning in excel file, upload and see what changed<br>
+					</aside>
 				</section>
 
 			</section>
