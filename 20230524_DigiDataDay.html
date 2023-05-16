@@ -1,0 +1,592 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Embrace the graph! | DigiDataDay 2023</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/mhra.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	<!-- Custom styles -->
+	<style>
+		.two-col {
+			display: flex;
+			height: 100vh;
+			width: 100%;
+		}
+
+		.col {
+			flex: 1;
+			padding: 50px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		.footer-left {
+			position: absolute;
+			bottom: 27px;
+			left: 80px;
+		}
+
+		.footer-left img {
+			height: 3vh;
+		}
+
+		.box {
+			background-color: rgba(255, 255, 255, 0.5);
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			font-size: 1em !important;
+			color: black;
+			padding: 1vh;
+		}
+
+		.box-top-left {
+			position: absolute;
+			left: 0vw;
+			top: -30vh;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			font-size: 1em !important;
+			color: black;
+			padding: 1vh;
+		}
+
+		.top-right {
+			position: static;
+			right: 0vw;
+			top: 0vh;
+			bottom: 40vh;
+			z-index: 10;
+			background-color: red;
+		}
+
+		.logo-container {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: flex-end;
+			margin-top: 5vh;
+			gap: 40px;
+		}
+
+		.logo-container img {
+			height: 70px;
+		}
+
+
+		.assumption1 {
+			display: flex;
+			justify-content: center;
+		}
+
+		.assumption2 {
+			display: flex;
+			flex-direction: column;
+			width: 500px;
+		}
+
+		.assumption2 div:first-of-type {
+			border-bottom: 2px solid black
+		}
+
+		.footnote {
+			display: flex;
+			justify-content: end;
+			font-size: 15px;
+			height: 50;
+		}
+
+		.ruleinter {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 700px;
+			border: 5px dotted grey;
+		}
+
+		.buildingprep {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 450px;
+			border: 5px dotted grey;
+		}
+
+		.ruleexec {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 200px;
+			border: 5px dotted grey;
+		}
+
+		.reporting {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: -20px;
+			border: 5px dotted grey;
+		}
+
+		.case1 {
+			position: fixed;
+			height: 100px;
+			width: 425px;
+			bottom: 250px;
+			right: 525px;
+			border: 4px dotted blue;
+			opacity: 0.5;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case2 {
+			position: fixed;
+			height: 150px;
+			width: 200px;
+			bottom: 350px;
+			right: 475px;
+			border: 4px dotted blue;
+			opacity: 0.5;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case3 {
+			position: fixed;
+			height: 250px;
+			width: 400px;
+			bottom: 250px;
+			right: 275px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case4 {
+			position: fixed;
+			height: 100px;
+			width: 110px;
+			bottom: 325px;
+			right: 165px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case5 {
+			position: fixed;
+			height: 110px;
+			width: 110px;
+			bottom: 130px;
+			right: 300px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+		}
+
+		.note{
+			font-family: Consolas, monaco, monospace;
+			font-size: 0.4em;
+			font-weight: bold;
+		}
+		.coded{
+			font-family: Consolas, monaco, monospace;
+			font-size: 0.7em;
+			font-weight: 100;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="reveal">
+
+		<!-- Captions -->
+		<cap
+			style="position: absolute; bottom: 12vh; left: 0px; width: 100%; z-index:500; text-align: center; font-size: 1.4vw; font-style: italic; color: #65625e; font-family: 'Courier New', Courier, monospace;">
+		</cap>
+
+		<!-- Footer left -->
+		<div class="footer-left">
+			<img src="./static/images/mhra/digidataday2.png" alt="" style="height: 2vh;">
+			<img src="./static/images/logos/niras.svg" alt="">
+		</div>
+
+		<!-- Slides -->
+		<div class="slides">
+
+			<!-- Front page -->
+			<section>
+				<h1>Embrace the graph!</h1>
+				<img src="./static/images/mhra/digidataday.png" style="height: 8vh;">
+				<p style="font-size: 0.8em;">https://bit.ly/3W3IA7i</p>
+				<p style="font-size: 0.5em;">By Mads Holten Rasmussen</p>
+			</section>
+
+			<!-- What is a graph -->
+			<section>
+				
+				<section>
+					<h1>Graphs?</h1>
+				</section>
+
+				<section data-background-image="./static/images/mhra/edu/diagram_vs_graph1.svg" data-background-size="50%">
+				</section>
+
+				<section data-background-image="./static/images/mhra/edu/diagram_vs_graph2.svg" data-background-size="90%">
+				</section>
+
+				<section data-background-image="./static/images/mhra/edu/diagram_vs_graph3.svg" data-background-size="90%">
+				</section>
+
+				<section data-background-image="./static/images/mhra/edu/diagram_vs_graph4.svg" data-background-size="90%">
+					<div class="box">directed graph</div>
+				</section>
+				
+			</section>
+
+			<!-- When to use? -->
+			<section>
+				
+				<section>
+					<h1>When to use graphs?</h1>
+				</section>
+
+				<section>
+					<h3>When the relationships are the most important part of the dataset</h3>
+				</section>
+
+				<section data-background-image="./static/images/mhra/edu/who_uses_graphs.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph1.svg"
+					data-background-size="70%" data-state="neptune">
+					<style>
+						.neptune cap:after {
+							content: "Amazon Neptune: https://aws.amazon.com/neptune";
+						}
+					</style>
+				</section>
+
+				<section>
+					<table>
+						<tr>
+							<th>ID</th>
+							<th>Time</th>
+							<th>Value</th>
+						</tr>
+						<tr>
+							<td>2345</td>
+							<td>2023-05-15T07:07:00Z</td>
+							<td>21.3</td>
+						</tr>
+						<tr>
+							<td>2346</td>
+							<td>2023-05-15T07:08:00Z</td>
+							<td>70.1</td>
+						</tr>
+					</table>
+				</section>
+
+				<section 
+					data-background-image="./static/images/mhra/edu/database-types.jpg" 
+					data-background-size="60%"
+					data-state="db-types">
+					<style>
+						.db-types cap:after {
+							content: "https://www.nextplatform.com/2018/09/19/the-graph-database-poised-to-pounce-on-the-mainstream/";
+						}
+					</style>
+				</section>
+				
+			</section>
+
+			<!-- Graphs vs tables -->
+			<section>
+
+				<section>
+					<h2>Graphs vs. tables</h2>
+				</section>
+
+				<section>
+					<img data-src="./static/images/logos/W3C.svg"></img>
+					<h2>RDF: Resource Description Framework</h2>
+				</section>
+
+				<section data-background-image="./static/images/SPO.svg" data-background-size="120vw">
+				</section>
+				<section data-background-image="./static/images/SPO2.svg" data-background-size="120vw">
+				</section>
+
+				<section>
+					<h2>But how do we get from tables to graphs?</h2>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-01.svg">
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-02.svg">
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-03.svg">
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-04.svg">
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-05.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-06.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-07.svg" data-background-size="80%">
+				</section>
+
+				<section 
+					data-background-image="./static/images/mhra/edu/rdb-graph.png" 
+					data-background-size="60%"
+					data-state="rdb-graph">
+					<style>
+						.rdb-graph cap:after {
+							content: "https://www.slideshare.net/lyonwj/natural-language-processing-with-graph-databases-and-neo4j";
+						}
+					</style>
+				</section>
+
+			</section>
+
+
+			<!-- Querying the graph -->
+			<section>
+
+				<section>
+					<h1>Querying the graph</h1>
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph1.svg"
+					data-background-size="70%" data-state="neptune">
+					<style>
+						.neptune cap:after {
+							content: "Amazon Neptune: https://aws.amazon.com/neptune";
+						}
+					</style>
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph2.svg"
+					data-background-size="70%" data-state="neptune">
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph3.svg"
+					data-background-size="70%" data-state="neptune">
+				</section>
+
+				<section>
+					<h2>Querying the graph is as easy as decribing a path along its edges</h2>
+				</section>
+
+				<!-- SPARQL -->
+				<section>
+					<img data-src="./static/images/logos/W3C.svg"></img>
+					<h2>SPARQL: SPARQL Protocol and RDF Query Language</h2>
+				</section>
+
+				<section
+					data-background-iframe="./static/interactive/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true"
+					data-background-interactive>
+				</section>
+
+				<section
+					data-background-iframe="./static/interactive/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true&tab=5"
+					data-background-interactive>
+				</section>
+
+				<section data-background-image="./static/images/mhra/mads-mikkelsen.png" data-background-size="50%">
+					<a href="https://madsholten.github.io/graph-sparql/" target="_blank">graph SPARQL</a>
+				</section>
+
+				<!-- Mads Mikkelsen -->
+				<section>
+					<pre><code data-trim class="sparql hljs" data-line-numbers="|3-14|3-4|6|8-9|11-12|14|1">
+						SELECT DISTINCT ?coActorName ?age
+						WHERE {
+							?movie dbo:starring ?theActor . 
+							?movie dbo:starring ?otherActor . 
+
+							?theActor rdfs:label "Mads Mikkelsen"@en .
+
+							?otherActor rdfs:label ?coActorName .
+							?otherActor dbo:birthDate ?bd .
+							  
+							BIND( NOW() as ?today )
+							BIND( YEAR(?today)-YEAR(?bd) as ?age )
+						
+							FILTER(LANG(?coActorName) = "en")
+						}					
+					</code></pre>
+					<a href="https://bit.ly/3W2e1Pv" target="_blank">https://bit.ly/3W2e1Pv</a>
+				</section>
+
+			</section>
+
+			<!-- ChatGPT to graph -->
+			<section>
+				
+				<section>
+					<h1>Make ChatGPT build the knowledge graph</h1>
+				</section>
+
+				<section>
+					<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7052548169544425472" height="949" width="504" frameborder="0" allowfullscreen="" title="Indlejret indlæg"></iframe>
+				</section>
+
+			</section>
+
+
+			<!-- Combination of databases -->
+			<section>
+
+				<section>
+					<h1>Use in combination</h1>
+				</section>
+
+				<section data-background-iframe="https://www.w3.org/TR/vocab-ssn/"></section>
+
+				<section data-background-image="./static/images/mhra/ssn-sosa-bot-ex.svg" data-background-size="80%">
+					<a href="https://bit.ly/3Oamvlt" target="_blank">https://bit.ly/3Oamvlt</a>
+				</section>
+
+				<section>
+					<table>
+						<tr>
+							<th>ID</th>
+							<th>Time</th>
+							<th>Value</th>
+						</tr>
+						<tr>
+							<td>2345</td>
+							<td>2023-05-15T07:07:00Z</td>
+							<td>21.3</td>
+						</tr>
+						<tr>
+							<td>2346</td>
+							<td>2023-05-15T07:08:00Z</td>
+							<td>70.1</td>
+						</tr>
+						<tr>
+							<td>2345</td>
+							<td>2023-05-15T07:09:00Z</td>
+							<td>21.2</td>
+						</tr>
+						<tr>
+							<td>2346</td>
+							<td>2023-05-15T07:10:00Z</td>
+							<td>70.4</td>
+						</tr>
+						<tr>
+							<td>2345</td>
+							<td>2023-05-15T07:07:00Z</td>
+							<td>21.3</td>
+						</tr>
+						<tr>
+							<td>2346</td>
+							<td>2023-05-15T07:08:00Z</td>
+							<td>70.2</td>
+						</tr>
+						<tr>
+							<td>2345</td>
+							<td>2023-05-15T07:09:00Z</td>
+							<td>21.2</td>
+						</tr>
+						<tr>
+							<td>2346</td>
+							<td>2023-05-15T07:10:00Z</td>
+							<td>70.1</td>
+						</tr>
+					</table>
+				</section>
+
+			</section>
+
+			<section>
+				<h1>Key takeaways</h1>
+				<ul>
+					<li>Logical data model (like you would draw it on a board)</li>
+					<li>Faster than RDBs for deep relationships</li>
+					<li>You can use multiple standards to annotate your data</li>
+					<li>Not the right choise for all kinds of data</li>
+				</ul>
+
+				<section>
+					<h1>Learn more</h1>
+					<ul>
+						<li><a href="https://lbd-hackers.github.io/slides/LBD-school_1.html" target="_blank">LBD School lecture 1</a></li>
+					</ul>
+				</section>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/notes/notes.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/markdown/markdown.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+
+</body>
+
+</html>
