@@ -1,0 +1,455 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Interaction and Querying | SSoLDAC 2023</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/mhra.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	<!-- Custom styles -->
+	<style>
+		.two-col {
+			display: flex;
+			height: 100vh;
+			width: 100%;
+		}
+
+		.col {
+			flex: 1;
+			padding: 50px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		.footer-left {
+			position: absolute;
+			bottom: 27px;
+			left: 80px;
+		}
+
+		.footer-left img {
+			height: 3vh;
+		}
+
+		.box {
+			background-color: rgba(255, 255, 255, 0.5);
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			font-size: 1em !important;
+			color: black;
+			padding: 1vh;
+		}
+
+		.box-top-left {
+			position: absolute;
+			left: 0vw;
+			top: -30vh;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			font-size: 1em !important;
+			color: black;
+			padding: 1vh;
+		}
+
+		.top-right {
+			position: static;
+			right: 0vw;
+			top: 0vh;
+			bottom: 40vh;
+			z-index: 10;
+			background-color: red;
+		}
+
+		.logo-container {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: flex-end;
+			margin-top: 5vh;
+			gap: 40px;
+		}
+
+		.logo-container img {
+			height: 70px;
+		}
+
+
+		.assumption1 {
+			display: flex;
+			justify-content: center;
+		}
+
+		.assumption2 {
+			display: flex;
+			flex-direction: column;
+			width: 500px;
+		}
+
+		.assumption2 div:first-of-type {
+			border-bottom: 2px solid black
+		}
+
+		.footnote {
+			display: flex;
+			justify-content: end;
+			font-size: 15px;
+			height: 50;
+		}
+
+		.ruleinter {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 700px;
+			border: 5px dotted grey;
+		}
+
+		.buildingprep {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 450px;
+			border: 5px dotted grey;
+		}
+
+		.ruleexec {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: 200px;
+			border: 5px dotted grey;
+		}
+
+		.reporting {
+			position: fixed;
+			height: 250px;
+			width: 250px;
+			bottom: 250px;
+			right: -20px;
+			border: 5px dotted grey;
+		}
+
+		.case1 {
+			position: fixed;
+			height: 100px;
+			width: 425px;
+			bottom: 250px;
+			right: 525px;
+			border: 4px dotted blue;
+			opacity: 0.5;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case2 {
+			position: fixed;
+			height: 150px;
+			width: 200px;
+			bottom: 350px;
+			right: 475px;
+			border: 4px dotted blue;
+			opacity: 0.5;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case3 {
+			position: fixed;
+			height: 250px;
+			width: 400px;
+			bottom: 250px;
+			right: 275px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case4 {
+			position: fixed;
+			height: 100px;
+			width: 110px;
+			bottom: 325px;
+			right: 165px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+
+		}
+
+		.case5 {
+			position: fixed;
+			height: 110px;
+			width: 110px;
+			bottom: 130px;
+			right: 300px;
+			border: 4px dotted blue;
+			opacity: 0.9;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			color: blue;
+			justify-content: center;
+			font-weight: bold;
+		}
+
+		.note{
+			font-family: Consolas, monaco, monospace;
+			font-size: 0.4em;
+			font-weight: bold;
+		}
+		.coded{
+			font-family: Consolas, monaco, monospace;
+			font-size: 0.7em;
+			font-weight: 100;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="reveal">
+
+		<!-- Captions -->
+		<cap
+			style="position: absolute; bottom: 12vh; left: 0px; width: 100%; z-index:500; text-align: center; font-size: 1.4vw; font-style: italic; color: #65625e; font-family: 'Courier New', Courier, monospace;">
+		</cap>
+
+		<!-- Footer left -->
+		<div class="footer-left">
+			<img src="./static/images/logos/LDAC.png" height="35vw"> <img src="./static/images/logos/niras.svg"
+				height="35vw">
+		</div>
+
+		<!-- Slides -->
+		<div class="slides">
+
+			<!-- Front page -->
+			<section>
+				<h1>Interaction and Querying</h1>
+				<p style="font-size: 0.8em;">https://bit.ly/43NPpwi</p>
+				<p style="font-size: 0.5em;">By Mads Holten Rasmussen</p>
+			</section>
+
+			<!-- Agenda -->
+			<section>
+				<h2>Agenda</h2>
+				<ul>
+					<li class="fragment fade-up">SPARQL is a graph 🕸️</li>
+					<li class="fragment fade-up">Interactive session: LD-BIM 🕹️🎬</li>
+					<li class="fragment fade-up">Code along: LBD app ⚙️🔧🦾👩‍💻💻</li>
+					<li class="fragment fade-up">Coffee break ☕  &nbsp;->&nbsp;  hackathon 💻🤓💀🔥</li>
+				</ul>
+			</section>
+
+			<!-- Graph SPARQL -->
+			<section>
+				
+				<section>
+					<h2>SPARQL is a graph 🕸️</h2>
+				</section>
+
+				<section data-background-image="./static/images/mhra/mads-mikkelsen.png" data-background-size="50%">
+					<a href="https://madsholten.github.io/graph-sparql/" target="_blank">graph SPARQL</a>
+				</section>
+
+				<!-- Mads Mikkelsen -->
+				<section>
+					<pre><code data-trim class="sparql hljs" data-line-numbers="|3-14|3-4|6|8-9|11-12|14|1">
+						SELECT DISTINCT ?coActorName ?age
+						WHERE {
+							?movie dbo:starring ?theActor . 
+							?movie dbo:starring ?otherActor . 
+
+							?theActor rdfs:label "Mads Mikkelsen"@en .
+
+							?otherActor rdfs:label ?coActorName .
+							?otherActor dbo:birthDate ?bd .
+							  
+							BIND( NOW() as ?today )
+							BIND( YEAR(?today)-YEAR(?bd) as ?age )
+						
+							FILTER(LANG(?coActorName) = "en")
+						}					
+					</code></pre>
+				</section>
+
+				<section data-background-iframe="https://bit.ly/3W2e1Pv">
+					<a href="https://bit.ly/3W2e1Pv" target="_blank">https://dbpedia.org/sparql</a>
+				</section>
+
+			</section>
+
+			<!-- LD-BIM -->
+			<section>
+				
+				<section>
+					<h2>Interactive session: LD-BIM 🕹️🎬</h2>
+					<a target="_blank" href="https://ld-bim.web.app">ld-bim.web.app</a>
+				</section>
+
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys + spaces -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D%0A"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys + spaces TABLE -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ASELECT%20%2A%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: adjacent elements -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20inst%3A0BTBFw6f90Nfh9rP1dlXru%20bot%3AadjacentElement%20%3Fel%20%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: interfaces -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20ex%3A%20%3Chttps%3A%2F%2Fexample.com%2F%3E%20%0APREFIX%20kg%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fkobl%2Fgeometry%23%3E%20%0APREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ASELECT%20DISTINCT%20%3Fboundary%20%3Fls%20%3Fel%0AWHERE%7B%0A%20%20%20BIND%28inst%3A0BTBFw6f90Nfh9rP1dl_3A%20AS%20%3Fspace%29%0A%20%20%20%3Fboundary%20bot%3AinterfaceOf%20%3Fspace%20%2C%20%3Fel%20%3B%0A%20%20%20%20%20%20%20kg%3Avertices3D%20%3Fver%20%3B%0A%20%20%20%20%20%20%20ex%3AisVertical%20true%20.%0A%20%20%20FILTER%28%3Fel%20%21%3D%20%3Fspace%29%0A%20%20%20BIND%28CONCAT%28%22POLYGON%20Z%20%28%22%2C%20STR%28%20%3Fver%20%29%2C%20%22%29%22%29%20%20%20AS%20%3Fls%20%29%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<section>
+					<h1>Try yourself!</h1>
+					<h3>Query the model on LD-BIM 🔨🕹️</h3>
+					<a target="_blank" style="font-size: 1.2em; font-weight: 700;" href="./static/documents/SSoLDAC2023 Handout.pdf">Handout</a>
+					<p></p>
+					<a style="font-size: smaller;" target="_blank" href="https://www.iro.umontreal.ca/~lapalme/ift6281/sparql-1_1-cheat-sheet.pdf">SPARQL Cheat Sheet</a>
+				</section>
+
+			</section>
+
+			<!-- LBD App -->
+			<section>
+				
+				<section>
+					<h2>Code along: LBD app ⚙️🔧🦾👩‍💻💻</h2>
+					<a href="https://github.com/LBD-Hackers/LBD-app-tutorial">https://github.com/LBD-Hackers/LBD-app-tutorial</a>
+				</section>
+
+			</section>
+
+			<!-- END -->
+			<section>
+
+				<section data-background-image="./static/images/mhra/ukraine.jpg" data-state="cap-intune">
+					<h3>Thank you for your attention!</h3>
+					<p><span style="font-style: oblique">Questions? Thoughts? Ideas? Let's discuss them over a</span> ☕</p>
+					<style>
+						.cap-intune cap:after {
+							content: "@inga_tuneew_drawings";
+						}
+					</style>
+				</section>
+
+				<section>
+					<h2>Learn more</h2>
+					<ul style="font-size: 0.6em;">
+						<li><a href="https://www.taylorfrancis.com/books/edit/10.1201/9781003204381/buildings-semantics-pieter-pauwels-kris-mcglinn">Buildings and Semantics – Data Models and Web Technologies for the Built Environment</a>, 2022 📘</li>
+						<li><a href="https://link.springer.com/book/10.1007/978-3-030-82430-3">Industry 4.0 for the Built Environment</a>, 2021 📕</li>
+						<li><a href="https://www.semantic-web-journal.net/system/files/swj2224.pdf">BOT: the building topology ontology of the W3C linked building data group</a>, 2021 📃</li>
+						<li><a href="https://biltacademy.org/bap005/">BILT Academy Episode Five – Decentralization Part 1</a>, 2020 🎙️🎧</li>
+						<li><a href="https://pure.tue.nl/ws/portalfiles/portal/138966098/1_s2.0_S0926580519300378_main.pdf">Managing interrelated project information in AEC Knowledge Graphs</a>, 2019 📃</li>
+						<li><a href="https://biblio.ugent.be/publication/8526704/file/8529298.pdf">Proposing a central AEC ontology that allows for domain specific extensions</a>, 2017 📃</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>My tools <span style="font-size: 0.4em;">(please contribute 😎)</span></h2>
+					<ul style="font-size: 0.8em;">
+						<li><a href="https://madsholten.github.io/sparql-visualizer/">SPARQL visualizer</a></li>
+						<li><a href="https://madsholten.github.io/graph-sparql/">Graph SPARQL</a></li>
+						<li><a href="https://madsholten.github.io/json-ld-vis/">JSON-LD visualizer</a></li>
+						<li><a href="https://ld-bim.web.app/">LD BIM</a></li>
+						<li><a href="https://www.npmjs.com/package/ifc-lbd">IFC-LBD</a> JavaScript</li>
+						<li><a href="https://github.com/MadsHolten/IFC2BOT">IFC2BOT</a> Python</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Other tools</h2>
+					<ul style="font-size: 0.8em;">
+						<li><a href="http://prefix.cc/">Prefix.cc</a> prefix search</li>
+						<li><a href="lov.linkeddata.es">Linked Open Vocabularies</a> schema/ontology search</li>
+						<li><a href="http://vowl.visualdataweb.org/webvowl.html">WebVOWL</a> Visualization of Ontologies</li>
+					</ul>
+				</section>
+
+			</section>
+
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/notes/notes.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/markdown/markdown.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+
+</body>
+
+</html>
