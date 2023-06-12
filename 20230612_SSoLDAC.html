@@ -269,11 +269,44 @@
 			<section>
 				<h2>Agenda</h2>
 				<ul>
+					<li class="fragment fade-up">SPARQL 101</li>
 					<li class="fragment fade-up">SPARQL is a graph 🕸️</li>
 					<li class="fragment fade-up">Interactive session: LD-BIM 🕹️🎬</li>
 					<li class="fragment fade-up">Code along: LBD app ⚙️🔧🦾👩‍💻💻</li>
 					<li class="fragment fade-up">Coffee break ☕  &nbsp;->&nbsp;  hackathon 💻🤓💀🔥</li>
 				</ul>
+			</section>
+
+			<section>
+
+				<section>
+					<h2>SPARQL 101</h2>
+				</section>
+
+				<section>
+					<img data-src="./static/images/logos/W3C.svg"></img>
+					<h2>SPARQL: SPARQL Protocol and RDF Query Language</h2>
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph1.svg"
+					data-background-size="70%" data-state="neptune">
+					<style>
+						.neptune cap:after {
+							content: "Amazon Neptune: https://aws.amazon.com/neptune";
+						}
+					</style>
+				</section>
+
+				<section
+					data-background-iframe="./static/interactive/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true"
+					data-background-interactive>
+				</section>
+
+				<section
+					data-background-iframe="./static/interactive/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true&tab=5"
+					data-background-interactive>
+				</section>
+
 			</section>
 
 			<!-- Graph SPARQL -->
@@ -320,6 +353,74 @@
 				<section>
 					<h2>Interactive session: LD-BIM 🕹️🎬</h2>
 					<a target="_blank" href="https://ld-bim.web.app">ld-bim.web.app</a>
+				</section>
+
+				<!-- BOT -->
+				<section data-background-image="./static/images/BOT-papers.svg" data-background-size="80vw"
+					data-state="cap-bot3">
+					<h2 class="box">BOT: The Building Topology Ontology</h2>
+					<style>
+						.cap-bot3 cap:after {
+							content: "Rasmussen, M. H., Lefrançois, Maxime, Schneider, G. F., Pauwels, P. (2020). BOT: the Building Topology Ontology of the W3C Linked Building Data Group. Semantic Web Journal.";
+						}
+					</style>
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-01.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
+				<style>
+					.cap-bot2 cap:after {
+					content: "Rasmussen, M., Pauwels, P., Lefrançois, M., Schneider, G. F., Hviid, C., & Karlshøj, J. (2017, November). Recent changes in the building topology ontology. In LDAC2017-5th Linked Data in Architecture and Construction Workshop.";
+					}
+				</style>
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-02.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-03.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
+				</section>
+
+				<!-- BOT ZONE -->
+				<section>
+					<h2 class="center">bot:Zone</h2>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Zones-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Zones-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- BOT ELEMENT -->
+				<section>
+					<h2 class="center">bot:Element</h2>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- BOT INTERFACE -->
+
+				<section>
+					<h2 class="center">bot:Interface</h2>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-03.svg" data-background-size="80vw">
 				</section>
 
 				<section
@@ -378,7 +479,21 @@
 				
 				<section>
 					<h2>Code along: LBD app ⚙️🔧🦾👩‍💻💻</h2>
-					<a href="https://github.com/LBD-Hackers/LBD-app-tutorial">https://github.com/LBD-Hackers/LBD-app-tutorial</a>
+					<a href="https://github.com/LBD-Hackers/LBD-app-tutorial" target="_blank">https://github.com/LBD-Hackers/LBD-app-tutorial</a>
+				</section>
+
+				<section>
+					<h2>Example app that uses this toolset</h2>
+					<a href="https://madsholten.github.io/history-poc/" target="_blank">Room history</a>
+				</section>
+
+				<section data-background-iframe="https://madsholten.github.io/json-ld-vis/?d=Jcontext!Jbase6*my-projs%2F123%2FOex6s*example.cQ%2FontologyF~botBbotF~QgBQgF~rdfs6*www.w3K2000%2F01%2Frdf-schemaF)~%40graphAI'bot%3ASpaceOrdfs%3AlabelRSpace%2000OU9A-geoI%5B'E9Oex%3APlanPolygon'%5D~USimple9DescriptionRM5NTNC17CLH17CZ')%5D)%5D)*%3A%2F%2FH0.4176Rhttp9GeQetryA!%5BJidRsB6s*w3idKCT%20EQg%3AF%23'H5%20IO%40type!J('%40K.org%2FNHL%208O'~QomR!'T.383UEhas%01UTRQONKJIHFECBA965*_">
+				</section>
+
+				<section data-background-iframe="https://ifcjs.io/">
+					<h2>Need 3D? Use OpenBIM Components</h2>
+					<a href="https://madsholten.github.io/components/examples/fragment-combined-binary.html" target="_blank">Demo</a><br>
+					<a href="https://github.com/IFCjs/components" target="_blank">Repo</a>
 				</section>
 
 			</section>
