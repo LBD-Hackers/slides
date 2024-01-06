@@ -1,0 +1,699 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>41B2A Digitale Værktøjer til Bæredygtigt Byggeri | DTU 2024</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/mhra.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="slide-styles.css">
+
+</head>
+
+<body>
+	<div class="reveal">
+
+		<!-- Captions -->
+		<cap
+			style="position: absolute; bottom: 12vh; left: 0px; width: 100%; z-index:500; text-align: center; font-size: 1.4vw; font-style: italic; color: #65625e; font-family: 'Courier New', Courier, monospace;">
+		</cap>
+
+		<!-- Footer left -->
+		<div class="footer-left">
+			<img src="./static/images/logos/DTU-small.svg" alt="" style="height: 4vh;">
+			<img src="./static/images/logos/niras.svg" alt="" style="height: 3vh;">
+		</div>
+
+		<!-- Slides -->
+		<div class="slides">
+
+			<section>
+                <h4>41B2A Digitale Værktøjer til Bæredygtigt Byggeri</h4>
+				<h1>Linked data i byggeriet</h1>
+				<img src="./static/images/logos/DTU-small.svg" style="height: 10vh;">
+				<p style="font-size: 0.8em;">https://bit.ly/3vxf2pf</p>
+			</section>
+
+			<section>
+				<h2>Kort om mig</h2>
+
+				<!-- Row -->
+				<div style="display: flex; height: 20vh">
+					<div class="col">
+						<p>Mads Holten Rasmussen</p>
+						<span style="font-size: 0.7em; font-style: oblique;">Business Development Director</span>
+						<img src="./static/images/logos/niras.svg" style="height: 3vh;">
+					</div>
+					<div class="col" style="height: 80%;">
+						<img src="static/images/mhra_1x1.png">
+					</div>
+				</div>
+				
+			</section>
+
+
+			<!-- Fly-in. Challenges -->
+			<section>
+
+				<section>
+					<h2>Nuværende tilstand af BIM og mine tanker omkring hvordan det kan forbedres</h2>
+				</section>
+
+				<section>
+					<h3>"Byggebrancen arbejder i en dokument-centreret snarere end data.centreret praksis"</h3>
+					<aside class="notes">
+						- Exchange of files rather than data integration<br>
+						- A bim is one database - we need multiple
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-01.svg" data-background-size="80%">
+					<aside class="notes">
+						- To do a heat loss calculation, information that is stored in architectural drawings is required<br>
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-02.svg" data-background-size="80%">
+					<aside class="notes">
+						- Thermal requirements, room usage, areas, lengths, room IDs<br>
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-03.svg" data-background-size="80%">
+					<aside class="notes">
+						- The connections is broken because we use closed systems to store the information<br>
+						- This is only a small part of the big process of developing the MEP design of a building <br>
+						- There are also other disciplines that have an influence on the heat loss calculation <br>
+						- And they store the information again in closed file formats
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-04.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-05.svg" data-background-size="80%">
+				</section>
+
+				<section data-background-image="./static/images/HeatLossCalc-07.svg" data-background-size="80%">
+					<aside class="notes">
+						- Here you see the big process of developing the MEP design of a building <br>
+						- Characterized by closed file formats with broken connections, where there should be a direct relation between them
+					</aside>
+				</section>
+
+				<section>
+					<h3 class="center">"Udveksling af BIM-data som filer står i vejen for opnåelse af dataintegration"</h3>
+					<aside class="notes">
+						- BCF as an example<br>
+						- You cannot exchange issues in a file. How about the ones you resolve in the mean time?
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/monolitic_da-01.svg" data-background-size="70%"></section>
+				<section data-background-image="./static/images/monolitic_da-02.svg" data-background-size="70%"></section>
+
+				<!-- <section data-background-image="./static/images/BIM-islands.svg" data-background-size="70%"></section> -->
+
+				<section>
+					<h3 class="center">"Vi er nødt til at flytte os fra det nuværende monolitiske BIM til et netværksbaseret BIM"
+					</h3>
+					<aside class="notes">
+						- Fine that the different BIM systems rely on an closed data model, but they should be able
+						to exchange resulting geometry and derived properties
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/bs-wall-01.svg" data-background-size="70%"></section>
+				<section data-background-image="./static/images/bs-wall-02.svg" data-background-size="70%"></section>
+				<section data-background-image="./static/images/bs-wall-03.svg" data-background-size="70%"></section>
+
+			</section>
+
+			<!-- How - NB! Extend with more on RDF -->
+			<section>
+
+				<section>
+					<h2 class="center">Og hvordan gør vi så det?</h2>
+				</section>
+
+				<section>
+					<h3 class="center">Idéen er at bruge den eksisterende infrastruktur fra World Wide Web til at understøtte et distribueret, netværksbaseret BIM</h3>
+				</section>
+
+				<section data-background-image="./static/images/web1-01.svg">
+					<h2 style="margin-top: 30vh;" class="box">Web of documents</h2>
+				</section>
+
+				<section data-background-image="./static/images/web3-01.svg">
+					<h2 style="margin-top: 30vh;" class="box">Web of data</h2>
+				</section>
+
+				<section>
+					<h2>Linked Data</h2>
+					<p>Konceptet Linked Data blev <a href="https://www.w3.org/DesignIssues/LinkedData">opfundet i 2006</a> af Sir Tim Berners-Lee, opfinderen af nettet, og er derfor ikke helt nyt 👴👵</p>
+					<p class="fragment fade-up">Det refererer dybest set til et sæt bedste praksis for udgivelse af strukturerede data på nettet</p>
+					
+					<style>
+						.cap-ld cap:after {
+							content: "¹https://www.w3.org/DesignIssues/LinkedData";
+						}
+					</style>
+				</section>
+
+				<section>
+					<h2>Linked Data Principles</h2>
+					<ol>
+						<li>Brug URIer <span class="note">(Uniform Resource Identifiers)</span> til at navngive ting</li>
+						<li class="fragment fade-up">Brug HTTP URIer <span class="note">(webaddresser)</span> så folk kan slå tingene op 👀</li>
+						<li class="fragment fade-up">Når nogen slår en URI op, skal du give nyttige oplysninger ved hjælp af standarderne (RDF, SPARQL) <span class="note">(mere om det senere)</span> 💡</li>
+						<li class="fragment fade-up">Inkluder links til andre URI'er, så de kan opdage flere ting 🔭🧭🗺️</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2 class="center">
+                        Data opbevares og hostes af den interessent, der har genereret dem og er ansvarlig for dem <br>🤝🛡️🔐</h2>
+				</section>
+
+				<section>
+					<h2 class="center">Data kan deles med godkendte personer eller gøres offentligt tilgængelige <br>🤫📣</h2>
+				</section>
+
+				<section>
+					<h2 class="center">Modeldataene kan udvides med Linked Open Data (produkt- og materialeegenskaber, IoT, GIS) <br> 🌿🌡️📳🗺️</h2>
+				</section>
+
+				<section>
+					<h2 class="center">Selv skemaerne er distribuerede og kan derfor udvide hinanden</h2>
+				</section>
+
+				<section data-background-image="./static/images/CWA.svg" data-background-size="90%">
+					<h2 style="margin-top: 50vh;" class="box">Nuværende situation: Åbne standarder der lukker sig om sig selv</h2>
+				</section>
+
+				<section data-background-image="./static/images/OWA_en.svg" data-background-size="90%">
+					<h2 style="margin-top: 50vh;" class="box">Linked data fordel: Standarderne bruger, udvider og refererer til hinanden</h2>
+				</section>
+
+			</section>
+
+
+			<!-- RDF vs tables -->
+			<section>
+
+				<section>
+					<h2>RDF vs. tabeller</h2>
+				</section>
+
+				<section>
+					<h3>De fleste af os er vant til at gemme information i regneark <span class="note">(eller relationelle databaser (RDBs) for de mere avancerede)</span>, men i RDF bruger vi en grafstruktur.</h3>
+				</section>
+
+				<section>
+					<img data-src="./static/images/logos/W3C.svg"></img>
+					<h2>RDF: Resource Description Framework</h2>
+					<aside class="notes">
+						(Alex) Linked Data is using a graph structure, based on the Resource Description Framework (RDF), creating an interconnected knowledge graph that is much more powerful than storing data in conventional tables. Knowledge graphs consist of relationships between things, stored as triples.
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/SPO_da.svg" data-background-size="120vw">
+					<aside class="notes">
+						(Alex) A triple always consists of three things - A subject, predicate and an opject.
+					</aside>
+				</section>
+				<section data-background-image="./static/images/SPO2_da.svg" data-background-size="120vw">
+					<aside class="notes">
+						<p>(Alex) In the context of a building, if we want to declare a relationship between a wall and a window, we can say:</p>
+						<p>Wall_002 has window Window_022</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Men hvordan kommer vi fra tabeller til grafer?</h2>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-01.svg">
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-02.svg">
+					<aside class="notes">
+						(Alex) From an RDF perspective we see too subjects. One for each data row. And they are even identified with an ID.
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-03.svg">
+					<aside class="notes">
+						(Alex) Each column contains a statement about those subjects and the predicate value is given by the column header.
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-04.svg">
+					<aside class="notes">
+						(Alex) The value of the subject-predicate pair can then be found in the cell.
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-05.svg">
+					<aside class="notes">
+						(Alex) So in RDF perspective the table can be written in <b>raw data</b> like this. <br>
+						And as a <b>graph</b>, we can visualize the data like this. <br>
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-06.svg">
+					<aside class="notes">
+						(Alex) <br>
+						- Combining data stored in different tables into one unified representation is possible if there is a common identifier for the rows.<br>
+						- For example, we could have another table with middle names.<br>
+						- It's not a problem that there is no middle name for Alexander. RDF builds on an open world assumption meaning that if we have the information that's great and if we don't that's also alright. Then Alexanders middle name is simply unknown to us.<br>
+					</aside>
+				</section>
+
+				<section data-background-image="./static/images/RDF-en-simple-07.svg">
+					<aside class="notes">
+						(Alex) In RDBs it's common to have dedicated tables that deal with many-to-many relationships. These are also easily translated.
+					</aside>
+				</section>
+
+				<section>
+					<p>Sammenlignet med RDB'er giver RDF mening ud fra et logisk perspektiv og ikke kun fra et datastyringsperspektiv. 🧐</p>
+					<p>Denne fordel vil være mere indlysende, når vi begynder at lave forespørgseler på datasættene! 💡✨</p>
+				</section>
+
+			</section>
+
+
+			<section>
+
+				<!-- Knowledge graph -->
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph1.svg"
+					data-background-size="90vw" data-state="neptune">
+					<style>
+						.neptune cap:after {
+							content: "Amazon Neptune: https://aws.amazon.com/neptune";
+						}
+					</style>
+					<h2 class="fragment fade-up box">Knowledge Graph</h2>
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph2.svg"
+					data-background-size="90vw" data-state="neptune">
+				</section>
+
+				<section data-background-image="./static/images/Neptune-Diagram_knowledge-graph3.svg"
+					data-background-size="90vw" data-state="neptune">
+				</section>
+
+				<section>
+					<h2>At forespørge på grafen er lige så let som at beskrive en sti langs dens kanter</h2>
+				</section>
+
+				<!-- SPARQL -->
+				<section>
+					<img data-src="./static/images/logos/W3C.svg"></img>
+					<h2>SPARQL: SPARQL Protocol and RDF Query Language</h2>
+				</section>
+
+				<section
+					data-background-iframe="./static/interactive/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true"
+					data-background-interactive>
+				</section>
+
+				<section
+					data-background-iframe="./static/interactive/sparql-visualizer/Neptune/index.html?file=./assets/neptune-simple.json&fs=true&tab=5"
+					data-background-interactive>
+				</section>
+
+			</section>
+
+			<!-- LBD -->
+			<section>
+				<section>
+					<h2>En modulopbygget og udvidelig bygningsrepræsentation</h2>
+				</section>
+
+				<!-- BOT -->
+				<section data-background-image="./static/images/BOT-papers.svg" data-background-size="80vw"
+					data-state="cap-bot3">
+					<h2 class="box">BOT: The Building Topology Ontology</h2>
+					<style>
+						.cap-bot3 cap:after {
+							content: "Rasmussen, M. H., Lefrançois, Maxime, Schneider, G. F., Pauwels, P. (2020). BOT: the Building Topology Ontology of the W3C Linked Building Data Group. Semantic Web Journal.";
+						}
+					</style>
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-purpose-03.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-01.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
+				<style>
+					.cap-bot2 cap:after {
+					content: "Rasmussen, M., Pauwels, P., Lefrançois, M., Schneider, G. F., Hviid, C., & Karlshøj, J. (2017, November). Recent changes in the building topology ontology. In LDAC2017-5th Linked Data in Architecture and Construction Workshop.";
+					}
+				</style>
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-02.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
+				</section>
+
+				<section data-background-image="./static/images/BOT-content-03.svg" data-background-size="80%"
+				data-background-position="50% 60%" data-state="cap-bot2">
+				</section>
+
+				<!-- BOT ZONE -->
+				<section>
+					<h2 class="center">bot:Zone</h2>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Zones-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Zones-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- BOT ELEMENT -->
+				<section>
+					<h2 class="center">bot:Element</h2>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Elements-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- BOT INTERFACE -->
+
+				<section>
+					<h2 class="center">bot:Interface</h2>
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-01.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-02.svg" data-background-size="80vw">
+				</section>
+
+				<section data-background-image="./static/images/BOT-Interfaces-03.svg" data-background-size="80vw">
+				</section>
+
+				<!-- <section data-background-image="./static/images/BOT-Interfaces-04.svg" data-background-size="80vw">
+				</section>
+				<section data-background-image="./static/images/BOT-Interfaces-05.svg" data-background-size="80vw">
+				</section> -->
+
+			</section>
+
+
+			<section>
+
+				<!-- Extending -->
+				<section>
+					<h1>Udvidelse af BOT</h1>
+				</section>
+
+				<section>
+					<h2 class="center">bot:Element? Hvad kan jeg bruge noget så generisk til?</h2>
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-01.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+
+					<style>
+						.cap-bot3 cap:after {
+							content: "Rasmussen, M. H., Lefrançois, M., Schneider, G. F., & Pauwels, P. (2021). BOT: the building topology ontology of the W3C linked building data group. Semantic Web Journal";
+						}
+					</style>
+
+					<p class="center box fragment fade-out">Opret specifikke underklasser</p>
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-02.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-03.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-04.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+					<p class="center box fragment fade-out">Opret specifikke underegenskaber</p>
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-05.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+				<section data-background-image="./static/images/BOT-extending-06.svg" data-background-size="70%"
+					data-state="cap-bot3" data-background-position="50% 20%">
+				</section>
+
+                <section>
+                    <h2>Der er allerede oprettet et væld af ontologier der udvider BOT.</h2>
+                    <p>Broer, skader på konstruktioner, brugeradfærd, tekniske installationer ...</p>
+                </section>
+
+				<section data-background-iframe="https://bs-visualizer.web.app" data-background-interactive>
+				</section>
+
+			</section>
+
+		
+
+			<section>
+				<!-- LD BIM Demonstration -->
+				<section>
+					<h1>Demonstration</h1>
+					<h2>LD-BIM 🕹️🎬</h2>
+					<a target="_blank" href="https://ld-bim.web.app">ld-bim.web.app</a>
+				</section>
+				
+				<!-- LD BIM -->
+
+				<!-- LD BIM EXAMPLE QUERIES -->
+				<!-- Query: sites -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys + spaces -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D%0A"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: sites + buildings + storeys + spaces TABLE -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ASELECT%20%2A%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%20%20%20%3Flvl%20bot%3AhasSpace%20%3Fspace%20.%0A%20%20%20%3Fspace%20a%20bot%3ASpace%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: adjacent elements -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20inst%3A0BTBFw6f90Nfh9rP1dlXru%20bot%3AadjacentElement%20%3Fel%20%0A%7D"
+					data-background-interactive>
+				</section>
+
+				<!-- Query: interfaces -->
+				<section
+					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20ex%3A%20%3Chttps%3A%2F%2Fexample.com%2F%3E%20%0APREFIX%20kg%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fkobl%2Fgeometry%23%3E%20%0APREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0APREFIX%20inst%3A%20%3Chttps%3A%2F%2Fweb-bim%2Fresources%2F%3E%20%0A%0ASELECT%20DISTINCT%20%3Fboundary%20%3Fls%20%3Fel%0AWHERE%7B%0A%20%20%20BIND%28inst%3A0BTBFw6f90Nfh9rP1dl_3A%20AS%20%3Fspace%29%0A%20%20%20%3Fboundary%20bot%3AinterfaceOf%20%3Fspace%20%2C%20%3Fel%20%3B%0A%20%20%20%20%20%20%20kg%3Avertices3D%20%3Fver%20%3B%0A%20%20%20%20%20%20%20ex%3AisVertical%20true%20.%0A%20%20%20FILTER%28%3Fel%20%21%3D%20%3Fspace%29%0A%20%20%20BIND%28CONCAT%28%22POLYGON%20Z%20%28%22%2C%20STR%28%20%3Fver%20%29%2C%20%22%29%22%29%20%20%20AS%20%3Fls%20%29%0A%7D"
+					data-background-interactive>
+				</section>
+			</section>
+
+
+
+			<!-- Practical examples -->
+			<section>
+
+				<section>
+					<h2>Nogle praktiske eksempler</h2>
+				</section>
+
+				<section data-background-iframe="./static/interactive/timelines/timeline.html?file=mhra-full.json#event-webim">
+				</section>
+
+				<!-- BART -->
+				<section>
+					<h2>BART Fase 2 aflevering</h2>
+				</section>
+
+				<section>
+					<img src="./static/images/mhra/projects/ConTech5-fire-cl_ol.svg">
+					<aside class="notes">
+						(Alex) In this small project, the intention was to check a building model upon fire damper requirements. <br>
+						- If a pipe is going through a wall with fire classification (wall between two different fire sections), a fire damper has to be installed. <br>
+						- If the fire zoning changes, the requirement of fire damper changes as well. This is conidered here by using incremental reasoning with the graph database solution RDFox from Oxford Semantics. <br>
+						- We can write a rule: If two spaces from different fire sections share the same wall interface, this wall interface is classified as a fire protection interface <br>
+						- If a pipe is now intersecting with such a fire classified interface, it must contain a fire damper.
+					</aside>
+				</section>
+
+				<section>
+					<img src="./static/images/logos/RDFox.png" height="100vh">
+					<p>Incremential reasoning</p>
+				</section>
+
+				<section data-background-video="./static/videos/mhra-bart.mp4" 
+					data-background-video-loop data-background-video-muted>
+					<aside class="notes">
+						(Alex) <br>
+						1. Enter fire sectioning into excel file and visualize in 3D viewer<br>
+						2.  Show fire walls based on the fire sectioning<br>
+						3.  Check if the required fire dampers are installed<br>
+						4.  Change fire sectioning in excel file, upload and see what changed<br>
+					</aside>
+				</section>
+
+			</section>
+
+			<!-- BIM bots -->
+			<section>
+
+				<section>
+					<h1>Visionen om BIM bots 🤖</h1>
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-01.svg">
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-02.svg">
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-03.svg">
+				</section>
+
+				<section data-background-image="./static/images/web3-bim-bots-04.svg">
+				</section>
+
+			</section>
+
+			<!-- incremential reasoning -->
+			<section>
+
+				<section>
+					<h2>Regelbaserede flowberegninger</h2>
+				</section>
+
+				<section data-background-image="./static/images/mhra/projects/RDFox test-01.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-02.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-03.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-04.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-05.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-06.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-07.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-08.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-09.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-10.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-11.svg" data-background-size="80%">
+				</section>
+				<section data-background-image="./static/images/mhra/projects/RDFox test-12.svg" data-background-size="80%">
+				</section>
+
+			</section>
+
+			<section>
+				<h1>Åben diskussion 🙋‍♂️💭</h1>
+
+				<ul>
+					<li>Grafer giver en fleksibel datastruktur</li>
+					<li>Løs kobling af distribuerede datasæt</li>
+					<li>Flere skemaer/ontologier anvendt i samme datasæt</li>
+					<li>Der er allerede et fundament, du kan bygge videre på!</li>
+				</ul>
+			</section>
+
+			<!-- END -->
+			<section>
+
+				<section>
+					<h2>Lær mere</h2>
+					<ul style="font-size: 0.6em;">
+						<li><a href="https://www.taylorfrancis.com/books/edit/10.1201/9781003204381/buildings-semantics-pieter-pauwels-kris-mcglinn">Buildings and Semantics – Data Models and Web Technologies for the Built Environment</a>, 2022 📘</li>
+						<li><a href="https://link.springer.com/book/10.1007/978-3-030-82430-3">Industry 4.0 for the Built Environment</a>, 2021 📕</li>
+						<li><a href="https://www.semantic-web-journal.net/system/files/swj2224.pdf">BOT: the building topology ontology of the W3C linked building data group</a>, 2021 📃</li>
+						<li><a href="https://biltacademy.org/bap005/">BILT Academy Episode Five – Decentralization Part 1</a>, 2020 🎙️🎧</li>
+						<li><a href="https://pure.tue.nl/ws/portalfiles/portal/138966098/1_s2.0_S0926580519300378_main.pdf">Managing interrelated project information in AEC Knowledge Graphs</a>, 2019 📃</li>
+						<li><a href="https://biblio.ugent.be/publication/8526704/file/8529298.pdf">Proposing a central AEC ontology that allows for domain specific extensions</a>, 2017 📃</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Værktøjer</h2>
+					<ul style="font-size: 0.6em;">
+						<li><a href="http://prefix.cc/">Prefix.cc</a> prefix search</li>
+						<li><a href="lov.linkeddata.es">Linked Open Vocabularies</a> schema/ontology search</li>
+						<li><a href="http://vowl.visualdataweb.org/webvowl.html">WebVOWL</a> Visualization of Ontologies</li>
+					</ul>
+				</section>
+
+			</section>
+
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/notes/notes.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/markdown/markdown.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+
+</body>
+
+</html>

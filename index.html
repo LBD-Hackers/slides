@@ -7,86 +7,118 @@
 
 	<title>LBD Hackers - slides</title>
 
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 	<link rel="stylesheet" href="index.css">
 
 </head>
 <body>
 
-	<div class="flex-container">
-		<div class="row">
-			<div class="title">
-				<a href="./20220125_IFCjs_vs_LBD.html">2022.01.25 IFCjs vs LBD</a>
-			</div>
-			<div class="names">
-				<span>Mads Holten Rasmussen</span>
-				<span>Antonio González Viegas</span>
-			</div>
-		</div>
-		<div class="row">
-			<div class="title">
-				<a href="./20220302_Annex_81.html">2022.03.02 IEA EBC Annex 81</a>
-			</div>
-			<div class="names">
-				<span>Mads Holten Rasmussen</span>
-			</div>
-		</div>
-		<div class="row">
-			<div class="title">
-				<a href="./20220608_SSoLDAC.html">2022.06.08 SSoLDAC @ Cercedilla</a>
-			</div>
-			<div class="names">
-				<span>Mads Holten Rasmussen</span>
-			</div>
-		</div>
-		<div class="row">
-			<div class="title">
-				<a href="./20220822_BuildsimNordic.html">2022.08.22 Buildsim Nordic</a>
-			</div>
-			<div class="names">
-				<span>Mads Holten Rasmussen</span>
-				<span>Ali Kücükavci</span>
-			</div>
-		</div>
-		<div class="row">
-			<div class="title">
-				<a href="./20220906_Aalto.html">2022.09.06 Data Driven Smart Buildings @ Aalto</a>
-			</div>
-			<div class="names">
-				<span>Mads Holten Rasmussen</span>
-			</div>
-		</div>
-		<div class="row">
-			<div class="title">
-				<a href="./20221116_BILT.html">2022.11.16 BiLT Europe @ Valencia</a>
-			</div>
-			<div class="names">
-				<span>Mads Holten Rasmussen</span>
-				<span>Alex Schlachter</span>
-			</div>
-		</div>
-		<div class="row">
-			<div class="title">
-				<a href="./20230524_DigiDataDay.html">2023.05.25 DigiDataDay @ NIRAS</a>
-			</div>
-			<div class="names">
-				<span>Mads Holten Rasmussen</span>
-			</div>
-		</div>
-		<div class="row">
-			<div class="title">
-				<a href="./20230612_SSoLDAC.html">2023.06.12 SSoLDAC @ Matera</a>
-			</div>
-			<div class="names">
-				<span>Mads Holten Rasmussen</span>
-			</div>
-		</div>
+	<h1>LBD Slides</h1>
+
+	<div class="flex-container" id="links">
 	</div>
 
-	<!-- <div class="container">
+	<script>
+		const rowContainer = document.getElementById("links");
 
-		<a href="./20220125_IFCjs_vs_LBD.html">2022.01.25 IFCjs vs LBD</a>
+		const presentations = [
+			{
+				href: "20240111_41B2A.html",
+				title: "2024.01.11 41B2A @ DTU",
+				authors: [
+					"Mads Holten Rasmussen"
+				]
+			},
+			{
+				href: "20230612_SSoLDAC.html",
+				title: "2023.06.12 SSoLDAC @ Matera",
+				authors: [
+					"Mads Holten Rasmussen"
+				]
+			},
+			{
+				href: "20230524_DigiDataDay.html",
+				title: "2023.05.25 DigiDataDay @ NIRAS",
+				authors: [
+					"Mads Holten Rasmussen"
+				]
+			},
+			{
+				href: "20221116_BILT.html",
+				title: "2022.11.16 BiLT Europe @ Valencia",
+				authors: [
+					"Mads Holten Rasmussen",
+					"Alex Schlachter"
+				]
+			},
+			{
+				href: "20220906_Aalto.html",
+				title: "2022.09.06 Data Driven Smart Buildings @ Aalto",
+				authors: [
+					"Mads Holten Rasmussen"
+				]
+			},
+			{
+				href: "20220822_BuildsimNordic.html",
+				title: "2022.08.22 Buildsim Nordic",
+				authors: [
+					"Mads Holten Rasmussen",
+					"Ali Kücükavci"
+				]
+			},
+			{
+				href: "20220608_SSoLDAC.html",
+				title: "2022.06.08 SSoLDAC @ Cercedilla",
+				authors: [
+					"Mads Holten Rasmussen"
+				]
+			},
+			{
+				href: "20220302_Annex_81.html",
+				title: "2022.03.02 IEA EBC Annex 81",
+				authors: [
+					"Mads Holten Rasmussen"
+				]
+			},
+			{
+				href: "20220125_IFCjs_vs_LBD.html",
+				title: "2022.01.25 IFCjs vs LBD",
+				authors: [
+					"Mads Holten Rasmussen",
+					"Antonio González Viegas"
+				]
+			}
+			
+		];
 
-	</div> -->
+		presentations.forEach(p => {
+			const rowDiv = document.createElement("div");
+			rowDiv.href = p.href;
+			rowDiv.classList.add("row");
+
+			const titleDiv = document.createElement("div");
+			titleDiv.classList.add("title");
+			rowDiv.appendChild(titleDiv);
+
+			const pLink = document.createElement("a");
+			pLink.href = p.href;
+			pLink.innerText = p.title;
+			titleDiv.appendChild(pLink);
+
+			const nameseDiv = document.createElement("div");
+			nameseDiv.classList.add("names");
+			rowDiv.appendChild(nameseDiv);
+
+			p.authors.forEach(a => {
+				const nSpan = document.createElement("span");
+				nSpan.innerText = a;
+				nameseDiv.appendChild(nSpan);
+			})
+
+			rowContainer.appendChild(rowDiv);
+		})
+
+	</script>
 
 
 </body>

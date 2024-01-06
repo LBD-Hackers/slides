@@ -1,0 +1,229 @@
+.two-col {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.col {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer-left {
+    position: absolute;
+    bottom: 27px;
+    left: 80px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-content: flex-start;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer-left img {
+    height: 3vh;
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 1em !important;
+    color: black;
+    padding: 1vh;
+}
+
+.box-top-left {
+    position: absolute;
+    left: 0vw;
+    top: -30vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 1em !important;
+    color: black;
+    padding: 1vh;
+}
+
+.top-right {
+    position: static;
+    right: 0vw;
+    top: 0vh;
+    bottom: 40vh;
+    z-index: 10;
+    background-color: red;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 5vh;
+    gap: 40px;
+}
+
+.logo-container img {
+    height: 70px;
+}
+
+
+.assumption1 {
+    display: flex;
+    justify-content: center;
+}
+
+.assumption2 {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.assumption2 div:first-of-type {
+    border-bottom: 2px solid black
+}
+
+.footnote {
+    display: flex;
+    justify-content: end;
+    font-size: 15px;
+    height: 50;
+}
+
+.ruleinter {
+    position: fixed;
+    height: 250px;
+    width: 250px;
+    bottom: 250px;
+    right: 700px;
+    border: 5px dotted grey;
+}
+
+.buildingprep {
+    position: fixed;
+    height: 250px;
+    width: 250px;
+    bottom: 250px;
+    right: 450px;
+    border: 5px dotted grey;
+}
+
+.ruleexec {
+    position: fixed;
+    height: 250px;
+    width: 250px;
+    bottom: 250px;
+    right: 200px;
+    border: 5px dotted grey;
+}
+
+.reporting {
+    position: fixed;
+    height: 250px;
+    width: 250px;
+    bottom: 250px;
+    right: -20px;
+    border: 5px dotted grey;
+}
+
+.case1 {
+    position: fixed;
+    height: 100px;
+    width: 425px;
+    bottom: 250px;
+    right: 525px;
+    border: 4px dotted blue;
+    opacity: 0.5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: blue;
+    justify-content: center;
+    font-weight: bold;
+
+}
+
+.case2 {
+    position: fixed;
+    height: 150px;
+    width: 200px;
+    bottom: 350px;
+    right: 475px;
+    border: 4px dotted blue;
+    opacity: 0.5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: blue;
+    justify-content: center;
+    font-weight: bold;
+
+}
+
+.case3 {
+    position: fixed;
+    height: 250px;
+    width: 400px;
+    bottom: 250px;
+    right: 275px;
+    border: 4px dotted blue;
+    opacity: 0.9;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: blue;
+    justify-content: center;
+    font-weight: bold;
+
+}
+
+.case4 {
+    position: fixed;
+    height: 100px;
+    width: 110px;
+    bottom: 325px;
+    right: 165px;
+    border: 4px dotted blue;
+    opacity: 0.9;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: blue;
+    justify-content: center;
+    font-weight: bold;
+
+}
+
+.case5 {
+    position: fixed;
+    height: 110px;
+    width: 110px;
+    bottom: 130px;
+    right: 300px;
+    border: 4px dotted blue;
+    opacity: 0.9;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: blue;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.note{
+    font-family: Consolas, monaco, monospace;
+    font-size: 0.4em;
+    font-weight: bold;
+}
+.coded{
+    font-family: Consolas, monaco, monospace;
+    font-size: 0.7em;
+    font-weight: 100;
+}
