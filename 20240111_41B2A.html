@@ -69,7 +69,7 @@
 				</section>
 
 				<section>
-					<h3>"Byggebrancen arbejder i en dokument-centreret snarere end data.centreret praksis"</h3>
+					<h3>"Byggebrancen arbejder i en dokument-centreret snarere end data-centreret praksis"</h3>
 					<aside class="notes">
 						- Exchange of files rather than data integration<br>
 						- A bim is one database - we need multiple
@@ -286,7 +286,7 @@
 				</section>
 
 				<section>
-					<p>Sammenlignet med RDB'er giver RDF mening ud fra et logisk perspektiv og ikke kun fra et datastyringsperspektiv. 🧐</p>
+					<p>Sammenlignet med RDB'er giver RDF mening ud fra et logisk perspektiv og ikke kun fra et datahåndteringsperspektiv. 🧐</p>
 					<p>Denne fordel vil være mere indlysende, når vi begynder at lave forespørgseler på datasættene! 💡✨</p>
 				</section>
 
@@ -494,23 +494,6 @@
 				<!-- LD BIM -->
 
 				<!-- LD BIM EXAMPLE QUERIES -->
-				<!-- Query: sites -->
-				<section
-					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%0A%7D"
-					data-background-interactive>
-				</section>
-
-				<!-- Query: sites + buildings -->
-				<section
-					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%0A%7D"
-					data-background-interactive>
-				</section>
-
-				<!-- Query: sites + buildings + storeys -->
-				<section
-					data-background-iframe="https://ld-bim.web.app?duplex=true&query=PREFIX%20bot%3A%20%3Chttps%3A%2F%2Fw3id.org%2Fbot%23%3E%20%0A%0ACONSTRUCT%0AWHERE%7B%0A%20%20%20%3Fsite%20a%20bot%3ASite%20.%0A%20%20%20%3Fsite%20bot%3AhasBuilding%20%3Fbldg%20.%0A%20%20%20%3Fbldg%20a%20bot%3ABuilding%20.%0A%20%20%20%3Fbldg%20bot%3AhasStorey%20%3Flvl%20.%0A%20%20%20%3Flvl%20a%20bot%3AStorey%20.%0A%7D"
-					data-background-interactive>
-				</section>
 
 				<!-- Query: sites + buildings + storeys + spaces -->
 				<section
