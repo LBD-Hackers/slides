@@ -549,25 +549,43 @@
 				<section data-background-iframe="./static/interactive/timelines/timeline.html?file=mhra-full.json#event-webim">
 				</section>
 
+                <section>
+                    <h2>Automatisk check af BIM-modeller ift. produktdata</h2>
+                    <a href="https://molio.dk/nyheder-og-viden/netvaerk/contech-lab/aktiviteter/pionerprojekter/pionerprojekter-2021/automatisk-berigelse-af-bim-modeller-ift-produktdata">Link</a>
+                </section>
+
+                <section data-background-image="./static/images/Pionerprojekt5-01.svg" data-background-size="70%">
+				</section>
+
+                <section data-background-image="./static/images/Pionerprojekt5-02.svg" data-background-size="70%">
+				</section>
+
+                <section data-background-image="./static/images/Pionerprojekt5-03.svg" data-background-size="70%">
+				</section>
+
+                <section data-background-image="./static/images/Pionerprojekt5-04.svg" data-background-size="70%">
+				</section>
+
+                <section data-background-image="./static/images/Pionerprojekt5-05.svg" data-background-size="70%">
+				</section>
+
+                <section>
+					<img src="./static/images/logos/RDFox.png" height="100vh">
+					<p>Incremential reasoning</p>
+				</section>
+
+                <section data-background-image="./static/images/Pionerprojekt5-06.svg" data-background-size="70%">
+				</section>
+
+                <section data-background-image="./static/images/Pionerprojekt5-07.svg" data-background-size="70%">
+				</section>
+
+                <section data-background-image="./static/images/Pionerprojekt5-08.svg" data-background-size="70%">
+				</section>
+
 				<!-- BART -->
 				<section>
 					<h2>BART Fase 2 aflevering</h2>
-				</section>
-
-				<section>
-					<img src="./static/images/mhra/projects/ConTech5-fire-cl_ol.svg">
-					<aside class="notes">
-						(Alex) In this small project, the intention was to check a building model upon fire damper requirements. <br>
-						- If a pipe is going through a wall with fire classification (wall between two different fire sections), a fire damper has to be installed. <br>
-						- If the fire zoning changes, the requirement of fire damper changes as well. This is conidered here by using incremental reasoning with the graph database solution RDFox from Oxford Semantics. <br>
-						- We can write a rule: If two spaces from different fire sections share the same wall interface, this wall interface is classified as a fire protection interface <br>
-						- If a pipe is now intersecting with such a fire classified interface, it must contain a fire damper.
-					</aside>
-				</section>
-
-				<section>
-					<img src="./static/images/logos/RDFox.png" height="100vh">
-					<p>Incremential reasoning</p>
 				</section>
 
 				<section data-background-video="./static/videos/mhra-bart.mp4" 
@@ -583,29 +601,8 @@
 
 			</section>
 
-			<!-- BIM bots -->
-			<section>
-
-				<section>
-					<h1>Visionen om BIM bots 🤖</h1>
-				</section>
-
-				<section data-background-image="./static/images/web3-bim-bots-01.svg">
-				</section>
-
-				<section data-background-image="./static/images/web3-bim-bots-02.svg">
-				</section>
-
-				<section data-background-image="./static/images/web3-bim-bots-03.svg">
-				</section>
-
-				<section data-background-image="./static/images/web3-bim-bots-04.svg">
-				</section>
-
-			</section>
-
-			<!-- incremential reasoning -->
-			<section>
+            <!-- Regelbaserede flowberegninger -->
+            <section>
 
 				<section>
 					<h2>Regelbaserede flowberegninger</h2>
@@ -637,6 +634,63 @@
 				</section>
 
 			</section>
+
+
+            <!-- LLMs -->
+            <section>
+
+                <section>
+					<h2>Og hvad så med sprogmodellerne?</h2>
+				</section>
+
+                <section>
+					<p>LLMs arbejder med tekst, og det er fantastisk hvis vi har den efterspurgte viden dokumenteret i prosaform. Men hvad med al den information der nu ligger gemt i vores grafer? <b>Lad os lave et eksperiment!</b> 🤓💻🦾</p>
+				</section>
+
+                <section>
+
+                    <pre><code class="hljs text" data-line-numbers="|1-3|4-6|7-12|13-15|16-17|19-20|22-23">AA er et vindue
+BB er et vindue
+CC er et vindue
+AA vender mod nord
+BB vender mod syd
+CC vender mod syd
+AA har glasareal 3,2 m2
+AA har karmareal 1,7 m2
+BB har glasareal 2,3 m2
+BB har karmareal 1,1 m2
+CC har glasareal 2,1 m2
+CC har karmareal 1,0 m2
+XX er et rum
+XX har vindue AA
+XX har vindue BB
+YY er et rum
+YY har vindue CC
+                        
+Et vindues totale areal beregnes som summen af glasareal og karmareal.
+Glasandelen er den del af et vindues totale areal der udgøres af glas.
+
+--------
+Hvad er det samlede areal af vinduerne på husets sydfacade?</code></pre>
+                </section>
+
+                <section>
+                    <video style="height: 50vh" data-autoplay controls src="./static/videos/Prompt1_bard.mp4"></video>
+                </section>
+
+                <section>
+                    <video style="height: 50vh" data-autoplay controls src="./static/videos/Prompt2_bard.mp4"></video>
+                </section>
+
+                <section>
+                    <video style="height: 50vh" data-autoplay controls src="./static/videos/Prompt3_bard.mp4"></video>
+                </section>
+
+                <section>
+                    <h1>🤯🥴</h1>
+                </section>
+
+            </section>
 
 			<section>
 				<h1>Åben diskussion 🙋‍♂️💭</h1>
